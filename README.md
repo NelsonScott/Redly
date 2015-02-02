@@ -1,4 +1,4 @@
-# Flux-capacitr
+# Redly
 
 [Heroku link][heroku]
 
@@ -46,7 +46,7 @@ By this point users should be able to properly add and see feeds on their page. 
 [Details][phase-four]
 
 ### Phase 5: CSS and Tidying up (~2 days)
-Improve site appearance and functionality by adding Bootstrap, improving CSS, and implementing Jquery functions.  Spend time improving the layout and add effects for sliding in/fading out of feeds/tags/ratings.  Optional method to hide these features.  Make sure users can edit and update content. 
+Improve site appearance and functionality by adding Bootstrap, improving CSS, and implementing Jquery functions.  Spend time improving the layout and add effects for sliding in/fading out of feeds/tags/ratings.  Optional method to hide these features.  Make sure users can edit and update content.
 
 [Details][phase-five]
 
