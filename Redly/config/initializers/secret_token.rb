@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Redly::Application.config.secret_key_base = '57fae8d020c75c9b3df0764d9b8ff925433912600b3540550fa3969842c6be7a6360e57a1df104d7764667389425434083b3bec2cf64e127601b5540e6d47b9d'
+Redly::Application.config.secret_key_base = '80f46c9f610ad54fee768b478ccd3d1955be29f53466e5986e8849f28628bab937a1b623ec28372c494d0f692f1a728356fa4239b9e7506afd6c149358376e1e'
