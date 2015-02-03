@@ -1,0 +1,25 @@
+<h1>Sign Up</h1>
+
+<form action="/users" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <label for="smallInput">Email<br>
+    <input class = "user_email" name="user[email]" type="text" class="small input-text" id="smallInput" value="<%= @user.email %>"><br>
+  </label><br>
+  <label>Username<br>
+    <input class = "user_name" name="user[user_name]" type="text" value="<%= @user.user_name %>"><br>
+  </label><br>
+  <label>Password<br>
+    <input class = "password" name="user[password]" type="password"><br>
+  </label><br>
+  <input type="submit" value="Submit" class="small button"><br>
+</form>
+  <button name="button" id="guest">Guest Login</button>
+
+<script>
+$('#guest').on('click', function(){
+  $('.user_email').val('demo@example.com');
+  $('.user_name').val('demo');
+  $('.password').val('password');
+  $('input').trigger('click');
+});
+</script>

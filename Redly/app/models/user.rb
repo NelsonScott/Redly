@@ -4,11 +4,12 @@ class User < ActiveRecord::Base
   validates :user_name, :email, :password_digest, :session_token, presence: true
   validates :password, length: { in: 6..15, allow_nil: true }
   validates :user_name, uniqueness: true
+  after_initialize :ensure_session_token
 
-  def self.find_by_credentials(username, password)
-   user = User.find_by_username(username)
+  def self.find_by_credentials(user_params)
+   user = User.find_by(user_name: user_params[:user_name])
    return nil unless user
-   user.is_password?(password) ? user : nil
+   user.is_password?(user_params[:password]) ? user : nil
   end
 
   def self.generate_session_token
