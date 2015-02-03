@@ -6,7 +6,7 @@ window.Redly = {
   Utils: {},
   initialize: function() {
     alert("Test Start");
-    new Redly.Routers.Router
-    Backbone.history.start();
+    // new Redly.Routers.Router
+    // Backbone.history.start();
   }
 };

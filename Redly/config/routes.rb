@@ -1,5 +1,5 @@
 Redly::Application.routes.draw do
-  root to: 'users#index'
+  root 'static_pages#home'
   resources :users
   resource :session
 end
