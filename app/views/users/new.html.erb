@@ -12,14 +12,5 @@
     <input class = "password" name="user[password]" type="password"><br>
   </label><br>
   <input type="submit" value="Submit" class="small button"><br>
+  <button name="user[button]" id="guest">Guest Login</button>
 </form>
-  <button name="button" id="guest">Guest Login</button>
-
-<script>
-$('#guest').on('click', function(){
-  $('.user_email').val('demo@example.com');
-  $('.user_name').val('demo');
-  $('.password').val('password');
-  $('input').trigger('click');
-});
-</script>

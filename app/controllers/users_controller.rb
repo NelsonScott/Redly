@@ -10,14 +10,20 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
-
-    if @user.save
+    if (user_params[:button])
+      @user = User.find_by(user_name: "demo")
       sign_in!(@user)
       redirect_to root_url
     else
-      flash.now[:errors] = @user.errors.full_messages
-      render :new
+      @user = User.new(user_params)
+
+      if @user.save
+        sign_in!(@user)
+        redirect_to root_url
+      else
+        flash.now[:errors] = @user.errors.full_messages
+        render :new
+      end
     end
   end
 
@@ -28,7 +34,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:user_name, :password, :email)
+    params.require(:user).permit(:user_name, :password, :email, :button)
   end
 
 end
