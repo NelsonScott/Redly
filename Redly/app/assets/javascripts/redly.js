@@ -3,10 +3,18 @@ window.Redly = {
   Collections: {},
   Views: {},
   Routers: {},
-  Utils: {},
   initialize: function() {
-    alert("Test Start");
-    // new Redly.Routers.Router
-    // Backbone.history.start();
+    // alert('Hello from Backbone!');
+    var $rootEl = $('#content')
+    new Redly.Routers.Router($rootEl);
+    Backbone.history.start();
   }
 };
+
+$(document).ready(function(){
+  Redly.initialize();
+});
+
+
+// how to get $rootEl to router
+// what the is the process for login?
