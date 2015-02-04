@@ -1139,3 +1139,87 @@ Load paths:
 
 
 Started POST "/__better_errors/70124736090300/variables" for 127.0.0.1 at 2015-02-03 21:55:44 -0800
+
+
+Started GET "/session/new" for 127.0.0.1 at 2015-02-03 22:04:02 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 456ms (Views: 434.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-03 22:04:02 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-03 22:04:02 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-03 22:04:02 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-03 22:04:02 -0800
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2015-02-03 22:04:02 -0800
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2015-02-03 22:04:02 -0800
+
+
+Started GET "/assets/redly.js?body=1" for 127.0.0.1 at 2015-02-03 22:04:02 -0800
+
+
+Started GET "/assets/routers/router.js?body=1" for 127.0.0.1 at 2015-02-03 22:04:02 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-03 22:04:02 -0800
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.5ms)[0m  SELECT "users"."user_name" FROM "users"
+  [1m[36m (0.5ms)[0m  [1mSELECT "users"."user_name", "users"."email" FROM "users"[0m
+  [1m[35m (0.5ms)[0m  SELECT "users"."user_name", "users"."email" FROM "users"
+
+
+Started POST "/session" for 127.0.0.1 at 2015-02-03 22:05:58 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"YDYWScMS42TaZh+ifs5aLMZzbqG0fQEqAMJ7lkNLXFs=", "user"=>{"user_name"=>"Scott", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."user_name" = 'Scott' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT 1 AS one FROM "users" WHERE ("users"."user_name" = 'Scott' AND "users"."id" != 1) LIMIT 1
+  [1m[36mSQL (3.3ms)[0m  [1mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = 1[0m  [["session_token", "dhoZKKosXZ6gkxjNI_eX4npAWhve7LB7n4PkAkQLLao"], ["updated_at", Wed, 04 Feb 2015 06:05:58 UTC +00:00]]
+  [1m[35m (60.0ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 150ms (ActiveRecord: 65.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-03 22:05:58 -0800
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."session_token" = 'dhoZKKosXZ6gkxjNI_eX4npAWhve7LB7n4PkAkQLLao' LIMIT 1[0m
+  Rendered static_pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 7ms (Views: 4.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-03 22:05:58 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-03 22:05:58 -0800
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2015-02-03 22:05:58 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-03 22:05:58 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-03 22:05:58 -0800
+
+
+Started GET "/assets/redly.js?body=1" for 127.0.0.1 at 2015-02-03 22:05:58 -0800
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2015-02-03 22:05:58 -0800
+
+
+Started GET "/assets/routers/router.js?body=1" for 127.0.0.1 at 2015-02-03 22:05:58 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-03 22:05:58 -0800
