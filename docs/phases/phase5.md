@@ -1,4 +1,4 @@
-# Phase 5: Searching for Blogs and Posts
+# Phase 4: Search Bar/Feed Selection
 
 ## Rails
 ### Models
@@ -13,7 +13,7 @@
 ### Collections
 
 ### Views
+* SearchBar
+* FeedPreview
 
 ## Gems/Libraries
-* jQuery
-* Bootstrap

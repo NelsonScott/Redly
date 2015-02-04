@@ -1,11 +1,11 @@
-# Phase 2: Seeds, JSON API and Backbone Views
+# Phase 2: Feeds, JSON API, & Backbone Views
 
 ## Rails
 ### Models
+* Feed (belongs to User)
 
 ### Controllers
 Api::FeedsController (create, destroy, index, show)
-Api::TagsController (create, destroy, show, update)
 
 ### Views
 * feeds/show.json.jbuilder
@@ -13,14 +13,18 @@ Api::TagsController (create, destroy, show, update)
 ## Backbone
 ### Models
 * Feed
-* Tag
+
+### Routers
+* Router
 
 ### Collections
 * Feeds
-* Tags
 
 ### Views
-* FeedShow (composite view, contains TagShow subviews)
-* TagShow
+* FeedIndex (composite view)
+* FeedShow
+* FeedForm
 
 ## Gems/Libraries
+* 'open-uri'
+* 'simple-rss'

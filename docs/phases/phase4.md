@@ -1,4 +1,4 @@
-# Phase 4: User Feeds
+# Phase 3: Add sidebar view, Easier Feed Creation
 
 ## Rails
 ### Models
@@ -6,16 +6,14 @@
 ### Controllers
 
 ### Views
-tags/feed.json.jbuilder
 
 ## Backbone
 ### Models
 
 ### Collections
-* Tags
 
 ### Views
-* Tags
-* Ratings 
+* sidebar
+* addFeed
 
 ## Gems/Libraries

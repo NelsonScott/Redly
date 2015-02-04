@@ -3,19 +3,14 @@
 ## Rails
 ### Models
 * User
-* Blog
-* Post
 
 ### Controllers
 * UsersController (create, new)
 * SessionsController (create, new, destroy)
-* FeedsController (create, new, show)
-* TagsController (create, new, show)
-
+* StaticPagesController (home)
 ### Views
 * users/new.html.erb
 * session/new.html.erb
-* feeds/new.html.erb
 
 ## Backbone
 ### Models

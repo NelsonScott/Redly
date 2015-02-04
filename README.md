@@ -5,15 +5,15 @@
 [heroku]:
 
 ## Minimum Viable Product
-Redly is a clone of Feedly with a reddit twist, built on Rails and Backbone. Users can:
+Redly is a clone of Feedly that allows users to rate and tag entries, built on Rails and Backbone. Users can:
 
 - [x] Create accounts
 - [x] Create sessions (log in)
-- [ ] Create feeds
-- [ ] Choose feeds
-- [ ] Tag feeds
-- [ ] Rate feeds
-- [ ] View feeds and tags
+- [ ] Add feeds
+- [ ] View feeds
+- [ ] Tag entries
+- [ ] Rate entries
+- [ ] View entries' tags and ratings
 
 ## Design Docs
 * [View Wireframes][views]
@@ -29,33 +29,31 @@ I will implement user login and authentication using Rails based on the lessons 
 
 [Details][phase-one]
 
-### Phase 2: Seeds, JSON API and Backbone Views (~2 days)
-I will seed the database will some feeds and tags.  I will add API routes to serve feed post data as JSON, then add Backbone
-models and collections that fetch data from those routes. The previous Rails views will be transferred to Backbone.
+### Phase 2: Feeds, JSON API and Backbone Views (~2 days)
+Allow users to create feeds with a URL, store these URLs in the database.  Create feed API for retrieving feed data with corresponding entries.  Create Backbone views to display information about a feed on the homepage.
 
 [Details][phase-two]
 
-### Phase 3: Connecting and Configuring Third-Party API (~3 days)
-I plan to use third-party APIs to fetch feed data.  I'll need to use the RSS feed reader for rails to parse feed data.  This will involve storing those results in the database and creating corresponding backbone views and models.  
+### Phase 3: Ratings & Taggings(~3 days)
+Create Model and Controller for entries. Add ability to see a feed's entries.  Allow user to rate entries from 1 to 5 stars using the ajaxful_rating gem.  Create tags for feeds in order to better organize them.  
 
 [Details][phase-three]
 
-### Phase 4: Feeds and Ratings (~2 days)
-By this point users should be able to properly add and see feeds on their page.  I will now add views to display the ratings and tags next to feed data on the user's page.  This will involve finding the average ratings through SQL and implementing a displaying it in terms of stars.  
+### Phase 4: Add sidebar view, Easier Feed Creation (~2 days)
+By this point users should be able to properly add and see feeds on their page.  Have sidebar to slide open to show a list of the user's current feeds to select from.  Also change Feed creation to be done from the sidebar instead of with the current separate form.
 
 [Details][phase-four]
 
-### Phase 5: CSS and Tidying up (~2 days)
-Improve site appearance and functionality by adding Bootstrap, improving CSS, and implementing Jquery functions.  Spend time improving the layout and add effects for sliding in/fading out of feeds/tags/ratings.  Optional method to hide these features.  Make sure users can edit and update content.
+### Phase 5: Search Bar/Feed Selection (~2 days)
+Implement a search bar that displays a realtime preview of feeds to select from.  Allow a user to click on a result to add it to their list of feeds.  
 
 [Details][phase-five]
 
-### Bonus Features (TBD)
+### Bonus Features
 - [ ] Display feeds higher based on rating and popularity
 - [ ] Pagination of the feeds show
 - [ ] Divide page into feeds categories (tech, science, etc)
-- [ ] Adding friends and seeing their feeds
-- [ ] User pages
+- [ ] Add a feeds suggestion index
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md

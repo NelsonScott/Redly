@@ -179,3 +179,4 @@
 [02/04/15 12:41:49 -0800 Scotts-MacBook-Pro.local (15428)] INFO : Doing deferred dependency-detection before Rack startup
 [02/04/15 12:41:50 -0800 Scotts-MacBook-Pro.local (15428)] ERROR : Unknown license key
 [02/04/15 12:41:50 -0800 Scotts-MacBook-Pro.local (15428)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[02/04/15 13:22:52 -0800 Scotts-MacBook-Pro.local (15428)] INFO : Starting Agent shutdown

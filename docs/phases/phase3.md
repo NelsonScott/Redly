@@ -1,19 +1,27 @@
-# Phase 3: Connecting and Configuring Third-Party API
+# Phase 3: Ratings & Taggings
 
 ## Rails
 ### Models
 
 ### Controllers
+Api::EntriesController (create, destroy, show)
+Api::TagsController (create, destroy, show)
 
 ### Views
+* entry/show.json.jbuilder
 
 ## Backbone
 ### Models
+* Entry
+* Tag
 
 ### Collections
+* Entries
+* Tags
 
 ### Views
+* EntryShow
+* TagShow
 
 ## Gems/Libraries
-* RSS
-* Feedjira (or simple-rss)
+* ajaxful-rating
