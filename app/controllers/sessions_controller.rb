@@ -4,6 +4,8 @@ class SessionsController < ApplicationController
   end
 
   def create
+    fail
+
     @user = User.find_by_credentials(params[:user])
 
     if @user
@@ -19,6 +21,6 @@ class SessionsController < ApplicationController
 
   def destroy
     sign_out!
-    redirect_to users_url
+    redirect_to new_session_url
   end
 end

@@ -7,8 +7,8 @@
 ## Minimum Viable Product
 Redly is a clone of Feedly with a reddit twist, built on Rails and Backbone. Users can:
 
-- [ ] Create accounts
-- [ ] Create sessions (log in)
+- [x] Create accounts
+- [x] Create sessions (log in)
 - [ ] Create feeds
 - [ ] Choose feeds
 - [ ] Tag feeds
