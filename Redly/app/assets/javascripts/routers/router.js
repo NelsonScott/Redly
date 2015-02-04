@@ -8,8 +8,6 @@ Redly.Routers.Router = Backbone.Router.extend({
   },
 
   feedIndex: function(){
-    console.log("At the index.");
   },
-
 
 })
