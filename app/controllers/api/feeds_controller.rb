@@ -1,20 +1,22 @@
+require 'uri'
+
 class Api::FeedsController < ApplicationController
 
   def create
-    feed = Feed.find_or_create(feed_params[:url])
-
-    if (current_user.feeds.include?(feed))
-      render json: feed
+    if !valid?(feed_params[:url])
+      render json: {error: "Invalid URL Format."}
     else
-      UserFeed.create!(user_id: current_user.id, feed_id: feed.id)
-      render json: feed
-    end
+      feed = Feed.find_or_create(feed_params[:url])
 
-    # if feed.save
-    #   render json: feed
-    # else
-    #   render json: { error: "invalid url" }, status: :unprocessable_entity
-    # end
+      if (current_user.feeds.include?(feed))
+        render json: feed
+      elsif (feed)
+        UserFeed.create!(user_id: current_user.id, feed_id: feed.id)
+        render json: feed
+      else
+        render json: {error: "Unable to Create Feed."}
+      end
+    end
   end
 
   def show
@@ -35,5 +37,13 @@ class Api::FeedsController < ApplicationController
   def feed_params
     params.require(:feed).permit(:title, :url)
   end
+
+  def valid?(url)
+    uri = URI.parse(url)
+    uri.kind_of?(URI::HTTP)
+  rescue URI::InvalidURIError
+    false
+  end
+
 
 end

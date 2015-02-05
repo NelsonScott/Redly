@@ -34,7 +34,7 @@ Allow users to create feeds with a URL, store these URLs in the database.  Creat
 
 [Details][phase-two]
 
-### Phase 3: Ratings & Taggings(~2 days)
+### Phase 3: Entries, Ratings, & Taggings(~2 days)
 Create Model and Controller for entries. Add ability to see a feed's entries.  Allow user to rate entries from 1 to 5 stars using the ajaxful_rating gem.  Create tags for feeds in order to better organize them.  
 
 [Details][phase-three]
