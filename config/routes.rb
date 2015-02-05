@@ -4,6 +4,8 @@ Redly::Application.routes.draw do
   resource :session
 
   namespace :api do
-    resources :feeds, only: [:index, :create, :show]
+    resources :feeds, only: [:index, :create, :show] do
+      resources :entries, only: [:index, :create, :show]
+    end
   end
 end

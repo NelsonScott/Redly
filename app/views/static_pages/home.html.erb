@@ -4,3 +4,9 @@
 
 <div id="feeds">
 </div>
+
+<% content_for :scripts do %>
+  <script>
+    $(Redly.initialize);
+  </script>
+<% end  %>

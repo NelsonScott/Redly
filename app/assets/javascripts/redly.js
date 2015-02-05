@@ -12,7 +12,3 @@ window.Redly = {
     Backbone.history.start();
   }
 };
-
-$(document).ready(function(){
-  Redly.initialize();
-});
