@@ -125,9 +125,9 @@ GEM
     thread_safe (0.3.4)
     tilt (1.4.1)
     treetop (1.4.15)
+      coffee-rails
       polyglot
       polyglot (>= 0.3.1)
-      coffee-rails
     tzinfo (0.3.43)
     uglifier (2.7.0)
       execjs (>= 0.3.0)

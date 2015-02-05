@@ -1,3 +1,6 @@
-Backbone.Collections.Feed = Backbone.Collection.extend({
-  url: "api/feeds"
+Redly.Collections.Feeds = Backbone.Collection.extend({
+  model: Redly.Models.Feed,
+
+  url: "api/feeds",
+
 });

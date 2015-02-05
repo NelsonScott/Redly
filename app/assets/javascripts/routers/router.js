@@ -9,7 +9,16 @@ Redly.Routers.Router = Backbone.Router.extend({
   },
 
   feedIndex: function(){
-    
+    var indexView = new Redly.Views.feedIndex({
+      collection: this.feeds
+    });
+
+    this._swapView(indexView);
   },
 
+  _swapView: function (view) {
+    this._currentView && this._currentView.remove();
+    this._currentView = view;
+    this.$rootEl.html(view.render().$el);
+  },
 })

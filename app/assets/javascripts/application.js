@@ -15,6 +15,7 @@
 //= require underscore
 //= require backbone
 //= require redly
+//= require_tree ./util
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./collections

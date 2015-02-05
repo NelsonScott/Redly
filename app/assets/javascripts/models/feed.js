@@ -1,4 +1,3 @@
-Backbone.Models.Feed = Backbone.Model.extend({
+Redly.Models.Feed = Backbone.Model.extend({
   urlRoot: "api/feeds",
-  
 });
