@@ -4,8 +4,9 @@
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-user_id     | integer   | not null, foreign key
 url         | string    | not null
+title       | string    | not null
+user_id     | integer   | not null, foreign key
 
 ## entries
 column name | data type | details
