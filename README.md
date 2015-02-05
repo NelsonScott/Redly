@@ -30,7 +30,7 @@ I will implement user login and authentication using Rails based on the lessons 
 [Details][phase-one]
 
 ### Phase 2: Feeds, JSON API and Backbone Views (~2 days)
-Allow users to create feeds with a URL, store these URLs in the database.  Create feed API for retrieving feed data with corresponding entries.  Create Backbone views to display information about a feed on the homepage.
+Allow users to create feeds with a URL, store these URLs in the database.  Create feed API for retrieving feed data with corresponding entries.  Create Backbone views to display information about a feed on the homepage. Ensure feeds index returns feeds only for the current user and that URL's are valid.  
 
 [Details][phase-two]
 

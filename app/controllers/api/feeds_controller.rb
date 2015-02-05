@@ -3,20 +3,32 @@ class Api::FeedsController < ApplicationController
   def create
     feed = Feed.find_or_create(feed_params[:url])
 
-    if feed.save
+    if (current_user.feeds.include?(feed))
       render json: feed
     else
-      render json: { error: "invalid url" }, status: :unprocessable_entity
+      UserFeed.create!(user_id: current_user.id, feed_id: feed.id)
+      render json: feed
     end
+
+    # if feed.save
+    #   render json: feed
+    # else
+    #   render json: { error: "invalid url" }, status: :unprocessable_entity
+    # end
   end
 
   def show
-    render :json => Feed.find(params[:id])
-    # TODO, :include => :latest_entries
+    begin
+      feed = current_user.feeds.find(params[:id])
+      render json: feed
+      # TODO, :include => :latest_entries
+    rescue
+      render json: { error: "Feed not found." }, status: :not_found
+    end
   end
 
   def index
-    render json: Feed.all
+    render json: current_user.feeds
   end
 
   private

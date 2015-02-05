@@ -28,3 +28,4 @@ Api::FeedsController (create, destroy, index, show)
 ## Gems/Libraries
 * 'open-uri'
 * 'simple-rss'
+* 'validate_url'
