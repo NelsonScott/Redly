@@ -11,3 +11,14 @@
  *= require_self
  *= require_tree .
  */
+ #sidebar {
+   border: 2px solid;
+   float:left;
+   margin-right: 20px;
+   width: 20%;
+   height: 100%;
+ }
+
+ #content {
+  overflow: auto;
+}

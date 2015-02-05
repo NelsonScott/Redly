@@ -4,7 +4,7 @@ window.Redly = {
   Views: {},
   Routers: {},
   initialize: function() {
-    var $rootEl = $('#feeds');
+    var $rootEl = $('#content');
     var feeds = new Redly.Collections.Feeds();
     feeds.fetch();
 

@@ -44,6 +44,4 @@ class Api::FeedsController < ApplicationController
   rescue URI::InvalidURIError
     false
   end
-
-
 end
