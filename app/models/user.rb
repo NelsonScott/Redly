@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   after_initialize :ensure_session_token
   has_many :user_feeds
   has_many :feeds, through: :user_feeds
+  has_many :entries, through: :feeds
 
   def self.find_by_credentials(user_params)
    user = User.find_by(user_name: user_params[:user_name])

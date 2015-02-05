@@ -18769,3 +18769,10 @@ Completed 200 OK in 14ms (Views: 3.7ms | ActiveRecord: 0.9ms)
   [1m[35mUserFeed Load (0.5ms)[0m  SELECT "user_feeds".* FROM "user_feeds"
   [1m[36mUserFeed Load (0.5ms)[0m  [1mSELECT "user_feeds".* FROM "user_feeds"[0m
   [1m[35mFeed Load (0.6ms)[0m  SELECT "feeds".* FROM "feeds"
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateEntries (20150205195312)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (30.9ms)[0m  [1mCREATE TABLE "entries" ("id" serial primary key, "guid" character varying(255) NOT NULL, "title" character varying(255) NOT NULL, "link" character varying(255) NOT NULL, "feed_id" integer NOT NULL, "published_at" timestamp NOT NULL, "json" text NOT NULL, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150205195312"]]
+  [1m[36m (66.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
