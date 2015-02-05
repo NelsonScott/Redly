@@ -4,7 +4,10 @@ window.Redly = {
   Views: {},
   Routers: {},
   initialize: function() {
-    var $rootEl = $('#content')
+    var $rootEl = $('#feeds');
+    var feeds = new Redly.Collection.Feeds();
+    feeds.fetch();
+    
     new Redly.Routers.Router($rootEl);
     Backbone.history.start();
   }

@@ -1,6 +1,7 @@
 Redly.Routers.Router = Backbone.Router.extend({
-  initialize: function($rootEl){
+  initialize: function($rootEl, feeds){
     this.$rootEl = $rootEl;
+    this.feeds = feeds;
   },
 
   routes: {
@@ -8,6 +9,7 @@ Redly.Routers.Router = Backbone.Router.extend({
   },
 
   feedIndex: function(){
+    
   },
 
 })

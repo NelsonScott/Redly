@@ -10160,3 +10160,147 @@ Started GET "/api/feeds" for 127.0.0.1 at 2015-02-04 17:26:54 -0800
 Processing by Api::FeedsController#index as HTML
   [1m[35mFeed Load (0.4ms)[0m  SELECT "feeds".* FROM "feeds"
 Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/feeds" for 127.0.0.1 at 2015-02-04 17:35:31 -0800
+Processing by Api::FeedsController#index as HTML
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT "feeds".* FROM "feeds"[0m
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-04 17:47:42 -0800
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."session_token" = 'Dw6jetVyWjjshPkp64G5_zQ0eAUUAXDWyuKvN5miGeQ' LIMIT 1
+  Rendered static_pages/home.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 55ms (Views: 47.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-04 17:47:42 -0800
+
+
+Started GET "/assets/api/feeds.css?body=1" for 127.0.0.1 at 2015-02-04 17:47:42 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-04 17:47:42 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-04 17:47:42 -0800
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2015-02-04 17:47:42 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-04 17:47:42 -0800
+
+
+Started GET "/assets/models/feed.js?body=1" for 127.0.0.1 at 2015-02-04 17:47:42 -0800
+
+
+Started GET "/assets/redly.js?body=1" for 127.0.0.1 at 2015-02-04 17:47:42 -0800
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2015-02-04 17:47:42 -0800
+
+
+Started GET "/assets/collections/feeds.js?body=1" for 127.0.0.1 at 2015-02-04 17:47:42 -0800
+
+
+Started GET "/assets/api/feeds.js?body=1" for 127.0.0.1 at 2015-02-04 17:47:42 -0800
+
+
+Started GET "/assets/routers/router.js?body=1" for 127.0.0.1 at 2015-02-04 17:47:42 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-04 17:47:42 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-04 17:48:39 -0800
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."session_token" = 'Dw6jetVyWjjshPkp64G5_zQ0eAUUAXDWyuKvN5miGeQ' LIMIT 1[0m
+  Rendered static_pages/home.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 46ms (Views: 44.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-04 17:48:39 -0800
+
+
+Started GET "/assets/api/feeds.css?body=1" for 127.0.0.1 at 2015-02-04 17:48:39 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-04 17:48:39 -0800
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2015-02-04 17:48:39 -0800
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2015-02-04 17:48:39 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-04 17:48:39 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-04 17:48:39 -0800
+
+
+Started GET "/assets/redly.js?body=1" for 127.0.0.1 at 2015-02-04 17:48:39 -0800
+
+
+Started GET "/assets/models/feed.js?body=1" for 127.0.0.1 at 2015-02-04 17:48:39 -0800
+
+
+Started GET "/assets/collections/feeds.js?body=1" for 127.0.0.1 at 2015-02-04 17:48:39 -0800
+
+
+Started GET "/assets/routers/router.js?body=1" for 127.0.0.1 at 2015-02-04 17:48:39 -0800
+
+
+Started GET "/assets/api/feeds.js?body=1" for 127.0.0.1 at 2015-02-04 17:48:39 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-04 17:48:39 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-04 17:48:50 -0800
+Processing by StaticPagesController#home as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."session_token" = 'Dw6jetVyWjjshPkp64G5_zQ0eAUUAXDWyuKvN5miGeQ' LIMIT 1
+  Rendered static_pages/home.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-02-04 17:48:50 -0800
+
+
+Started GET "/assets/api/feeds.css?body=1" for 127.0.0.1 at 2015-02-04 17:48:50 -0800
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2015-02-04 17:48:50 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-02-04 17:48:50 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-02-04 17:48:50 -0800
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2015-02-04 17:48:50 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-02-04 17:48:50 -0800
+
+
+Started GET "/assets/redly.js?body=1" for 127.0.0.1 at 2015-02-04 17:48:50 -0800
+
+
+Started GET "/assets/models/feed.js?body=1" for 127.0.0.1 at 2015-02-04 17:48:50 -0800
+
+
+Started GET "/assets/collections/feeds.js?body=1" for 127.0.0.1 at 2015-02-04 17:48:50 -0800
+
+
+Started GET "/assets/routers/router.js?body=1" for 127.0.0.1 at 2015-02-04 17:48:50 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-02-04 17:48:50 -0800
+
+
+Started GET "/assets/api/feeds.js?body=1" for 127.0.0.1 at 2015-02-04 17:48:50 -0800
