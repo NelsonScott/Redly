@@ -8,8 +8,8 @@ gem 'pg'
 
 gem 'bcrypt'
 gem 'backbone-on-rails'
-gem 'simple-rss'
 gem 'newrelic_rpm'
+gem 'simple-rss'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
