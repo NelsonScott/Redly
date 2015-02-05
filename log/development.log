@@ -18763,3 +18763,9 @@ Processing by Api::FeedsController#index as JSON
   [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."session_token" = 'PkPeFUiU8Utd982i_M6U3Ud4IXMpWKGt3mC_JFicvvY' LIMIT 1
   [1m[36mFeed Load (0.5ms)[0m  [1mSELECT "feeds".* FROM "feeds" INNER JOIN "user_feeds" ON "feeds"."id" = "user_feeds"."feed_id" WHERE "user_feeds"."user_id" = $1[0m  [["user_id", 7]]
 Completed 200 OK in 14ms (Views: 3.7ms | ActiveRecord: 0.9ms)
+  [1m[36mFeed Load (1.1ms)[0m  [1mSELECT "feeds".* FROM "feeds"[0m
+  [1m[35mFeed Load (0.6ms)[0m  SELECT "feeds".* FROM "feeds"
+  [1m[36mUserFeed Load (0.7ms)[0m  [1mSELECT "user_feeds".* FROM "user_feeds"[0m
+  [1m[35mUserFeed Load (0.5ms)[0m  SELECT "user_feeds".* FROM "user_feeds"
+  [1m[36mUserFeed Load (0.5ms)[0m  [1mSELECT "user_feeds".* FROM "user_feeds"[0m
+  [1m[35mFeed Load (0.6ms)[0m  SELECT "feeds".* FROM "feeds"

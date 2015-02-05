@@ -4,9 +4,3 @@
 
 <div id="feeds">
 </div>
-
-<h2>Add Feed</h2>
-<%= form_for :feed, url: "/api/feeds" do |f| %>
-  Url <%= f.text_field :url %><br />
-  <%= f.submit %>
-<% end %>

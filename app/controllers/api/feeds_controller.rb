@@ -4,7 +4,7 @@ class Api::FeedsController < ApplicationController
 
   def create
     if !valid?(feed_params[:url])
-      render json: {error: "Invalid URL Format."}
+      render json: {error: "Invalid URL Format."}, status: :unprocessable_entity
     else
       feed = Feed.find_or_create(feed_params[:url])
 
@@ -14,7 +14,7 @@ class Api::FeedsController < ApplicationController
         UserFeed.create!(user_id: current_user.id, feed_id: feed.id)
         render json: feed
       else
-        render json: {error: "Unable to Create Feed."}
+        render json: {error: "Unable to Create Feed."}, status: :unprocessable_entity
       end
     end
   end
