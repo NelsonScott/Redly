@@ -1,6 +1,7 @@
 Redly.Routers.Router = Backbone.Router.extend({
-  initialize: function($rootEl, feeds){
-    this.$rootEl = $rootEl;
+  initialize: function($content, $sidebar, feeds){
+    this.$content = $content;
+    this.$sidebar = $sidebar;
     this.feeds = feeds;
   },
 
@@ -9,16 +10,16 @@ Redly.Routers.Router = Backbone.Router.extend({
   },
 
   feedIndex: function(){
-    var indexView = new Redly.Views.feedIndex({
-      collection: this.feeds
-    });
-
-    this._swapView(indexView);
+    // var indexView = new Redly.Views.feedIndex({
+    //   collection: this.feeds
+    // });
+    //
+    // this._swapView(indexView);
   },
 
   _swapView: function (view) {
     this._currentView && this._currentView.remove();
     this._currentView = view;
-    this.$rootEl.html(view.render().$el);
+    this.$content.html(view.render().$el);
   },
 })

@@ -1,7 +1,11 @@
 <div id="sidebar" style="width:30% float:left">
-  <h1>Redly</h1>
-  <h2> Welcome back, <%= current_user.user_name %><h2>
-  <%= button_to "logout", session_url, method: :delete %>
+  <div id="header">
+    <h1>Redly</h1>
+    <h2> Welcome back, <%= current_user.user_name %><h2>
+    <%= button_to "logout", session_url, method: :delete %>
+  </div>
+  <div id="feed-items">
+  </div>
 </div>
 <div id="content" style="width:70% float:right">
 </div>

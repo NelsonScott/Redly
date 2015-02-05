@@ -4,11 +4,18 @@ window.Redly = {
   Views: {},
   Routers: {},
   initialize: function() {
-    var $rootEl = $('#content');
+    var $content = $('#content');
+    var $sidebar = $('#feed-items');
     var feeds = new Redly.Collections.Feeds();
     feeds.fetch();
 
-    new Redly.Routers.Router($rootEl, feeds);
+    var sidebarView = new Redly.Views.sidebar({
+      collection: feeds
+    });
+    $sidebar.html(sidebarView.render().$el)
+
+
+    new Redly.Routers.Router($content, $sidebar, feeds);
     Backbone.history.start();
   }
 };

@@ -1,8 +1,9 @@
-Redly.Views.feedIndex = Backbone.CompositeView.extend({
-  template: JST['feeds/index'],
+Redly.Views.sidebar = Backbone.CompositeView.extend({
+  template: JST['feeds/sidebar'],
 
   initialize: function(){
     var that = this;
+
     this.listenTo(this.collection, 'add', this.attachFeedSubView);
     this.collection.each(function(feed){
       that.attachFeedSubView(feed);
@@ -27,7 +28,7 @@ Redly.Views.feedIndex = Backbone.CompositeView.extend({
       error: function(){
         console.log("Could not Save Feed.");
       }
-    })
+    });
   },
 
   attachFeedSubView: function(feed){
