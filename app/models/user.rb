@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
   validates :password, length: { in: 6..15, allow_nil: true }
   validates :user_name, uniqueness: true
   after_initialize :ensure_session_token
+  has_many :user_feeds
+  has_many :feeds, through: :user_feeds
 
   def self.find_by_credentials(user_params)
    user = User.find_by(user_name: user_params[:user_name])
