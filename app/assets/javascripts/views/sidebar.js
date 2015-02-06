@@ -1,9 +1,8 @@
 Redly.Views.sidebar = Backbone.CompositeView.extend({
   template: JST['feeds/sidebar'],
 
-  initialize: function(options) {
+  initialize: function() {
     var that = this;
-    this.entries = options.entries
 
     this.listenTo(this.collection, 'add', this.attachFeedSubView);
     this.listenTo(this.collection, 'add sync remove', this.render);
@@ -27,7 +26,6 @@ Redly.Views.sidebar = Backbone.CompositeView.extend({
     newFeed.save({}, {
       success: function(){
         that.collection.add(newFeed);
-        that.entries.fetch()
       },
       error: function(){
         console.log("Could not Save Feed.");
@@ -41,11 +39,9 @@ Redly.Views.sidebar = Backbone.CompositeView.extend({
   },
 
   render: function(){
-    // console.log("sidebar render called");
     var content = this.template();
     this.$el.html(content);
     this.attachSubviews();
-    this.entries.fetch();
 
     return this;
   },

@@ -1,9 +1,9 @@
 require 'uri'
 
 class Api::FeedsController < ApplicationController
-
+# not best form, edit this
   def index
-    render json: current_user.feeds
+    render json: current_user.feeds, include: :latest_entries
   end
 
   def show
@@ -22,16 +22,15 @@ class Api::FeedsController < ApplicationController
       feed = Feed.find_or_create(feed_params[:url])
 
       if (current_user.feeds.include?(feed))
-        render json: feed
+        render json: feed, include: :latest_entries
       elsif (feed)
         UserFeed.create!(user_id: current_user.id, feed_id: feed.id)
-        render json: feed
+        render json: feed, include: :latest_entries
       else
         render json: {error: "Unable to Create Feed."}, status: :unprocessable_entity
       end
     end
   end
-
 
   def destroy
     begin

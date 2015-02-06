@@ -4,16 +4,29 @@ Redly.Views.entriesIndex = Backbone.CompositeView.extend({
   initialize: function(){
     var that = this;
 
-    this.listenTo(this.collection, 'add', this.attachEntrySubView);
-    this.listenTo(this.collection, 'sync remove', this.render);
-    this.collection.each(function(entry){
-      that.attachEntrySubView(entry);
+    this.listenTo(this.collection, 'add', this.attachFeedEntries);
+    this.listenTo(this.collection, 'sync add', this.render);
+    this.listenTo(this.collection, 'remove', this.removeFeedEntries);
+    this.collection.each(function(feed){
+      that.attachFeedEntries(feed);
     });
   },
 
-  attachEntrySubView: function(entry){
-    var feedView = new Redly.Views.entryListItem({model: entry});
-    this.addSubview('ul#entries-index', feedView);
+  attachFeedEntries: function(feed){
+    var that = this;
+    feed.entries().each(function(entry){
+      var entryView = new Redly.Views.entryListItem({model: entry});
+
+      that.addSubview('ul#entries-index', entryView);
+    });
+  },
+
+  removeFeedEntries: function(feed){
+    // var that = this;
+    // feed.entries().each(function(entry){
+    //   var entryView = new Redly.Views.entryListItem({model: entry});
+    //   that.removeSubview('ul#entries-index', entryView);
+    // });
   },
 
   render: function(){

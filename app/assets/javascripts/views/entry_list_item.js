@@ -1,4 +1,6 @@
 Redly.Views.entryListItem = Backbone.View.extend({
+  tag: 'li',
+
   template: JST['entries/list_item'],
 
   render: function(){
