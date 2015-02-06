@@ -24,4 +24,4 @@ Api::TagsController (create, destroy, show)
 * TagShow
 
 ## Gems/Libraries
-* ajaxful-rating
+* JQuery Raty
