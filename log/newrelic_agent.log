@@ -549,3 +549,4 @@
 [02/06/15 08:56:51 -0800 Scotts-MacBook-Pro.local (608)] INFO : Doing deferred dependency-detection before Rack startup
 [02/06/15 08:56:56 -0800 Scotts-MacBook-Pro.local (608)] ERROR : Invalid license key, please contact support@newrelic.com
 [02/06/15 08:56:56 -0800 Scotts-MacBook-Pro.local (608)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[02/06/15 12:58:06 -0800 Scotts-MacBook-Pro.local (608)] INFO : Starting Agent shutdown
