@@ -2,7 +2,7 @@ require 'open-uri'
 
 class Feed < ActiveRecord::Base
   validates :title, :url, presence: true
-  has_many :user_feeds
+  has_many :user_feeds, dependent: :destroy
   has_many :users, through: :user_feeds
   has_many :entries
 

@@ -5,7 +5,8 @@ Redly.Views.sidebar = Backbone.CompositeView.extend({
     var that = this;
 
     this.listenTo(this.collection, 'add', this.attachFeedSubView);
-    this.listenTo(this.collection, 'add sync remove', this.render);
+    this.listenTo(this.collection, 'add sync', this.render);
+    this.listenTo(this.collection, 'remove', this.removeFeed);
     this.collection.each(function(feed){
       that.attachFeedSubView(feed);
     });
@@ -31,6 +32,18 @@ Redly.Views.sidebar = Backbone.CompositeView.extend({
         console.log("Could not Save Feed.");
       }
     });
+  },
+
+  removeFeed: function(feed){
+    var subview = _.find(
+     this.subviews("ul#feeds-index"),
+     function (subview) {
+       return subview.model === feed;
+     }
+   );
+
+   this.removeSubview("ul#feeds-index", subview);
+   this.render();
   },
 
   attachFeedSubView: function(feed){
