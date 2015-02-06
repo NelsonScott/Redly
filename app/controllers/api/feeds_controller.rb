@@ -2,6 +2,19 @@ require 'uri'
 
 class Api::FeedsController < ApplicationController
 
+  def index
+    render json: current_user.feeds
+  end
+
+  def show
+    begin
+      feed = current_user.feeds.find(params[:id])
+      render json: feed, include: :latest_entries
+    rescue
+      render json: { error: "Feed not found." }, status: :not_found
+    end
+  end
+
   def create
     if !valid?(feed_params[:url])
       render json: {error: "Invalid URL Format."}, status: :unprocessable_entity
@@ -19,24 +32,15 @@ class Api::FeedsController < ApplicationController
     end
   end
 
-  def show
+
+  def destroy
     begin
       feed = current_user.feeds.find(params[:id])
-      render json: feed
-      # TODO, :include => :latest_entries
+      feed.destroy
+      render json: {}
     rescue
       render json: { error: "Feed not found." }, status: :not_found
     end
-  end
-
-  def index
-    render json: current_user.feeds
-  end
-
-  def destroy
-    feed = Feed.find(params[:id])
-    feed.destroy
-    render json: {}
   end
 
   private

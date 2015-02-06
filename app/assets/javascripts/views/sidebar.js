@@ -41,10 +41,12 @@ Redly.Views.sidebar = Backbone.CompositeView.extend({
   },
 
   render: function(){
+    // console.log("sidebar render called");
     var content = this.template();
     this.$el.html(content);
     this.attachSubviews();
     this.entries.fetch();
+
     return this;
   },
 });

@@ -23,4 +23,29 @@ class Feed < ActiveRecord::Base
 
     feed
   end
+
+  def latest_entries
+    reload if updated_at < 30.seconds.ago
+    entries
+  end
+
+  def reload
+    begin
+      feed_data = SimpleRSS.parse(open(url))
+      self.title = feed_data.title
+      save!
+
+      existing_entry_guids = Entry.pluck(:guid).sort
+      feed_data.entries.each do |entry_data|
+        unless existing_entry_guids.include?(entry_data.guid)
+          Entry.create_from_json!(entry_data, self)
+        end
+      end
+
+      self
+    rescue SimpleRSSError
+      return false
+    end
+  end
+
 end

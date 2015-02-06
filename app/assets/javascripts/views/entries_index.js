@@ -19,7 +19,6 @@ Redly.Views.entriesIndex = Backbone.CompositeView.extend({
   render: function(){
     var content = this.template();
     this.$el.html(content);
-    console.log(this.collection.length);
     this.attachSubviews();
 
     return this;

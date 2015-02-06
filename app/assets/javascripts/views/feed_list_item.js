@@ -10,6 +10,7 @@ Redly.Views.feedListItem = Backbone.View.extend({
   },
 
   removeSelf: function(event){
+    // console.log("Removing self.");
     this.model.destroy({});
     this.remove();
   },
@@ -18,5 +19,5 @@ Redly.Views.feedListItem = Backbone.View.extend({
     var content = this.template({feed: this.model});
     this.$el.html(content);
     return this;
-  }
+  },
 });
