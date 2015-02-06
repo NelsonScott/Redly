@@ -5,6 +5,7 @@ Redly.Views.entriesIndex = Backbone.CompositeView.extend({
     var that = this;
 
     this.listenTo(this.collection, 'add', this.attachEntrySubView);
+    this.listenTo(this.collection, 'sync remove', this.render);
     this.collection.each(function(entry){
       that.attachEntrySubView(entry);
     });
@@ -18,7 +19,8 @@ Redly.Views.entriesIndex = Backbone.CompositeView.extend({
   render: function(){
     var content = this.template();
     this.$el.html(content);
-    debugger
+    console.log(this.collection.length);
+    this.attachSubviews();
 
     return this;
   },

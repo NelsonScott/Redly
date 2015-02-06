@@ -33,6 +33,12 @@ class Api::FeedsController < ApplicationController
     render json: current_user.feeds
   end
 
+  def destroy
+    feed = Feed.find(params[:id])
+    feed.destroy
+    render json: {}
+  end
+
   private
   def feed_params
     params.require(:feed).permit(:title, :url)
