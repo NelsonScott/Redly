@@ -10,7 +10,6 @@ gem 'bcrypt'
 gem 'backbone-on-rails'
 gem 'newrelic_rpm'
 gem 'simple-rss'
-gem 'jquery-raty-rails', github: 'bmc/jquery-raty-rails'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
