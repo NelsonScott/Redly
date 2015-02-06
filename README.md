@@ -34,15 +34,15 @@ Allow users to create feeds with a URL, store these URLs in the database.  Creat
 
 [Details][phase-two]
 
-### Phase 3: Entries, Ratings, & Taggings(~2 days)
-Create Model and Controller for entries. Add ability to see a feed's entries.  Allow user to rate entries from 1 to 5 stars using the ajaxful_rating gem.  Create tags for feeds in order to better organize them.  
-
-[Details][phase-three]
-
-### Phase 4: Add sidebar view, Easier Feed Creation (~1 days)
+### Phase 3: Add sidebar view, Easier Feed Creation (~1 days)
 By this point users should be able to properly add and see feeds on their page.  Have sidebar to slide open to show a list of the user's current feeds to select from.  Also change Feed creation to be done from the sidebar instead of with the current separate form.
 
 [Details][phase-four]
+
+### Phase 4: Entries, Ratings, & Taggings(~2 days)
+Create Model and Controller for entries. Add ability to see a feed's entries.  Allow user to rate entries from 1 to 5 stars using the ajaxful_rating gem.  Create tags for feeds in order to better organize them.  
+
+[Details][phase-three]
 
 ### Phase 5: Search Bar/Feed Selection (~2 days)
 Implement a search bar that displays a realtime preview of feeds to select from.  Allow a user to click on a result to add it to their list of feeds.  

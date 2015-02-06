@@ -1,19 +1,27 @@
-# Phase 3: Add sidebar view, Easier Feed Creation
+# Phase 3: Ratings & Taggings
 
 ## Rails
 ### Models
 
 ### Controllers
+Api::EntriesController (create, destroy, show)
+Api::TagsController (create, destroy, show)
 
 ### Views
+* entry/show.json.jbuilder
 
 ## Backbone
 ### Models
+* Entry
+* Tag
 
 ### Collections
+* Entries
+* Tags
 
 ### Views
-* sidebar
-* addFeed
+* EntryShow
+* TagShow
 
 ## Gems/Libraries
+* ajaxful-rating
