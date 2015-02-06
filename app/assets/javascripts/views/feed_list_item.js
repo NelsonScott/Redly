@@ -10,7 +10,6 @@ Redly.Views.feedListItem = Backbone.View.extend({
   },
 
   removeSelf: function(event){
-    console.log("removing Feed");
     this.model.destroy({});
     this.remove();
   },

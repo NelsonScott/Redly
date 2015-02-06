@@ -22,11 +22,13 @@ Redly.Views.entriesIndex = Backbone.CompositeView.extend({
   },
 
   removeFeedEntries: function(feed){
-    // var that = this;
-    // feed.entries().each(function(entry){
-    //   var entryView = new Redly.Views.entryListItem({model: entry});
-    //   that.removeSubview('ul#entries-index', entryView);
-    // });
+    _(this.subviews()).each(function (subviews, selector) {
+      _(subviews).each(function (subview) {
+        if (subview.model.attributes.feed_id == feed.id){
+          subview.remove();
+        }
+      })
+    });
   },
 
   render: function(){
