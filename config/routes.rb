@@ -7,5 +7,6 @@ Redly::Application.routes.draw do
     resources :feeds, only: [:index, :create, :show] do
       resources :entries, only: [:index, :create, :show]
     end
+    resources :entries, only: [:index]
   end
 end

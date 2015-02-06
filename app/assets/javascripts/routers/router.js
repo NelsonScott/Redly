@@ -1,20 +1,21 @@
 Redly.Routers.Router = Backbone.Router.extend({
-  initialize: function($content, $sidebar, feeds){
+  initialize: function($content, feeds){
     this.$content = $content;
-    this.$sidebar = $sidebar;
     this.feeds = feeds;
   },
 
   routes: {
-    "": "feedIndex"
+    "": "entriesIndex",
   },
 
-  feedIndex: function(){
-    // var indexView = new Redly.Views.feedIndex({
-    //   collection: this.feeds
-    // });
-    //
-    // this._swapView(indexView);
+  entriesIndex: function(){
+    var userEntries = new Redly.Collections.Entries();
+    userEntries.fetch();
+    var entriesView = new Redly.Views.entriesIndex({
+      collection: userEntries
+    });
+
+    this._swapView(entriesView);
   },
 
   _swapView: function (view) {

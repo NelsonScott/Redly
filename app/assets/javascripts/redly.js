@@ -15,7 +15,7 @@ window.Redly = {
     $sidebar.html(sidebarView.render().$el)
 
 
-    new Redly.Routers.Router($content, $sidebar, feeds);
+    new Redly.Routers.Router($content, feeds);
     Backbone.history.start();
   }
 };

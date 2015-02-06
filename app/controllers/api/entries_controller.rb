@@ -1,7 +1,11 @@
 class Api::EntriesController < ApplicationController
   def index
-    feed = Feed.find(params[:feed_id])
-    render json: feed.entries
+    if (params[:feed_id])
+      feed = Feed.find(params[:feed_id])
+      render json: feed.entries
+    else
+      render json: current_user.entries
+    end
   end
 
   def show
