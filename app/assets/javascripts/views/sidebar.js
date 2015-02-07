@@ -23,15 +23,18 @@ Redly.Views.sidebar = Backbone.CompositeView.extend({
     var newFeed = new Redly.Models.Feed({
       url: url
     });
+
     var that = this;
     newFeed.save({}, {
       success: function(){
         that.collection.add(newFeed);
       },
       error: function(){
-        console.log("Could not Save Feed.");
+        console.log("Could not save feed.");
       }
     });
+
+    this.$('input').val("");
   },
 
   removeFeed: function(feed){

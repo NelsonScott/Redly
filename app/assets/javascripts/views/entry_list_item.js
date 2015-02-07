@@ -8,7 +8,7 @@ Redly.Views.entryListItem = Backbone.View.extend({
   },
 
   handleRating: function(event){
-    console.log(this.$('.rate-entry').raty('score'));
+    // console.log(this.$('.rate-entry').raty('score'));
   },
 
   render: function(){
