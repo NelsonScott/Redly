@@ -66,3 +66,7 @@ button {
 .URL {
   width: 80px;
 }
+
+.add_feed:hover {
+  color: #7CCD61;
+}

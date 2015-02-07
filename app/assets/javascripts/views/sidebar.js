@@ -16,7 +16,17 @@ Redly.Views.sidebar = Backbone.CompositeView.extend({
     "click .add_feed": "addFeed",
     "click .logout": "logoutUser",
     "click .close-side": "toggleSlide",
-    "click .open-side": "toggleSlide"
+    "click .open-side": "toggleSlide",
+    "focus .URL": "enlargeInput",
+    "blur .URL": "shrinkInput"
+  },
+
+  enlargeInput: function(){
+    this.$('.URL').animate({ width: 160 }, 400);
+  },
+
+  shrinkInput: function(){
+    this.$('.URL').animate({ width: 80 }, 600);
   },
 
   toggleSlide: function(){
