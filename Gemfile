@@ -11,6 +11,7 @@ gem 'backbone-on-rails'
 gem 'newrelic_rpm'
 gem 'simple-rss'
 gem 'jquery-ui-rails'
+gem 'bootstrap-sass',       '3.2.0.0'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
