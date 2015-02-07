@@ -697,3 +697,107 @@
 [02/07/15 00:05:55 -0800 Scotts-MacBook-Pro.local (9043)] ERROR : Invalid license key, please contact support@newrelic.com
 [02/07/15 00:05:55 -0800 Scotts-MacBook-Pro.local (9043)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
 [02/07/15 00:26:20 -0800 Scotts-MacBook-Pro.local (9043)] INFO : Starting Agent shutdown
+[02/07/15 00:27:18 -0800 Scotts-MacBook-Pro.local (9382)] INFO : Starting the New Relic agent in "development" environment.
+[02/07/15 00:27:18 -0800 Scotts-MacBook-Pro.local (9382)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[02/07/15 00:27:18 -0800 Scotts-MacBook-Pro.local (9382)] WARN : No configuration file found. Working directory = /Users/scottnelson/Desktop/Redly
+[02/07/15 00:27:18 -0800 Scotts-MacBook-Pro.local (9382)] WARN : Looked in these locations (based on defaults): /Users/scottnelson/Desktop/Redly/config/newrelic.yml, /Users/scottnelson/Desktop/Redly/newrelic.yml, /Users/scottnelson/Desktop/Redly/config/newrelic.yml, /Users/scottnelson/Desktop/Redly/newrelic.yml, /Users/scottnelson/.newrelic/newrelic.yml, /Users/scottnelson/newrelic.yml
+[02/07/15 00:27:18 -0800 Scotts-MacBook-Pro.local (9382)] INFO : Environment: development
+[02/07/15 00:27:18 -0800 Scotts-MacBook-Pro.local (9382)] INFO : Dispatcher: webrick
+[02/07/15 00:27:18 -0800 Scotts-MacBook-Pro.local (9382)] INFO : Application: development
+[02/07/15 00:27:18 -0800 Scotts-MacBook-Pro.local (9382)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'.
+[02/07/15 00:27:18 -0800 Scotts-MacBook-Pro.local (9382)] INFO : Installing ActiveRecord 4 instrumentation
+[02/07/15 00:27:18 -0800 Scotts-MacBook-Pro.local (9382)] INFO : Installing Net instrumentation
+[02/07/15 00:27:18 -0800 Scotts-MacBook-Pro.local (9382)] INFO : Installing deferred Rack instrumentation
+[02/07/15 00:27:18 -0800 Scotts-MacBook-Pro.local (9382)] INFO : Installing Rack::Builder middleware instrumentation
+[02/07/15 00:27:18 -0800 Scotts-MacBook-Pro.local (9382)] INFO : Installing Rails 3+ middleware instrumentation
+[02/07/15 00:27:18 -0800 Scotts-MacBook-Pro.local (9382)] INFO : Installing Rails 4 Controller instrumentation
+[02/07/15 00:27:18 -0800 Scotts-MacBook-Pro.local (9382)] INFO : Installing Rails 4 view instrumentation
+[02/07/15 00:27:18 -0800 Scotts-MacBook-Pro.local (9382)] INFO : Installing Rails 4 Error instrumentation
+[02/07/15 00:27:18 -0800 Scotts-MacBook-Pro.local (9382)] INFO : Finished instrumentation
+[02/07/15 00:27:18 -0800 Scotts-MacBook-Pro.local (9382)] INFO : Doing deferred dependency-detection before Rack startup
+[02/07/15 00:27:19 -0800 Scotts-MacBook-Pro.local (9382)] ERROR : Invalid license key, please contact support@newrelic.com
+[02/07/15 00:27:19 -0800 Scotts-MacBook-Pro.local (9382)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[02/07/15 00:27:41 -0800 Scotts-MacBook-Pro.local (9382)] INFO : Starting Agent shutdown
+[02/07/15 12:06:55 -0800 Scotts-MacBook-Pro.local (733)] INFO : Starting the New Relic agent in "development" environment.
+[02/07/15 12:06:55 -0800 Scotts-MacBook-Pro.local (733)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[02/07/15 12:06:55 -0800 Scotts-MacBook-Pro.local (733)] WARN : No configuration file found. Working directory = /Users/scottnelson/Desktop/Redly
+[02/07/15 12:06:55 -0800 Scotts-MacBook-Pro.local (733)] WARN : Looked in these locations (based on defaults): /Users/scottnelson/Desktop/Redly/config/newrelic.yml, /Users/scottnelson/Desktop/Redly/newrelic.yml, /Users/scottnelson/Desktop/Redly/config/newrelic.yml, /Users/scottnelson/Desktop/Redly/newrelic.yml, /Users/scottnelson/.newrelic/newrelic.yml, /Users/scottnelson/newrelic.yml
+[02/07/15 12:06:55 -0800 Scotts-MacBook-Pro.local (733)] INFO : Environment: development
+[02/07/15 12:06:55 -0800 Scotts-MacBook-Pro.local (733)] INFO : Dispatcher: webrick
+[02/07/15 12:06:55 -0800 Scotts-MacBook-Pro.local (733)] INFO : Application: development
+[02/07/15 12:06:55 -0800 Scotts-MacBook-Pro.local (733)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'.
+[02/07/15 12:06:55 -0800 Scotts-MacBook-Pro.local (733)] INFO : Installing ActiveRecord 4 instrumentation
+[02/07/15 12:06:55 -0800 Scotts-MacBook-Pro.local (733)] INFO : Installing Net instrumentation
+[02/07/15 12:06:55 -0800 Scotts-MacBook-Pro.local (733)] INFO : Installing deferred Rack instrumentation
+[02/07/15 12:06:55 -0800 Scotts-MacBook-Pro.local (733)] INFO : Installing Rack::Builder middleware instrumentation
+[02/07/15 12:06:55 -0800 Scotts-MacBook-Pro.local (733)] INFO : Installing Rails 3+ middleware instrumentation
+[02/07/15 12:06:55 -0800 Scotts-MacBook-Pro.local (733)] INFO : Installing Rails 4 Controller instrumentation
+[02/07/15 12:06:56 -0800 Scotts-MacBook-Pro.local (733)] INFO : Installing Rails 4 view instrumentation
+[02/07/15 12:06:56 -0800 Scotts-MacBook-Pro.local (733)] INFO : Installing Rails 4 Error instrumentation
+[02/07/15 12:06:56 -0800 Scotts-MacBook-Pro.local (733)] INFO : Finished instrumentation
+[02/07/15 12:06:56 -0800 Scotts-MacBook-Pro.local (733)] INFO : Doing deferred dependency-detection before Rack startup
+[02/07/15 12:06:56 -0800 Scotts-MacBook-Pro.local (733)] ERROR : Invalid license key, please contact support@newrelic.com
+[02/07/15 12:06:56 -0800 Scotts-MacBook-Pro.local (733)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[02/07/15 12:52:36 -0800 Scotts-MacBook-Pro.local (733)] INFO : Starting Agent shutdown
+[02/07/15 12:52:47 -0800 Scotts-MacBook-Pro.local (1285)] INFO : Starting the New Relic agent in "development" environment.
+[02/07/15 12:52:47 -0800 Scotts-MacBook-Pro.local (1285)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[02/07/15 12:52:47 -0800 Scotts-MacBook-Pro.local (1285)] WARN : No configuration file found. Working directory = /Users/scottnelson/Desktop/Redly
+[02/07/15 12:52:47 -0800 Scotts-MacBook-Pro.local (1285)] WARN : Looked in these locations (based on defaults): /Users/scottnelson/Desktop/Redly/config/newrelic.yml, /Users/scottnelson/Desktop/Redly/newrelic.yml, /Users/scottnelson/Desktop/Redly/config/newrelic.yml, /Users/scottnelson/Desktop/Redly/newrelic.yml, /Users/scottnelson/.newrelic/newrelic.yml, /Users/scottnelson/newrelic.yml
+[02/07/15 12:52:47 -0800 Scotts-MacBook-Pro.local (1285)] INFO : Environment: development
+[02/07/15 12:52:47 -0800 Scotts-MacBook-Pro.local (1285)] INFO : Dispatcher: webrick
+[02/07/15 12:52:47 -0800 Scotts-MacBook-Pro.local (1285)] INFO : Application: development
+[02/07/15 12:52:47 -0800 Scotts-MacBook-Pro.local (1285)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'.
+[02/07/15 12:52:47 -0800 Scotts-MacBook-Pro.local (1285)] INFO : Installing ActiveRecord 4 instrumentation
+[02/07/15 12:52:47 -0800 Scotts-MacBook-Pro.local (1285)] INFO : Installing Net instrumentation
+[02/07/15 12:52:47 -0800 Scotts-MacBook-Pro.local (1285)] INFO : Installing deferred Rack instrumentation
+[02/07/15 12:52:47 -0800 Scotts-MacBook-Pro.local (1285)] INFO : Installing Rack::Builder middleware instrumentation
+[02/07/15 12:52:47 -0800 Scotts-MacBook-Pro.local (1285)] INFO : Installing Rails 3+ middleware instrumentation
+[02/07/15 12:52:47 -0800 Scotts-MacBook-Pro.local (1285)] INFO : Installing Rails 4 Controller instrumentation
+[02/07/15 12:52:47 -0800 Scotts-MacBook-Pro.local (1285)] INFO : Installing Rails 4 view instrumentation
+[02/07/15 12:52:47 -0800 Scotts-MacBook-Pro.local (1285)] INFO : Installing Rails 4 Error instrumentation
+[02/07/15 12:52:47 -0800 Scotts-MacBook-Pro.local (1285)] INFO : Finished instrumentation
+[02/07/15 12:52:47 -0800 Scotts-MacBook-Pro.local (1285)] INFO : Doing deferred dependency-detection before Rack startup
+[02/07/15 12:52:50 -0800 Scotts-MacBook-Pro.local (1285)] ERROR : Invalid license key, please contact support@newrelic.com
+[02/07/15 12:52:50 -0800 Scotts-MacBook-Pro.local (1285)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[02/07/15 12:53:34 -0800 Scotts-MacBook-Pro.local (1285)] INFO : Starting Agent shutdown
+[02/07/15 12:58:24 -0800 Scotts-MacBook-Pro.local (1400)] INFO : Starting the New Relic agent in "development" environment.
+[02/07/15 12:58:24 -0800 Scotts-MacBook-Pro.local (1400)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[02/07/15 12:58:24 -0800 Scotts-MacBook-Pro.local (1400)] WARN : No configuration file found. Working directory = /Users/scottnelson/Desktop/Redly
+[02/07/15 12:58:24 -0800 Scotts-MacBook-Pro.local (1400)] WARN : Looked in these locations (based on defaults): /Users/scottnelson/Desktop/Redly/config/newrelic.yml, /Users/scottnelson/Desktop/Redly/newrelic.yml, /Users/scottnelson/Desktop/Redly/config/newrelic.yml, /Users/scottnelson/Desktop/Redly/newrelic.yml, /Users/scottnelson/.newrelic/newrelic.yml, /Users/scottnelson/newrelic.yml
+[02/07/15 12:58:24 -0800 Scotts-MacBook-Pro.local (1400)] INFO : Environment: development
+[02/07/15 12:58:24 -0800 Scotts-MacBook-Pro.local (1400)] INFO : Dispatcher: webrick
+[02/07/15 12:58:24 -0800 Scotts-MacBook-Pro.local (1400)] INFO : Application: development
+[02/07/15 12:58:24 -0800 Scotts-MacBook-Pro.local (1400)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'.
+[02/07/15 12:58:24 -0800 Scotts-MacBook-Pro.local (1400)] INFO : Installing ActiveRecord 4 instrumentation
+[02/07/15 12:58:24 -0800 Scotts-MacBook-Pro.local (1400)] INFO : Installing Net instrumentation
+[02/07/15 12:58:24 -0800 Scotts-MacBook-Pro.local (1400)] INFO : Installing deferred Rack instrumentation
+[02/07/15 12:58:24 -0800 Scotts-MacBook-Pro.local (1400)] INFO : Installing Rack::Builder middleware instrumentation
+[02/07/15 12:58:24 -0800 Scotts-MacBook-Pro.local (1400)] INFO : Installing Rails 3+ middleware instrumentation
+[02/07/15 12:58:24 -0800 Scotts-MacBook-Pro.local (1400)] INFO : Installing Rails 4 Controller instrumentation
+[02/07/15 12:58:24 -0800 Scotts-MacBook-Pro.local (1400)] INFO : Installing Rails 4 view instrumentation
+[02/07/15 12:58:24 -0800 Scotts-MacBook-Pro.local (1400)] INFO : Installing Rails 4 Error instrumentation
+[02/07/15 12:58:24 -0800 Scotts-MacBook-Pro.local (1400)] INFO : Finished instrumentation
+[02/07/15 12:58:24 -0800 Scotts-MacBook-Pro.local (1400)] INFO : Doing deferred dependency-detection before Rack startup
+[02/07/15 12:58:26 -0800 Scotts-MacBook-Pro.local (1400)] ERROR : Invalid license key, please contact support@newrelic.com
+[02/07/15 12:58:26 -0800 Scotts-MacBook-Pro.local (1400)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[02/07/15 12:59:22 -0800 Scotts-MacBook-Pro.local (1400)] INFO : Starting Agent shutdown
+[02/07/15 13:02:00 -0800 Scotts-MacBook-Pro.local (1481)] INFO : Starting the New Relic agent in "development" environment.
+[02/07/15 13:02:00 -0800 Scotts-MacBook-Pro.local (1481)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[02/07/15 13:02:00 -0800 Scotts-MacBook-Pro.local (1481)] WARN : No configuration file found. Working directory = /Users/scottnelson/Desktop/Redly
+[02/07/15 13:02:00 -0800 Scotts-MacBook-Pro.local (1481)] WARN : Looked in these locations (based on defaults): /Users/scottnelson/Desktop/Redly/config/newrelic.yml, /Users/scottnelson/Desktop/Redly/newrelic.yml, /Users/scottnelson/Desktop/Redly/config/newrelic.yml, /Users/scottnelson/Desktop/Redly/newrelic.yml, /Users/scottnelson/.newrelic/newrelic.yml, /Users/scottnelson/newrelic.yml
+[02/07/15 13:02:00 -0800 Scotts-MacBook-Pro.local (1481)] INFO : Environment: development
+[02/07/15 13:02:00 -0800 Scotts-MacBook-Pro.local (1481)] INFO : Dispatcher: webrick
+[02/07/15 13:02:00 -0800 Scotts-MacBook-Pro.local (1481)] INFO : Application: development
+[02/07/15 13:02:00 -0800 Scotts-MacBook-Pro.local (1481)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'.
+[02/07/15 13:02:00 -0800 Scotts-MacBook-Pro.local (1481)] INFO : Installing ActiveRecord 4 instrumentation
+[02/07/15 13:02:00 -0800 Scotts-MacBook-Pro.local (1481)] INFO : Installing Net instrumentation
+[02/07/15 13:02:00 -0800 Scotts-MacBook-Pro.local (1481)] INFO : Installing deferred Rack instrumentation
+[02/07/15 13:02:00 -0800 Scotts-MacBook-Pro.local (1481)] INFO : Installing Rack::Builder middleware instrumentation
+[02/07/15 13:02:00 -0800 Scotts-MacBook-Pro.local (1481)] INFO : Installing Rails 3+ middleware instrumentation
+[02/07/15 13:02:00 -0800 Scotts-MacBook-Pro.local (1481)] INFO : Installing Rails 4 Controller instrumentation
+[02/07/15 13:02:00 -0800 Scotts-MacBook-Pro.local (1481)] INFO : Installing Rails 4 view instrumentation
+[02/07/15 13:02:00 -0800 Scotts-MacBook-Pro.local (1481)] INFO : Installing Rails 4 Error instrumentation
+[02/07/15 13:02:00 -0800 Scotts-MacBook-Pro.local (1481)] INFO : Finished instrumentation
+[02/07/15 13:02:00 -0800 Scotts-MacBook-Pro.local (1481)] INFO : Doing deferred dependency-detection before Rack startup
+[02/07/15 13:02:01 -0800 Scotts-MacBook-Pro.local (1481)] ERROR : Invalid license key, please contact support@newrelic.com
+[02/07/15 13:02:01 -0800 Scotts-MacBook-Pro.local (1481)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.

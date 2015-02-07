@@ -22,12 +22,12 @@ Redly.Views.sidebar = Backbone.CompositeView.extend({
   toggleSlide: function(){
     var that = this;
     if (this.$('#sidebar-content').is(":visible")){
-      this.$('#sidebar-content').toggle("slide", 2000, function(){
-        that.$('#open-side').css("visibility", "visible");
+      this.$('#sidebar-content').toggle("slide", 800, function(){
+        that.$('.open-side').css("visibility", "visible");
       });
     } else{
-      this.$('#sidebar-content').toggle("slide", 2000, function(){
-        that.$('#open-side').css("visibility", "hidden");
+        that.$('.open-side').css("visibility", "hidden");
+      this.$('#sidebar-content').toggle("slide", 800, function(){
       });
     }
   },

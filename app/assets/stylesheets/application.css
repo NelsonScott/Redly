@@ -20,20 +20,20 @@
    width: 250px;
  }
 
+
  #sidebar-content{
    position: relative;
- }
-
- #button-wrapper {
-   width: 40px;
-   float: right;
  }
 
  #content {
   overflow: auto;
 }
 
-#open-side{
+.close-side{
+  float: right;
+}
+
+.open-side{
   position: fixed;
   visibility: hidden;
 }
