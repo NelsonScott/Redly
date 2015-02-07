@@ -5,7 +5,7 @@ window.Redly = {
   Routers: {},
   initialize: function() {
     var $content = $('#content');
-    var $sidebar = $('#feed-items');
+    var $sidebar = $('#sidebar');
     var feeds = new Redly.Collections.Feeds();
     feeds.fetch();
 

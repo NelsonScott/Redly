@@ -13,7 +13,23 @@ Redly.Views.sidebar = Backbone.CompositeView.extend({
   },
 
   events: {
-    "click #add_feed": "addFeed"
+    "click #add_feed": "addFeed",
+    "click .logout": "logoutUser"
+  },
+
+  logoutUser: function(){
+    $.ajax({
+    type: 'DELETE',
+    url: '/session',
+    success: function(msg) {
+        if (msg == 'loggedOut') {
+            window.location.href = '/session/new';
+          }
+      },
+    error: function(msg){
+      console.log("Error logging out");
+      }
+    });
   },
 
   addFeed: function(event){
@@ -57,6 +73,7 @@ Redly.Views.sidebar = Backbone.CompositeView.extend({
   render: function(){
     var content = this.template();
     this.$el.html(content);
+    // this.$('#feed-items').html(content);
     this.attachSubviews();
 
     return this;
