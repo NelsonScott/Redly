@@ -16,17 +16,17 @@ Redly.Views.sidebar = Backbone.CompositeView.extend({
     "click .add_feed": "addFeed",
     "click .logout": "logoutUser",
     "click .close-side": "toggleSlide",
-    "click .open-button": "toggleSlide"
+    "click .open-side": "toggleSlide"
   },
 
   toggleSlide: function(){
     var that = this;
     if (this.$('#sidebar-content').is(":visible")){
-      this.$('#open-side').css("visibility", "visible");
-      this.$('#sidebar-content').toggle("slide", 0, function(){
+      this.$('#sidebar-content').toggle("slide", 2000, function(){
+        that.$('#open-side').css("visibility", "visible");
       });
     } else{
-      this.$('#sidebar-content').toggle("slide", 0, function(){
+      this.$('#sidebar-content').toggle("slide", 2000, function(){
         that.$('#open-side').css("visibility", "hidden");
       });
     }

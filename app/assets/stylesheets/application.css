@@ -17,24 +17,16 @@
    position: relative;
    float: left;
    margin-right: 20px;
-   width: 25%;
-   height: 100%;
+   width: 250px;
  }
 
  #sidebar-content{
    position: relative;
  }
 
- #header-feeds {
-   width: 85%;
-   float: left;
-   height: 100%;
- }
-
  #button-wrapper {
-   width: 14%;
+   width: 40px;
    float: right;
-   height: 100%;
  }
 
  #content {
