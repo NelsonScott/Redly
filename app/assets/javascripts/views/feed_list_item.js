@@ -1,4 +1,6 @@
 Redly.Views.feedListItem = Backbone.View.extend({
+  tagName: "li",
+
   template: JST['feeds/list_item'],
 
   initialize: function(){

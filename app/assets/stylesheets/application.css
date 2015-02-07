@@ -18,22 +18,51 @@
    float: left;
    margin-right: 20px;
    width: 250px;
- }
-
-
- #sidebar-content{
-   position: relative;
+   height: 800px;
  }
 
  #content {
   overflow: auto;
+  width:750px;
+  float:right
+}
+
+ #sidebar-content{
+   position: relative;
+   margin-left: 5px;
+ }
+
+
+button {
+  background: transparent;
+  border: none !important;
 }
 
 .close-side{
   float: right;
+  background: transparent;
+  border: none !important;
 }
+
 
 .open-side{
   position: fixed;
   visibility: hidden;
+}
+
+.logout{
+  position: fixed;
+  bottom: 5px;
+  font-size: 10px;
+}
+
+.logout:hover{
+  text-decoration: underline;
+}
+
+.delete-feed{
+}
+
+.URL {
+  width: 80px;
 }
