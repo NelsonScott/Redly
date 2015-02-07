@@ -14,7 +14,7 @@
  */
 
  #sidebar{
-   position: relative;
+   position: fixed;
    float: left;
    margin-right: 20px;
    width: 250px;
@@ -30,6 +30,7 @@
  #sidebar-content{
    position: relative;
    margin-left: 5px;
+   height: 100vh;
  }
 
 
@@ -47,12 +48,13 @@ button {
 
 .open-side{
   position: fixed;
+  margin-top: 20px;
   visibility: hidden;
 }
 
 .logout{
-  position: fixed;
-  bottom: 5px;
+  position: absolute;
+  bottom: 30px;
   font-size: 10px;
 }
 
