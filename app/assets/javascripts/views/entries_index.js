@@ -11,11 +11,7 @@ Redly.Views.entriesIndex = Backbone.CompositeView.extend({
       that.attachFeedEntries(feed);
     });
   },
-
-  handleRating: function(){
-    console.log("I was clicked!");
-  },
-
+  
   attachFeedEntries: function(feed){
     var that = this;
     feed.entries().each(function(entry){

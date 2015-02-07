@@ -3,6 +3,14 @@ Redly.Views.entryListItem = Backbone.View.extend({
 
   template: JST['entries/list_item'],
 
+  events: {
+    "click .rate-entry": "handleRating"
+  },
+
+  handleRating: function(event){
+    console.log(this.$('.rate-entry').raty('score'));
+  },
+
   render: function(){
     var content = this.template({entry: this.model});
     this.$el.html(content);
