@@ -15,13 +15,17 @@
 
  #sidebar{
    position: relative;
-   border: 2px solid;
    float: left;
    margin-right: 20px;
    width: 25%;
    height: 100%;
  }
- #sidebar-content {
+
+ #sidebar-content{
+   position: relative;
+ }
+
+ #header-feeds {
    width: 85%;
    float: left;
    height: 100%;
@@ -35,4 +39,9 @@
 
  #content {
   overflow: auto;
+}
+
+#open-side{
+  position: fixed;
+  visibility: hidden;
 }
