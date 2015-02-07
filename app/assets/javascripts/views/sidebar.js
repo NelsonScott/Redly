@@ -14,7 +14,12 @@ Redly.Views.sidebar = Backbone.CompositeView.extend({
 
   events: {
     "click #add_feed": "addFeed",
-    "click .logout": "logoutUser"
+    "click .logout": "logoutUser",
+    "click .close-side": "toggleSlide"
+  },
+
+  toggleSlide: function(){
+
   },
 
   logoutUser: function(){
@@ -73,7 +78,6 @@ Redly.Views.sidebar = Backbone.CompositeView.extend({
   render: function(){
     var content = this.template();
     this.$el.html(content);
-    // this.$('#feed-items').html(content);
     this.attachSubviews();
 
     return this;
