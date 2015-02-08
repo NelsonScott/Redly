@@ -76,7 +76,6 @@ button {
   border: none !important;
 }
 
-
 .open-side{
   position: fixed;
   margin-top: 20px;
@@ -121,7 +120,6 @@ button {
 }
 
 .entry-title{
-  text-overflow: ellipsis;
   font-size: 14px;
 }
 
