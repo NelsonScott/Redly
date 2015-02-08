@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   has_many :user_feeds, dependent: :destroy
   has_many :feeds, through: :user_feeds
   has_many :entries, through: :feeds
+  has_many :ratings
 
   def self.find_by_credentials(user_params)
    user = User.find_by(user_name: user_params[:user_name])
