@@ -12,7 +12,7 @@ Redly is a clone of Feedly that allows users to rate and tag entries, built on R
 - [x] Add feeds
 - [x] View feeds
 - [ ] Tag entries
-- [ ] Rate entries
+- [x] Rate entries
 - [ ] View entries' tags and ratings
 
 ## Design Docs
@@ -40,7 +40,7 @@ By this point users should be able to properly add and see feeds on their page. 
 [Details][phase-three]
 
 ### Phase 4: Entries, Ratings, & Taggings(~2 days)
-Create Model and Controller for entries. Add ability to see a feed's entries.  Allow user to rate entries from 1 to 5 stars using the ajaxful_rating gem.  Create tags for feeds in order to better organize them.  
+Create Model and Controller for entries. Add ability to see a feed's entries.  Allow user to rate entries from 1 to 5 stars using jquery raty and rails controllers.  Create tags for feeds in order to better organize them.  
 
 [Details][phase-four]
 
