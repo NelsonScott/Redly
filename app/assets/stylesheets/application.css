@@ -13,26 +13,31 @@
  *= require_tree .
  */
 
- #sidebar{
-   position: fixed;
-   float: left;
-   margin-right: 20px;
-   width: 250px;
-   height: 800px;
- }
+#sidebar{
+  position: fixed;
+  float: left;
+  margin-right: 20px;
+  width: 250px;
+  height: 800px;
+}
 
- #content {
+#content {
   overflow: auto;
   width:750px;
   float:right
 }
 
- #sidebar-content{
-   position: relative;
-   margin-left: 5px;
-   height: 100vh;
- }
+#sidebar-content{
+  position: relative;
+  margin-left: 5px;
+  height: 100vh;
+}
 
+ul.feeds-index {
+    padding: 0;
+    margin-top: 20px;
+    /*margin: 0 0 0px 0px;*/
+}
 
 button {
   background: transparent;

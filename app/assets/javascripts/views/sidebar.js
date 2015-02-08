@@ -32,12 +32,12 @@ Redly.Views.sidebar = Backbone.CompositeView.extend({
   toggleSlide: function(){
     var that = this;
     if (this.$('#sidebar-content').is(":visible")){
-      this.$('#sidebar-content').toggle("slide", 800, function(){
+      this.$('#sidebar-content').toggle("slide", 500, function(){
         that.$('.open-side').css("visibility", "visible");
       });
     } else{
         that.$('.open-side').css("visibility", "hidden");
-      this.$('#sidebar-content').toggle("slide", 800, function(){
+      this.$('#sidebar-content').toggle("slide", 400, function(){
       });
     }
   },
@@ -80,19 +80,19 @@ Redly.Views.sidebar = Backbone.CompositeView.extend({
 
   removeFeed: function(feed){
     var subview = _.find(
-     this.subviews("ul#feeds-index"),
+     this.subviews("ul.feeds-index"),
      function (subview) {
        return subview.model === feed;
      }
    );
 
-   this.removeSubview("ul#feeds-index", subview);
+   this.removeSubview("ul.feeds-index", subview);
    this.render();
   },
 
   attachFeedSubView: function(feed){
     var feedView = new Redly.Views.feedListItem({model: feed});
-    this.addSubview('ul#feeds-index', feedView);
+    this.addSubview('ul.feeds-index', feedView);
   },
 
   render: function(){
