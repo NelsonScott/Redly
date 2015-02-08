@@ -15,17 +15,19 @@
 
 /* containers */
 #sidebar{
-  position: fixed;
+  /*Making position fixed will break content sliding left effect */
+  position: relative;
   float: left;
   margin-right: 20px;
   width: 250px;
-  height: 800px;
+  /*putting height here also breaks content sliding left effect*/
+  /*height: 800px;*/
 }
 
 #content {
   overflow: auto;
   width:750px;
-  float:right;
+  /*float:right;*/
 }
 
 #sidebar-content{
