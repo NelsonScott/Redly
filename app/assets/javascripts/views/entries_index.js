@@ -11,13 +11,12 @@ Redly.Views.entriesIndex = Backbone.CompositeView.extend({
       that.attachFeedEntries(feed);
     });
   },
-  
+
   attachFeedEntries: function(feed){
     var that = this;
     feed.entries().each(function(entry){
       var entryView = new Redly.Views.entryListItem({model: entry});
-
-      that.addSubview('ul#entries-index', entryView);
+      that.addSubview('ul.entries-index', entryView);
     });
   },
 

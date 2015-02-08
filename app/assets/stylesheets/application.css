@@ -39,6 +39,11 @@ ul.feeds-index {
     /*margin: 0 0 0px 0px;*/
 }
 
+ul.entries-index li{
+  list-style-type: none;
+  display: none;
+}
+
 button {
   background: transparent;
   border: none !important;

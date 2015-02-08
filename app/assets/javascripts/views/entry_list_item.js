@@ -1,5 +1,5 @@
 Redly.Views.entryListItem = Backbone.View.extend({
-  tag: 'li',
+  tagName: 'li',
 
   template: JST['entries/list_item'],
 
@@ -8,12 +8,13 @@ Redly.Views.entryListItem = Backbone.View.extend({
   },
 
   handleRating: function(event){
-    // console.log(this.$('.rate-entry').raty('score'));
+    console.log(this.$('.rate-entry').raty('score'));
   },
 
   render: function(){
     var content = this.template({entry: this.model});
     this.$el.html(content);
+
     return this;
   },
 
