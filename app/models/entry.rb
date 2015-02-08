@@ -1,5 +1,6 @@
 class Entry < ActiveRecord::Base
   belongs_to :feed
+  has_many :ratings, dependent: :destroy
 
   def self.create_from_json!(entryData, feed)
     Entry.create!({

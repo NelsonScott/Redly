@@ -5,6 +5,7 @@ class Feed < ActiveRecord::Base
   has_many :user_feeds, dependent: :destroy
   has_many :users, through: :user_feeds
   has_many :entries
+  has_many :ratings, through: :entries
 
   def self.find_or_create(url)
     feed = Feed.find_by(url: url)
