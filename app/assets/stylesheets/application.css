@@ -24,7 +24,7 @@
 #content {
   overflow: auto;
   width:750px;
-  float:right
+  float:right;
 }
 
 #sidebar-content{
@@ -67,7 +67,8 @@ button {
   text-decoration: underline;
 }
 
-.delete-feed{
+.delete-feed:hover{
+  color: #CC0000;
 }
 
 .URL {
@@ -76,4 +77,9 @@ button {
 
 .add_feed:hover {
   color: #7CCD61;
+}
+
+/* raty stars*/
+.rate-entry{
+  width: 100px;
 }

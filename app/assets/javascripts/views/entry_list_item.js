@@ -19,6 +19,8 @@ Redly.Views.entryListItem = Backbone.View.extend({
 
   onRender: function () {
     this.$('.rate-entry').empty();
-    this.$('.rate-entry').raty();
+    this.$('.rate-entry').raty({
+      half: true
+    });
   }
 });
