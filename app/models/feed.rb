@@ -4,8 +4,8 @@ class Feed < ActiveRecord::Base
   validates :title, :url, presence: true
   has_many :user_feeds, dependent: :destroy
   has_many :users, through: :user_feeds
-  has_many :entries
-  has_many :ratings, through: :entries
+  has_many :entries, dependent: :destroy
+  has_many :ratings, through: :entries, dependent: :destroy
 
   def self.find_or_create(url)
     feed = Feed.find_by(url: url)
