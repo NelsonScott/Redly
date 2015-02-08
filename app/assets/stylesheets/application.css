@@ -19,14 +19,14 @@
   position: relative;
   float: left;
   margin-right: 20px;
-  width: 250px;
+  /*width: 250px;*/
   /*putting height here also breaks content sliding left effect*/
   /*height: 800px;*/
 }
 
 #content {
   overflow: auto;
-  width:750px;
+  /*width:750px;*/
   /*float:right;*/
 }
 
@@ -79,7 +79,7 @@ button {
 }
 
 .open-side{
-  position: fixed;
+  /*position: fixed;*/
   margin-top: 20px;
   visibility: hidden;
 }

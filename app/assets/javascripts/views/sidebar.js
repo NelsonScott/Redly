@@ -3,6 +3,7 @@ Redly.Views.sidebar = Backbone.CompositeView.extend({
 
   initialize: function() {
     var that = this;
+    this.handleScrolling();
 
     this.listenTo(this.collection, 'add', this.attachFeedSubView);
     this.listenTo(this.collection, 'add sync', this.render);
@@ -18,7 +19,7 @@ Redly.Views.sidebar = Backbone.CompositeView.extend({
     "click .close-side": "toggleSlide",
     "click .open-side": "toggleSlide",
     "focus .URL": "enlargeInput",
-    "blur .URL": "shrinkInput"
+    "blur .URL": "shrinkInput",
   },
 
   enlargeInput: function(){
@@ -93,6 +94,20 @@ Redly.Views.sidebar = Backbone.CompositeView.extend({
   attachFeedSubView: function(feed){
     var feedView = new Redly.Views.feedListItem({model: feed});
     this.addSubview('ul.feeds-index', feedView);
+  },
+
+  handleScrolling: function(){
+    var $sidebar = $("#sidebar"),
+        $window = $(window),
+        offset = $sidebar.offset();
+
+    $window.scroll(function() {
+        if ($window.scrollTop() > offset.top) {
+            $sidebar.css('margin-top', $window.scrollTop() - offset.top);
+        } else {
+            $sidebar.css('margin-top', 0);
+        }
+    });
   },
 
   render: function(){
