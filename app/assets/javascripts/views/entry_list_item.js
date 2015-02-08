@@ -17,12 +17,29 @@ Redly.Views.entryListItem = Backbone.View.extend({
     success: function(msg) {
       if (msg == "Updated rating."){
         console.log("Updated successfully.");
-      } else {
-        console.log("Added rating successfully.");
-      }
+        } else {
+          console.log("Added rating successfully.");
+        }
       },
     error: function(msg){
       console.log("Error updating rating.");
+      }
+    });
+  },
+
+  getRating: function(){
+    var that = this;
+    $.ajax({
+    type: 'GET',
+    url: 'api/entries/'+this.model.id,
+    success: function(msg) {
+        that.$('.rate-entry').raty({
+          half: true,
+          score: msg
+        });
+    },
+    error: function(msg){
+      console.log("Error finding rating.");
       }
     });
   },
@@ -36,8 +53,6 @@ Redly.Views.entryListItem = Backbone.View.extend({
 
   onRender: function () {
     this.$('.rate-entry').empty();
-    this.$('.rate-entry').raty({
-      half: true
-    });
+    this.getRating();
   }
 });

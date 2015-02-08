@@ -13,4 +13,8 @@ class Entry < ActiveRecord::Base
     })
   end
 
+  def average_rating
+    ratings.average(:entry_val).to_f
+  end
+
 end
