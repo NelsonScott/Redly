@@ -35,7 +35,8 @@ Redly.Views.entryListItem = Backbone.View.extend({
     success: function(msg) {
         that.$('.rate-entry').raty({
           half: true,
-          score: msg
+          score: msg,
+          hints: ['Poor', 'Boring', 'Neutral', 'Interesting', 'Incredible']
         });
     },
     error: function(msg){
