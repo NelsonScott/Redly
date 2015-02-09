@@ -9,10 +9,13 @@ Redly.Views.FeedShow = Backbone.CompositeView.extend({
 
   initialize: function(){
       this.attachFeedEntries(this.model);
+      this.listenTo(this.model, 'sync', this.attachFeedEntries);
+      this.listenTo(this.model, 'sync', this.render);
   },
 
   attachFeedEntries: function(feed){
     var that = this;
+    debugger
     feed.entries().each(function(entry){
       var entryView = new Redly.Views.entryListItem({model: entry});
       that.addSubview('ul.entries-index', entryView);
@@ -24,7 +27,7 @@ Redly.Views.FeedShow = Backbone.CompositeView.extend({
     this.$el.html(content);
     this.attachSubviews();
     this.onRender();
-    
+
     return this;
   },
 });

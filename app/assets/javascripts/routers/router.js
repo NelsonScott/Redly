@@ -18,7 +18,7 @@ Redly.Routers.Router = Backbone.Router.extend({
   },
 
   feedShow: function(id){
-    var feed = this.feeds.get(id);
+    var feed = this.feeds.getOrFetch(id);
     var feedShow = new Redly.Views.FeedShow({ model: feed });
 
     this._swapView(feedShow);
