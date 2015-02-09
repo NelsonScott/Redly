@@ -15,7 +15,6 @@ Redly.Views.FeedShow = Backbone.CompositeView.extend({
 
   attachFeedEntries: function(feed){
     var that = this;
-    debugger
     feed.entries().each(function(entry){
       var entryView = new Redly.Views.entryListItem({model: entry});
       that.addSubview('ul.entries-index', entryView);

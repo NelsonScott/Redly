@@ -13,7 +13,11 @@ class Feed < ActiveRecord::Base
 
     begin
       feed_data = SimpleRSS.parse(open(url))
-      feed = Feed.create!(title: feed_data.title, url: url)
+      feed = Feed.create!(
+      title: feed_data.title,
+      url: url,
+      image: feed_data.image)
+      
       feed_data.entries.each do |entry_data|
       # add helper that if the entry data is < certain time, add it
         Entry.create_from_json!(entry_data, feed)

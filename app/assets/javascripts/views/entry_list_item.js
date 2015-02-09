@@ -38,7 +38,6 @@ Redly.Views.entryListItem = Backbone.View.extend({
     this.$('.rate-entry').empty();
     var that = this;
     this.$('.rate-entry').raty({
-      half: true,
       score: that.model.average_rating,
       hints: ['Just Awful', 'Boring', 'Neutral', 'Interesting', 'Incredible']
     });

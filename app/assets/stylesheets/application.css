@@ -31,11 +31,11 @@ body {
   /*putting height here also breaks content sliding left effect*/
   /*height: 800px;*/
   margin-left: 0px;
-  transition: margin-left 500ms ease;
+
 }
 
 .slide-left{
-  margin-left: -175px;
+  margin-left: -177px;
 }
 
 #sidebar p{
@@ -57,6 +57,7 @@ body {
   padding-left: 5px;
   height: 100%;
   width: 250px;
+  transition: margin-left 500ms ease;
 }
 
 .feed-show{
