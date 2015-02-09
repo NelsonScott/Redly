@@ -18,10 +18,14 @@
   /*Making position fixed will break content sliding left effect */
   position: relative;
   float: left;
-  margin-right: 20px;
+
   /*width: 250px;*/
   /*putting height here also breaks content sliding left effect*/
   /*height: 800px;*/
+}
+
+#sidebar p{
+  color: rgba(0, 0, 0, 0.529412);
 }
 
 #content {
@@ -31,9 +35,11 @@
 }
 
 #sidebar-content{
+  background: #EBEBEB;
   position: relative;
-  margin-left: 5px;
+  padding-left: 5px;
   height: 100vh;
+  width: 250px;
 }
 
 /* lists */
@@ -52,7 +58,7 @@ ul.feeds-index > li > p{
   text-overflow: ellipsis;
 }
 
-ul.feeds-index:hover > li{
+.feed-item-title:hover{
   text-decoration: underline;
   cursor: pointer;
 }
@@ -74,17 +80,21 @@ button {
 
 .close-side{
   float: right;
+  padding-right: 40px;
+  padding-top: 20px;
   background: transparent;
   border: none !important;
 }
 
 .open-side{
   /*position: fixed;*/
+  margin-left: 15px;
   margin-top: 20px;
   visibility: hidden;
 }
 
 .logout{
+  color: rgba(0, 0, 0, 0.529412);
   position: absolute;
   bottom: 30px;
   font-size: 12px;
@@ -103,6 +113,11 @@ button {
   width: 80px;
 }
 
+label[for="URL"] {
+  color: rgba(0, 0, 0, 0.529412);
+  font-weight: bold;
+}
+
 .add_feed:hover {
   color: #7CCD61;
 }
@@ -113,11 +128,14 @@ button {
 }
 
 .feeds-header{
+  font-weight: bold;
   margin-top: 15px;
   margin-left: 15px;
 }
 
 .add-feed-header{
+  margin-top: 0px;
+  padding-top: 20px;
   margin-left: 15px;
 }
 

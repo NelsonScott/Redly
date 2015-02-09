@@ -23,7 +23,7 @@ Redly.Views.sidebar = Backbone.CompositeView.extend({
   },
 
   enlargeInput: function(){
-    this.$('.URL').animate({ width: 160 }, 400);
+    this.$('.URL').animate({ width: 130 }, 400);
   },
 
   shrinkInput: function(){
@@ -68,11 +68,11 @@ Redly.Views.sidebar = Backbone.CompositeView.extend({
 
     var that = this;
     newFeed.save({}, {
-      success: function(){
+      success: function(msg){
         that.collection.add(newFeed);
       },
-      error: function(){
-        console.log("Could not save feed.");
+      error: function(msg){
+        console.log("Error adding Feed.");
       }
     });
 
