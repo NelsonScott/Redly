@@ -1,6 +1,12 @@
 Redly.Views.sidebar = Backbone.CompositeView.extend({
   template: JST['feeds/sidebar'],
 
+  attributes: function(){
+    return {
+      class: 'sidebar-content'
+    };
+  },
+
   initialize: function() {
     var that = this;
     this.handleScrolling();
@@ -16,8 +22,7 @@ Redly.Views.sidebar = Backbone.CompositeView.extend({
   events: {
     "click .add_feed": "addFeed",
     "click .logout": "logoutUser",
-    "click .close-side": "toggleSlide",
-    "click .open-side": "toggleSlide",
+    "click .toggle-side": "toggleSlide",
     "focus .URL": "enlargeInput",
     "blur .URL": "shrinkInput",
   },
@@ -31,16 +36,29 @@ Redly.Views.sidebar = Backbone.CompositeView.extend({
   },
 
   toggleSlide: function(){
-    var that = this;
-    if (this.$('#sidebar-content').is(":visible")){
-      this.$('#sidebar-content').toggle("slide", 500, function(){
-        that.$('.open-side').css("visibility", "visible");
-      });
-    } else{
-        that.$('.open-side').css("visibility", "hidden");
-      this.$('#sidebar-content').toggle("slide", 400, function(){
-      });
+    if (this.$el.offset().left >= 0){
+      this.$el.animate({left: "-=175px"});
+    } else {
+      this.$el.animate({
+        left: "+=175px"
+      }, 500);
     }
+    // if (this.$el.hasClass("slide-left")){
+    //   this.$el.removeClass("slide-left");
+    // } else{
+    //   this.$el.addClass("slide-left");
+    // }
+
+    // var that = this;
+    // if (this.$('#sidebar-content').is(":visible")){
+    //   this.$('#sidebar-content').toggle("slide", 500, function(){
+    //     that.$('.open-side').css("visibility", "visible");
+    //   });
+    // } else{
+    //     that.$('.open-side').css("visibility", "hidden");
+    //   this.$('#sidebar-content').toggle("slide", 400, function(){
+    //   });
+    // }
   },
 
   logoutUser: function(){
@@ -97,17 +115,17 @@ Redly.Views.sidebar = Backbone.CompositeView.extend({
   },
 
   handleScrolling: function(){
-    var $sidebar = $("#sidebar"),
-        $window = $(window),
-        offset = $sidebar.offset();
-
-    $window.scroll(function() {
-        if ($window.scrollTop() > offset.top) {
-            $sidebar.css('margin-top', $window.scrollTop() - offset.top);
-        } else {
-            $sidebar.css('margin-top', 0);
-        }
-    });
+    // var $sidebar = $("#sidebar"),
+    //     $window = $(window),
+    //     offset = $sidebar.offset();
+    //
+    // $window.scroll(function() {
+    //     if ($window.scrollTop() > offset.top) {
+    //         $sidebar.css('margin-top', $window.scrollTop() - offset.top);
+    //     } else {
+    //         $sidebar.css('margin-top', 0);
+    //     }
+    // });
   },
 
   render: function(){
