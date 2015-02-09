@@ -5,8 +5,8 @@ Redly::Application.routes.draw do
   resources :ratings, only: [:create]
 
   namespace :api do
-    resources :feeds, only: [:index, :show, :create, :destroy] do
-      resources :entries
+    resources :feeds, only: [:index, :show, :create, :destroy], defaults: {format: :json} do
+      resources :entries, defaults: {format: :json}
     end
   end
 end
