@@ -1260,3 +1260,32 @@
 [02/09/15 12:31:03 -0800 Scotts-MacBook-Pro.local (2820)] INFO : Doing deferred dependency-detection before Rack startup
 [02/09/15 12:31:04 -0800 Scotts-MacBook-Pro.local (2820)] ERROR : Invalid license key, please contact support@newrelic.com
 [02/09/15 12:31:04 -0800 Scotts-MacBook-Pro.local (2820)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[02/09/15 13:22:50 -0800 Scotts-MacBook-Pro.local (2820)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: /Users/scottnelson/Desktop/Redly/app/controllers/api/feeds_controller.rb:19: syntax error, unexpected ':', expecting =>
+    render json: {"test": "One"}
+                         ^
+/Users/scottnelson/Desktop/Redly/app/controllers/api/feeds_controller.rb:19: syntax error, unexpected '}', expecting keyword_end
+/Users/scottnelson/Desktop/Redly/app/controllers/api/feeds_controller.rb:58: syntax error, unexpected end-of-input, expecting keyword_end
+[02/09/15 13:22:57 -0800 Scotts-MacBook-Pro.local (2820)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: /Users/scottnelson/Desktop/Redly/app/controllers/api/feeds_controller.rb:19: syntax error, unexpected ':', expecting =>
+    render json: {"test": "One"}
+                         ^
+/Users/scottnelson/Desktop/Redly/app/controllers/api/feeds_controller.rb:19: syntax error, unexpected '}', expecting keyword_end
+/Users/scottnelson/Desktop/Redly/app/controllers/api/feeds_controller.rb:58: syntax error, unexpected end-of-input, expecting keyword_end
+[02/09/15 13:25:07 -0800 Scotts-MacBook-Pro.local (2820)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined local variable or method `feed' for #<#<Class:0x007fa11ebb9600>:0x007fa124c0ae50>
+[02/09/15 13:26:04 -0800 Scotts-MacBook-Pro.local (2820)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined local variable or method `feed' for #<#<Class:0x007fa126189150>:0x007fa123c9fa88>
+[02/09/15 13:34:29 -0800 Scotts-MacBook-Pro.local (2820)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: Missing partial api/feeds/show with {:locale=>[:en], :formats=>[:json], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder]}. Searched in:
+  * "/Users/scottnelson/Desktop/Redly/app/views"
+
+[02/09/15 13:34:41 -0800 Scotts-MacBook-Pro.local (2820)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: /Users/scottnelson/Desktop/Redly/app/controllers/api/feeds_controller.rb:25: syntax error, unexpected tLABEL
+        render json: partial: "api/feeds/show"
+                             ^
+/Users/scottnelson/Desktop/Redly/app/controllers/api/feeds_controller.rb:30: syntax error, unexpected tLABEL
+        render json: partial: "api/feeds/show"
+                             ^
+[02/09/15 13:34:44 -0800 Scotts-MacBook-Pro.local (2820)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: /Users/scottnelson/Desktop/Redly/app/controllers/api/feeds_controller.rb:25: syntax error, unexpected tLABEL
+        render json: partial: "api/feeds/show"
+                             ^
+/Users/scottnelson/Desktop/Redly/app/controllers/api/feeds_controller.rb:30: syntax error, unexpected tLABEL
+        render json: partial: "api/feeds/show"
+                             ^
+[02/09/15 13:38:09 -0800 Scotts-MacBook-Pro.local (2820)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined local variable or method `feed' for #<#<Class:0x007fa126281378>:0x007fa126971548>
+[02/09/15 13:45:05 -0800 Scotts-MacBook-Pro.local (2820)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: 

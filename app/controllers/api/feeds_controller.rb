@@ -6,10 +6,11 @@ class Api::FeedsController < ApplicationController
   end
 
   def show
-    begin
-      feed = current_user.feeds.find(params[:id])
-      render json: feed, include: :latest_entries
-    rescue
+    @feed = current_user.feeds.find_by(id: params[:id])
+
+    if (@feed)
+      @feed
+    else
       render json: { error: "Feed not found." }, status: :not_found
     end
   end
@@ -18,13 +19,13 @@ class Api::FeedsController < ApplicationController
     if !valid?(feed_params[:url])
       render json: {error: "Invalid URL Format."}, status: :unprocessable_entity
     else
-      feed = Feed.find_or_create(feed_params[:url])
+      @feed = Feed.find_or_create(feed_params[:url])
 
-      if (current_user.feeds.include?(feed))
-        render json: feed, include: :latest_entries
-      elsif (feed)
-        UserFeed.create!(user_id: current_user.id, feed_id: feed.id)
-        render json: feed, include: :latest_entries
+      if (current_user.feeds.include?(@feed))
+        render :show
+      elsif (@feed)
+        UserFeed.create!(user_id: current_user.id, feed_id: @feed.id)
+        render :show
       else
         render json: {error: "Unable to Create Feed."}, status: :unprocessable_entity
       end
@@ -32,11 +33,12 @@ class Api::FeedsController < ApplicationController
   end
 
   def destroy
-    begin
-      feed = current_user.feeds.find(params[:id])
+    feed = current_user.feeds.find_by(id: params[:id])
+
+    if (feed)
       feed.destroy
       render json: {}
-    rescue
+    else
       render json: { error: "Feed not found." }, status: :not_found
     end
   end
