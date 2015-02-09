@@ -53,14 +53,14 @@
 /* lists */
 ul.feeds-index {
   list-style-type: none;
-  margin-left: 15px;
   padding: 0;
   margin-top: 0px;
   /*margin: 0 0 0px 0px;*/
 }
 
-ul.feeds-index > li > p{
+ul.feeds-index > li p{
   display:inline;
+  width: 25px;
   font-family: sans-serif;
   font-size: 12px;
   text-overflow: ellipsis;
@@ -82,6 +82,11 @@ ul.feed {
 ul.entries-index li{
   list-style-type: none;
   display: none;
+}
+
+ul.input-and-feeds{
+  padding-left: 15px;
+  padding-top: 20px;
 }
 
 /* buttons and clickables */
@@ -145,22 +150,15 @@ label[for="URL"] {
 .feeds-header{
   font-weight: bold;
   margin-top: 15px;
-  margin-left: 15px;
 }
 
 .add-feed-header{
   margin-top: 0px;
   padding-top: 20px;
-  margin-left: 15px;
 }
 
 .entry-title{
   font-size: 14px;
-}
-
-/* forms */
-#new_feed_form{
-  margin-left: 15px;
 }
 
 /* raty stars*/
