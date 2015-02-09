@@ -1303,3 +1303,20 @@
 [02/09/15 15:26:14 -0800 Scotts-MacBook-Pro.local (2820)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `image' for #<Feed:0x007fa124f5d350>
 [02/09/15 15:26:14 -0800 Scotts-MacBook-Pro.local (2820)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `image' for #<Feed:0x007fa124c93020>
 [02/09/15 15:27:41 -0800 Scotts-MacBook-Pro.local (2820)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: unknown attribute: image
+[02/09/15 15:29:39 -0800 Scotts-MacBook-Pro.local (4699)] INFO : Starting the New Relic agent in "development" environment.
+[02/09/15 15:29:39 -0800 Scotts-MacBook-Pro.local (4699)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[02/09/15 15:29:39 -0800 Scotts-MacBook-Pro.local (4699)] WARN : No configuration file found. Working directory = /Users/scottnelson/Desktop/Redly
+[02/09/15 15:29:39 -0800 Scotts-MacBook-Pro.local (4699)] WARN : Looked in these locations (based on defaults): /Users/scottnelson/Desktop/Redly/config/newrelic.yml, /Users/scottnelson/Desktop/Redly/newrelic.yml, /Users/scottnelson/Desktop/Redly/config/newrelic.yml, /Users/scottnelson/Desktop/Redly/newrelic.yml, /Users/scottnelson/.newrelic/newrelic.yml, /Users/scottnelson/newrelic.yml
+[02/09/15 15:29:39 -0800 Scotts-MacBook-Pro.local (4699)] INFO : Environment: development
+[02/09/15 15:29:39 -0800 Scotts-MacBook-Pro.local (4699)] INFO : No known dispatcher detected.
+[02/09/15 15:29:39 -0800 Scotts-MacBook-Pro.local (4699)] INFO : Application: development
+[02/09/15 15:29:39 -0800 Scotts-MacBook-Pro.local (4699)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'.
+[02/09/15 15:29:39 -0800 Scotts-MacBook-Pro.local (4699)] INFO : Installing ActiveRecord 4 instrumentation
+[02/09/15 15:29:39 -0800 Scotts-MacBook-Pro.local (4699)] INFO : Installing Net instrumentation
+[02/09/15 15:29:39 -0800 Scotts-MacBook-Pro.local (4699)] INFO : Installing deferred Rack instrumentation
+[02/09/15 15:29:39 -0800 Scotts-MacBook-Pro.local (4699)] INFO : Installing Rack::Builder middleware instrumentation
+[02/09/15 15:29:39 -0800 Scotts-MacBook-Pro.local (4699)] INFO : Installing Rails 3+ middleware instrumentation
+[02/09/15 15:29:39 -0800 Scotts-MacBook-Pro.local (4699)] INFO : Installing Rails 4 Controller instrumentation
+[02/09/15 15:29:39 -0800 Scotts-MacBook-Pro.local (4699)] INFO : Installing Rails 4 view instrumentation
+[02/09/15 15:29:39 -0800 Scotts-MacBook-Pro.local (4699)] INFO : Installing Rails 4 Error instrumentation
+[02/09/15 15:29:39 -0800 Scotts-MacBook-Pro.local (4699)] INFO : Finished instrumentation
