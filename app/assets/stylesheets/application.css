@@ -111,6 +111,8 @@ button {
   border: none !important;
 }
 
+button:focus {outline:0;}
+
 .toggle-side{
   float: right;
   padding-right: 40px;

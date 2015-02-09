@@ -1230,3 +1230,33 @@
 [02/09/15 09:04:55 -0800 Scotts-MacBook-Pro.local (597)] INFO : Doing deferred dependency-detection before Rack startup
 [02/09/15 09:04:57 -0800 Scotts-MacBook-Pro.local (597)] ERROR : Invalid license key, please contact support@newrelic.com
 [02/09/15 09:04:57 -0800 Scotts-MacBook-Pro.local (597)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[02/09/15 11:51:12 -0800 Scotts-MacBook-Pro.local (597)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `{}' for #<Entry:0x007fbcf62f02c8>
+[02/09/15 11:51:32 -0800 Scotts-MacBook-Pro.local (597)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `{}' for #<Entry:0x007fbced70d648>
+[02/09/15 11:52:18 -0800 Scotts-MacBook-Pro.local (597)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `{}' for #<Entry:0x007fbcf47db668>
+[02/09/15 11:54:46 -0800 Scotts-MacBook-Pro.local (597)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: Missing template api/entries/show, application/show with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder]}. Searched in:
+  * "/Users/scottnelson/Desktop/Redly/app/views"
+
+[02/09/15 11:58:08 -0800 Scotts-MacBook-Pro.local (597)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: Missing template api/feeds/index, application/index with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder]}. Searched in:
+  * "/Users/scottnelson/Desktop/Redly/app/views"
+
+[02/09/15 12:30:49 -0800 Scotts-MacBook-Pro.local (597)] INFO : Starting Agent shutdown
+[02/09/15 12:31:03 -0800 Scotts-MacBook-Pro.local (2820)] INFO : Starting the New Relic agent in "development" environment.
+[02/09/15 12:31:03 -0800 Scotts-MacBook-Pro.local (2820)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[02/09/15 12:31:03 -0800 Scotts-MacBook-Pro.local (2820)] WARN : No configuration file found. Working directory = /Users/scottnelson/Desktop/Redly
+[02/09/15 12:31:03 -0800 Scotts-MacBook-Pro.local (2820)] WARN : Looked in these locations (based on defaults): /Users/scottnelson/Desktop/Redly/config/newrelic.yml, /Users/scottnelson/Desktop/Redly/newrelic.yml, /Users/scottnelson/Desktop/Redly/config/newrelic.yml, /Users/scottnelson/Desktop/Redly/newrelic.yml, /Users/scottnelson/.newrelic/newrelic.yml, /Users/scottnelson/newrelic.yml
+[02/09/15 12:31:03 -0800 Scotts-MacBook-Pro.local (2820)] INFO : Environment: development
+[02/09/15 12:31:03 -0800 Scotts-MacBook-Pro.local (2820)] INFO : Dispatcher: webrick
+[02/09/15 12:31:03 -0800 Scotts-MacBook-Pro.local (2820)] INFO : Application: development
+[02/09/15 12:31:03 -0800 Scotts-MacBook-Pro.local (2820)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'.
+[02/09/15 12:31:03 -0800 Scotts-MacBook-Pro.local (2820)] INFO : Installing ActiveRecord 4 instrumentation
+[02/09/15 12:31:03 -0800 Scotts-MacBook-Pro.local (2820)] INFO : Installing Net instrumentation
+[02/09/15 12:31:03 -0800 Scotts-MacBook-Pro.local (2820)] INFO : Installing deferred Rack instrumentation
+[02/09/15 12:31:03 -0800 Scotts-MacBook-Pro.local (2820)] INFO : Installing Rack::Builder middleware instrumentation
+[02/09/15 12:31:03 -0800 Scotts-MacBook-Pro.local (2820)] INFO : Installing Rails 3+ middleware instrumentation
+[02/09/15 12:31:03 -0800 Scotts-MacBook-Pro.local (2820)] INFO : Installing Rails 4 Controller instrumentation
+[02/09/15 12:31:03 -0800 Scotts-MacBook-Pro.local (2820)] INFO : Installing Rails 4 view instrumentation
+[02/09/15 12:31:03 -0800 Scotts-MacBook-Pro.local (2820)] INFO : Installing Rails 4 Error instrumentation
+[02/09/15 12:31:03 -0800 Scotts-MacBook-Pro.local (2820)] INFO : Finished instrumentation
+[02/09/15 12:31:03 -0800 Scotts-MacBook-Pro.local (2820)] INFO : Doing deferred dependency-detection before Rack startup
+[02/09/15 12:31:04 -0800 Scotts-MacBook-Pro.local (2820)] ERROR : Invalid license key, please contact support@newrelic.com
+[02/09/15 12:31:04 -0800 Scotts-MacBook-Pro.local (2820)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.

@@ -2,7 +2,7 @@ require 'uri'
 
 class Api::FeedsController < ApplicationController
   def index
-    render json: current_user.feeds, include: :latest_entries
+    @feeds = current_user.feeds
   end
 
   def show
