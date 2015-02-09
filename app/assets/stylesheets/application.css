@@ -30,6 +30,7 @@
 
 #content {
   overflow: auto;
+  padding-left: 50px;
   /*width:750px;*/
   /*float:right;*/
 }
@@ -96,7 +97,7 @@ button {
 .logout{
   color: rgba(0, 0, 0, 0.529412);
   position: absolute;
-  bottom: 30px;
+  bottom: 20px;
   font-size: 12px;
   margin-left: 15px;
 }
@@ -124,7 +125,9 @@ label[for="URL"] {
 
 /* headers */
 .home-header{
+  font-size: 26px;
   padding-left: 50px;
+  padding-bottom: 50px;
 }
 
 .feeds-header{
