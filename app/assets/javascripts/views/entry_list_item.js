@@ -28,24 +28,6 @@ Redly.Views.entryListItem = Backbone.View.extend({
     });
   },
 
-  getRating: function(){
-    var that = this;
-    $.ajax({
-    type: 'GET',
-    url: 'api/entries/'+this.model.id,
-    success: function(msg) {
-        that.$('.rate-entry').raty({
-          half: true,
-          score: msg,
-          hints: ['Poor', 'Boring', 'Neutral', 'Interesting', 'Incredible']
-        });
-    },
-    error: function(msg){
-      console.log("Error finding rating.");
-      }
-    });
-  },
-
   render: function(){
     var content = this.template({entry: this.model});
     this.$el.html(content);
@@ -54,6 +36,11 @@ Redly.Views.entryListItem = Backbone.View.extend({
 
   onRender: function () {
     this.$('.rate-entry').empty();
-    this.getRating();
+    var that = this;
+    this.$('.rate-entry').raty({
+      half: true,
+      score: that.model.average_rating,
+      hints: ['Just Awful', 'Boring', 'Neutral', 'Interesting', 'Incredible']
+    });
   }
 });

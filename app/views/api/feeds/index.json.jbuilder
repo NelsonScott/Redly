@@ -1,5 +1,5 @@
 json.array!(@feeds) do |json, feed|
-  json.extract!(feed, :id, :title, :url)
+  json.partial!('feed', feed: feed)
 
   json.latest_entries do
     json.array!(feed.latest_entries) do |entry|

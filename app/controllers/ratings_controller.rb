@@ -16,16 +16,6 @@ class RatingsController < ApplicationController
     end
   end
 
-  def show
-    entry = Entry.find(params[:id])
-
-    if (entry.average_rating)
-      render text: entry.average_rating
-    else
-      render text: "No ratings yet."
-    end
-  end
-
   private
   def rating_params
     params.permit(:entry_id, :entry_val)
