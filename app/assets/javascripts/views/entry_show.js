@@ -12,10 +12,6 @@ Redly.Views.EntryShow = Backbone.View.extend({
   },
 
   render: function(){
-    // if (!this.model.get('image')){
-    //   return this;
-    // }
-
     var content = this.template({ entry: this.model });
     this.$el.html(content);
 

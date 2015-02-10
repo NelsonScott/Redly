@@ -47,7 +47,7 @@ body {
   padding-left: 50px;
   height: 100%;
   overflow-y: scroll;
-  padding-left: 130px;
+  /*padding-left: 130px;*/
   padding-right: 130px;
   /*width:750px;*/
   /*float:right;*/
@@ -64,7 +64,7 @@ body {
 
 .feed-show{
   padding-top: 20px;
-  padding-left: 50px;
+  /*padding-left: 50px;*/
   font-weight: bold;
   font-size: 26px;
 }
