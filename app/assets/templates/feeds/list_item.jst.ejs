@@ -1,4 +1,9 @@
-<img src="<%= feed.escape('image') %>" height="20" width="30" />
+<% if (feed.get('image')) { %>
+  <img src="<%= feed.escape('image') %>" height="20" width="30" />
+<% } else { %>
+  <img src="/images/news-128.png"></img>
+<% } %>
+
 <a href="#/feeds/<%= feed.id %>"><p class="feed-item-title"><%= feed.get('title') %></p></a>
 <button class="delete-feed">
   <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
