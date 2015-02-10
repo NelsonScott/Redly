@@ -6,16 +6,23 @@ class Entry < ActiveRecord::Base
     image = get_image(entryData)
 
     Entry.create!({
-      guid: entryData.guid,
-      link: entryData.link,
+      guid: shorten(entryData.guid),
+      link: shorten(entryData.link),
       published_at: entryData.pubDate,
-      title: entryData.title,
+      title: shorten(entryData.title),
       json: entryData.to_json,
       feed_id: feed.id,
       image: image
     })
   end
 
+  def self.shorten(str)
+    if (str.length > 225)
+      return str[0..225]
+    end
+
+    str
+  end
 
   def self.get_image(entryData)
     return entryData[:media_content_url] if entryData[:media_content_url]
