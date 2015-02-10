@@ -7,6 +7,7 @@ id          | integer   | not null, primary key
 url         | string    | not null
 title       | string    | not null
 user_id     | integer   | not null, foreign key
+image       | string    | 
 
 ## entries
 column name | data type | details
@@ -17,12 +18,12 @@ title       | string    | not null
 json        | text      | not null
 link        | string    | not null
 published   | datetime  | not null
+image       | string    |
 
 ## tags
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-feed_id     | integer   | not null, foreign key
 label       | string    | not null, unique
 
 ## ratings

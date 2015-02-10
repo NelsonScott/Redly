@@ -35,7 +35,7 @@ Allow users to create feeds with a URL, store these URLs in the database.  Creat
 [Details][phase-two]
 
 ### Phase 3: Add sidebar view, Easier Feed Creation (~1 days)
-By this point users should be able to properly add and see feeds on their page.  Have sidebar to slide open to show a list of the user's current feeds to select from.  Also change Feed creation to be done from the sidebar instead of with the current separate form.
+By this point users should be able to properly add and see feeds on their page.  Have sidebar to slide open to show a list of the user's current feeds to select from.  Also change Feed creation to be done from the sidebar instead of with the current separate form.  Use CSS to well-position index items and have sliding animation on sidebar close/open.
 
 [Details][phase-three]
 
