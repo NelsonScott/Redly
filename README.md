@@ -2,7 +2,7 @@
 
 [Heroku link][heroku]
 
-[heroku]:https://redly.herokuapp.com/session/new
+[heroku]:https://redly.herokuapp.com
 
 ## Minimum Viable Product
 Redly is a clone of Feedly that allows users to rate and tag entries, built on Rails and Backbone. Users can:
