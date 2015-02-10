@@ -1,4 +1,5 @@
 require 'open-uri'
+require 'nokogiri'
 
 class Feed < ActiveRecord::Base
   validates :title, :url, presence: true
@@ -13,11 +14,14 @@ class Feed < ActiveRecord::Base
 
     begin
       feed_data = SimpleRSS.parse(open(url))
+      doc = Nokogiri::HTML( feed_data.image )
+      img_srcs = doc.css('url')
+      
       feed = Feed.create!(
       title: feed_data.title,
       url: url,
-      image: feed_data.image)
-      
+      image: img_srcs.children.first.content)
+
       feed_data.entries.each do |entry_data|
       # add helper that if the entry data is < certain time, add it
         Entry.create_from_json!(entry_data, feed)
