@@ -38,6 +38,8 @@ include ActionView::Helpers::SanitizeHelper
       return raw.first.text
     elsif (raw = doc.css('.article-content')).any?
       return raw.first.text
+    elsif (raw = doc.css('#articleText')).any?
+      return raw.first.text
     else
       return entryData.description
     end
@@ -45,6 +47,8 @@ include ActionView::Helpers::SanitizeHelper
 
 
   def self.ensure_img(image)
+    return nil if !image
+
     uri = URI(image)
     request = Net::HTTP.new uri.host
     response = request.request_head uri.path

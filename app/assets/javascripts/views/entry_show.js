@@ -12,16 +12,20 @@ Redly.Views.EntryShow = Backbone.View.extend({
   },
 
   render: function(){
-    if (!this.model.get('image')){
-      return this;
-    }
+    // if (!this.model.get('image')){
+    //   return this;
+    // }
 
     var content = this.template({ entry: this.model });
     this.$el.html(content);
+
     var that = this;
-    PreloadImage(this.model.get('image'), function(){
-      that.$('.entry-show-img').attr('src', that.model.get('image'));
-    })
+    if (this.model.get('image')){
+      that.$('.entry-show-img').attr('src', "/assets/spinner.gif" )
+      PreloadImage(this.model.get('image'), function(){
+        that.$('.entry-show-img').attr('src', that.model.get('image'));
+      });
+    }
 
     return this;
   },
