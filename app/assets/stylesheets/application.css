@@ -67,6 +67,11 @@ body {
   font-size: 26px;
 }
 
+.feed-show-img{
+  max-width: 450px;
+  /*width: 200px;*/
+}
+
 /* lists */
 ul.feeds-index {
   list-style-type: none;
