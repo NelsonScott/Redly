@@ -1,9 +1,14 @@
+require 'open-uri'
+require 'nokogiri'
+
 class Entry < ActiveRecord::Base
+include ActionView::Helpers::SanitizeHelper
   belongs_to :feed
   has_many :ratings, dependent: :destroy
 
   def self.create_from_json!(entryData, feed)
     image = get_image(entryData)
+    content = get_content(entryData)
 
     Entry.create!({
       guid: shorten(entryData.guid),
@@ -24,12 +29,26 @@ class Entry < ActiveRecord::Base
     str
   end
 
+  def self.get_content(entryData)
+    doc = Nokogiri::HTML( open(entryData.link) )
+    raw = doc.css('.article-entry')
+
+    if raw.any?
+      return raw.first.text
+    elsif (raw = doc.css('.article-content')).any?
+      return raw.first.text
+    else
+      return entryData.description
+    end
+  end
+
+
   def self.ensure_img(image)
     uri = URI(image)
     request = Net::HTTP.new uri.host
-    response= request.request_head uri.path
+    response = request.request_head uri.path
 
-    if (response.code.to_i == 200)
+    if ((response.code.to_i >= 200) && (response.code.to_i <= 500))
       return image
     else
       return nil

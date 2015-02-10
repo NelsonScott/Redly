@@ -67,7 +67,7 @@ body {
   font-size: 26px;
 }
 
-.feed-show-img{
+.entry-show-img{
   max-width: 450px;
 }
 
@@ -97,6 +97,25 @@ ul.feeds-index > li p{
 .feed-item-title:hover{
   text-decoration: underline;
   cursor: pointer;
+
+}
+
+.entry-item-title{
+  font-size: 1.8695652173913044rem;
+  font-weight: 700;
+  font-family: sans-serif;
+  text-rendering: optimizeLegibility;
+  line-height: 2.15rem;
+  text-transform: none;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.04em;
+  display: block;
+  margin-bottom: 1rem;
+  width: 650px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
 }
 

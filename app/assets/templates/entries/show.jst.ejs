@@ -1,2 +1,4 @@
-<img class="feed-show-img" src="<%= entry.get('image') %>" />
-<p class="entry-item-title"><%= entry.get('title') %></p>
+<a class="entry-item-title" href="<%= entry.get('link') %>">
+  <%= entry.get('title') %>
+</a>
+<img class="entry-show-img" src="<%= entry.get('image') %>" />
