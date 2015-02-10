@@ -76,6 +76,8 @@ ul.feeds-index {
   list-style-type: none;
   padding: 0;
   margin-top: 0px;
+  width: 180px;
+  text-overflow: ellipsis;
   /*margin: 0 0 0px 0px;*/
 }
 
