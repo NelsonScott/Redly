@@ -25,3 +25,4 @@ Api::TagsController (create, destroy, show)
 
 ## Gems/Libraries
 * JQuery Raty
+* nokogiri
