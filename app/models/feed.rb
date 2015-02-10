@@ -16,7 +16,7 @@ class Feed < ActiveRecord::Base
       feed_data = SimpleRSS.parse(open(url))
       doc = Nokogiri::HTML( feed_data.image )
       img_srcs = doc.css('url')
-      
+
       feed = Feed.create!(
       title: feed_data.title,
       url: url,

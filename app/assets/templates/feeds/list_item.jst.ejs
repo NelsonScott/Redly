@@ -1,5 +1,5 @@
 <img src="<%= feed.escape('image') %>" height="20" width="30" />
-<a href="#/feeds/<%= feed.id %>"><p class="feed-item-title"><%= feed.escape('title') %></p></a>
+<a href="#/feeds/<%= feed.id %>"><p class="feed-item-title"><%= feed.get('title') %></p></a>
 <button class="delete-feed">
   <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
 </button>
