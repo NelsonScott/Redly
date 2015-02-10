@@ -12,7 +12,7 @@ class Entry < ActiveRecord::Base
       title: shorten(entryData.title),
       json: entryData.to_json,
       feed_id: feed.id,
-      image: image
+      image: ensure_img(image)
     })
   end
 
@@ -22,6 +22,18 @@ class Entry < ActiveRecord::Base
     end
 
     str
+  end
+
+  def self.ensure_img(image)
+    uri = URI(image)
+    request = Net::HTTP.new uri.host
+    response= request.request_head uri.path
+
+    if (response.code.to_i == 200)
+      return image
+    else
+      return nil
+    end
   end
 
   def self.get_image(entryData)

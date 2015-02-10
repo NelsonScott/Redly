@@ -20,7 +20,7 @@ class Feed < ActiveRecord::Base
       feed = Feed.create!(
       title: feed_data.title,
       url: url,
-      image: img_srcs.children.first.content)
+      image: ensure_img(img_srcs.children.first.content))
 
       feed_data.entries.each do |entry_data|
       # add helper that if the entry data is < certain time, add it
@@ -54,6 +54,18 @@ class Feed < ActiveRecord::Base
       self
     rescue SimpleRSSError
       return false
+    end
+  end
+
+  def self.ensure_img(image)
+    uri = URI(image)
+    request = Net::HTTP.new uri.host
+    response= request.request_head uri.path
+
+    if (response.code.to_i == 200)
+      return image
+    else
+      return nil
     end
   end
 
