@@ -47,6 +47,8 @@ body {
   padding-left: 50px;
   height: 100%;
   overflow-y: scroll;
+  padding-left: 130px;
+  padding-right: 130px;
   /*width:750px;*/
   /*float:right;*/
 }
@@ -67,8 +69,26 @@ body {
   font-size: 26px;
 }
 
+.entry-show{
+  padding-top: 30px;
+}
+
 .entry-show-img{
+  padding-top: 20px;
+  padding-bottom: 20px;
   max-width: 450px;
+}
+
+.entry-show p{
+  color: rgb(51, 51, 50);
+  cursor: auto;
+  display: block;
+  font-family: 'Slab Serif', sans-serif;
+  font-size: 15px;
+  height: 130px;
+  line-height: 26.25px;
+  margin-bottom: 24px;
+  margin-top: 24px;
 }
 
 /* lists */
