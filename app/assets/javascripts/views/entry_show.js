@@ -12,9 +12,34 @@ Redly.Views.EntryShow = Backbone.View.extend({
   },
 
   render: function(){
+    if (!this.model.get('image')){
+      return this;
+    }
+
     var content = this.template({ entry: this.model });
     this.$el.html(content);
+    var that = this;
+    PreloadImage(this.model.get('image'), function(){
+      that.$('.entry-show-img').attr('src', that.model.get('image'));
+    })
 
     return this;
   },
 });
+
+function PreloadImage(imgSrc, callback){
+  var objImagePreloader = new Image();
+
+  objImagePreloader.src = imgSrc;
+  if(objImagePreloader.complete){
+    callback();
+    objImagePreloader.onload=function(){};
+  }
+  else{
+    objImagePreloader.onload = function() {
+      callback();
+      //    clear onLoad, IE behaves irratically with animated gifs otherwise
+      objImagePreloader.onload=function(){};
+    }
+  }
+}

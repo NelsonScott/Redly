@@ -8,7 +8,7 @@ include ActionView::Helpers::SanitizeHelper
 
   def self.create_from_json!(entryData, feed)
     image = get_image(entryData)
-    content = get_content(entryData)
+    entry_content = get_content(entryData)
 
     Entry.create!({
       guid: shorten(entryData.guid),
@@ -17,7 +17,8 @@ include ActionView::Helpers::SanitizeHelper
       title: shorten(entryData.title),
       json: entryData.to_json,
       feed_id: feed.id,
-      image: ensure_img(image)
+      image: ensure_img(image),
+      content: entry_content
     })
   end
 

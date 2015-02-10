@@ -17,7 +17,10 @@ Backbone.CompositeView = Backbone.View.extend({
 
   attachSubview: function (selector, subview) {
     this.$(selector).append(subview.$el);
-    subview.$el.show(800);
+    setTimeout(function(){
+      subview.$el.show(800);
+    }, 10);
+
     subview.delegateEvents();
   },
 
