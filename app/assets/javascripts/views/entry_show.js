@@ -33,13 +33,13 @@ function PreloadImage(imgSrc, callback){
   objImagePreloader.src = imgSrc;
   if(objImagePreloader.complete){
     callback();
-    objImagePreloader.onload=function(){};
+    objImagePreloader.onload = function(){};
   }
   else{
     objImagePreloader.onload = function() {
       callback();
       //    clear onLoad, IE behaves irratically with animated gifs otherwise
-      objImagePreloader.onload=function(){};
+      objImagePreloader.onload = function(){};
     }
   }
 }
