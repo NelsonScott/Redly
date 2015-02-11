@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150210223010) do
+ActiveRecord::Schema.define(version: 20150211063002) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(version: 20150210223010) do
     t.string   "link",         null: false
     t.integer  "feed_id",      null: false
     t.datetime "published_at", null: false
-    t.text     "json",         null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image"
@@ -30,11 +29,12 @@ ActiveRecord::Schema.define(version: 20150210223010) do
   end
 
   create_table "feeds", force: true do |t|
-    t.string   "title",      null: false
-    t.string   "url",        null: false
+    t.string   "title",       null: false
+    t.string   "url",         null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image"
+    t.text     "description"
   end
 
   add_index "feeds", ["title"], name: "index_feeds_on_title", using: :btree

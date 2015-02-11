@@ -20,6 +20,7 @@ class Feed < ActiveRecord::Base
       feed = Feed.create!(
       title: feed_data.title,
       url: url,
+      description: feed_data.description,
       image: ensure_img(img_srcs.children.first.content))
 
       feed_data.entries.each do |entry_data|
