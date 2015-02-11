@@ -20,7 +20,6 @@ Backbone.CompositeView = Backbone.View.extend({
     setTimeout(function(){
       subview.$el.show(800);
     }, 10);
-
     subview.delegateEvents();
   },
 

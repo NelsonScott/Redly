@@ -14,6 +14,8 @@ Redly.Routers.Router = Backbone.Router.extend({
     var entriesView = new Redly.Views.entriesIndex({
       collection: this.feeds
     });
+    // TODO need this?
+    this.feeds.fetch();
 
     this._swapView(entriesView);
   },
@@ -30,6 +32,7 @@ Redly.Routers.Router = Backbone.Router.extend({
       feedId: feedId,
       id: entryId
     });
+
     entry.fetch();
     var entryShow = new Redly.Views.EntryShow({ model: entry });
 

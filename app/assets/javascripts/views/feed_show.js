@@ -26,6 +26,7 @@ Redly.Views.FeedShow = Backbone.CompositeView.extend({
     success: function(msg) {
         if (msg == 'Feed deleted.') {
             window.location.href = '/';
+            // Backbone.history.navigate('', {trigger: true})
           }
       },
     error: function(msg){
