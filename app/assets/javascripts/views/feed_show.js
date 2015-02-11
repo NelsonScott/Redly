@@ -22,14 +22,14 @@ Redly.Views.FeedShow = Backbone.CompositeView.extend({
 
     $.ajax({
     type: 'DELETE',
-    url: '/session',
+    url: 'api/user_feeds/'+this.model.id,
     success: function(msg) {
-        if (msg == 'loggedOut') {
-            window.location.href = '/session/new';
+        if (msg == 'Feed deleted.') {
+            window.location.href = '/';
           }
       },
     error: function(msg){
-      console.log("Error logging out");
+      console.log("Error, could not delete feed.");
       }
     });
     // this.model.destroy({});
