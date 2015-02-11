@@ -18,6 +18,8 @@ Redly.Views.FeedShow = Backbone.CompositeView.extend({
   },
 
   removeSelf: function(event){
+    event.preventDefault();
+
     this.model.destroy({});
     this.remove();
   },
