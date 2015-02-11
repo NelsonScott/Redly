@@ -55,10 +55,15 @@ class Entry < ActiveRecord::Base
     request = Net::HTTP.new uri.host
     response = request.request_head uri.path
 
-    if ((response.code.to_i >= 200) && (response.code.to_i <= 500))
-      return image
-    else
+    # if ((response.code.to_i >= 200) && (response.code.to_i <= 500))
+    #   return image
+    # else
+    #   return nil
+    # end
+    if ((response.code.to_i >= 400) && (response.code.to_i <= 499))
       return nil
+    else
+      return image
     end
   end
 

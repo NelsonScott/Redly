@@ -19,15 +19,17 @@ Redly.Views.FeedShow = Backbone.CompositeView.extend({
 
   removeSelf: function(event){
     event.preventDefault();
-
+    var feed = this.model;
     $.ajax({
     type: 'DELETE',
     url: 'api/user_feeds/'+this.model.id,
     success: function(msg) {
-        if (msg == 'Feed deleted.') {
-            window.location.href = '/';
-            // Backbone.history.navigate('', {trigger: true})
-          }
+          feed.collection.remove(feed);
+        //   feed;
+        // if (msg == 'Feed deleted.') {
+        //     // window.location.href = '/';
+        //     // Backbone.history.navigate('', {trigger: true})
+        //   }
       },
     error: function(msg){
       console.log("Error, could not delete feed.");
