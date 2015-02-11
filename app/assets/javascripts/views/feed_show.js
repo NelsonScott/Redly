@@ -13,6 +13,15 @@ Redly.Views.FeedShow = Backbone.CompositeView.extend({
       this.listenTo(this.model, 'sync', this.render);
   },
 
+  events: {
+    'click .delete-feed': 'removeSelf'
+  },
+
+  removeSelf: function(event){
+    this.model.destroy({});
+    this.remove();
+  },
+
   attachFeedEntries: function(feed){
     var that = this;
     feed.entries().each(function(entry){
