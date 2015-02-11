@@ -2,13 +2,14 @@ require 'open-uri'
 require 'nokogiri'
 
 class Entry < ActiveRecord::Base
-include ActionView::Helpers::SanitizeHelper
+
   belongs_to :feed
   has_many :ratings, dependent: :destroy
 
   def self.create_from_json!(entryData, feed)
     image = get_image(entryData)
     entry_content = get_content(entryData)
+    entry_content = ActionController::Base.helpers.strip_tags(entry_content)
 
     Entry.create!({
       guid: shorten(entryData.guid),
@@ -32,6 +33,8 @@ include ActionView::Helpers::SanitizeHelper
 
   def self.get_content(entryData)
     doc = Nokogiri::HTML( open(entryData.link) )
+    doc.css('script').remove
+
     raw = doc.css('.article-entry')
 
     if raw.any?
