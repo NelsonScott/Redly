@@ -61,7 +61,7 @@ class Feed < ActiveRecord::Base
   def self.ensure_img(image)
     uri = URI(image)
     request = Net::HTTP.new uri.host
-    response= request.request_head uri.path
+    response = request.request_head uri.path
 
     if (response.code.to_i == 200)
       return image

@@ -15,7 +15,7 @@ Redly.Routers.Router = Backbone.Router.extend({
       collection: this.feeds
     });
     // TODO need this?
-    this.feeds.fetch();
+    // this.feeds.fetch();
 
     this._swapView(entriesView);
   },
