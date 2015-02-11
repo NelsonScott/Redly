@@ -20,7 +20,19 @@ Redly.Views.FeedShow = Backbone.CompositeView.extend({
   removeSelf: function(event){
     event.preventDefault();
 
-    this.model.destroy({});
+    $.ajax({
+    type: 'DELETE',
+    url: '/session',
+    success: function(msg) {
+        if (msg == 'loggedOut') {
+            window.location.href = '/session/new';
+          }
+      },
+    error: function(msg){
+      console.log("Error logging out");
+      }
+    });
+    // this.model.destroy({});
     this.remove();
   },
 

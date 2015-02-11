@@ -8,5 +8,7 @@ Redly::Application.routes.draw do
     resources :feeds, only: [:index, :show, :create, :destroy], defaults: {format: :json} do
       resources :entries, defaults: {format: :json}
     end
+
+    # resources :user_feeds
   end
 end
