@@ -16,7 +16,6 @@ class Entry < ActiveRecord::Base
       link: shorten(entryData.link),
       published_at: entryData.pubDate,
       title: shorten(entryData.title),
-      json: entryData.to_json,
       feed_id: feed.id,
       image: ensure_img(image),
       content: entry_content

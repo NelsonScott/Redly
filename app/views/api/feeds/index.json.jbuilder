@@ -1,4 +1,4 @@
-json.array!(@feeds) do |json, feed|
+json.array!(@feeds) do |feed|
   json.partial!('feed', feed: feed)
 
   json.latest_entries do

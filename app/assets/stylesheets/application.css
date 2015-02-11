@@ -69,6 +69,19 @@ body {
   font-size: 26px;
 }
 
+.feed-description{
+  color: rgb(180, 179, 178);
+  display: inline;
+  font-family: sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  height: auto;
+  letter-spacing: normal;
+  line-height: 17px;
+  text-transform: none;
+  width: auto;
+}
+
 .entry-show{
   padding-top: 30px;
 }
