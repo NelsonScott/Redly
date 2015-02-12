@@ -40,7 +40,7 @@ By this point users should be able to properly add and see feeds on their page. 
 [Details][phase-three]
 
 ### Phase 4: Entries, Ratings, & Taggings(~2 days)
-Create Model and Controller for entries. Add ability to see a feed's entries.  Allow user to rate entries from 1 to 5 stars using jquery raty and rails controllers.  Create tags for feeds in order to better organize them.  Use nokogiri to parse sources for images.
+Create Model and Controller for entries. Add ability to see a feed's entries.  Allow user to rate entries from 1 to 5 stars using jquery raty and rails controllers.  Create tags for feeds in order to better organize them.  Use nokogiri to parse sources for images.  Use cloudinary for fastest image retrieval.  
 
 [Details][phase-four]
 
