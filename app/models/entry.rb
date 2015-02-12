@@ -23,7 +23,8 @@ class Entry < ActiveRecord::Base
       feed_id: feed.id,
       image: check_img_url_status(image),
       content: entry_content,
-      image_thumb: image_thumb
+      image_thumb: image_thumb,
+      description: entryData.description
     })
   end
 

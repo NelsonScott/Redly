@@ -35,8 +35,12 @@ Redly.Views.entryListItem = Backbone.View.extend({
   },
 
   render: function(){
-    var content = this.template({entry: this.model});
+    var div = $('<div></div>').html(this.model.get('description'));
+    // div.find("img").remove();
+    var desc = div.text();
+    var content = this.template({entry: this.model, description: desc});
     this.$el.html(content);
+    this.$('.entry-list-description img').remove();
     return this;
   },
 

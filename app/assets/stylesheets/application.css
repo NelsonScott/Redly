@@ -139,6 +139,18 @@ ul.feeds-index > li p{
 .entry-list-item {
   margin-bottom: 50px;
 }
+
+.entry-list-description {
+  color: rgb(180, 179, 178);
+  font-family: sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  /*height: auto;*/
+  letter-spacing: normal;
+  line-height: 17px;
+  /*text-transform: none;*/
+  width: auto;
+}
 /*
 .entry-thumb-nail {
   display: inline;
