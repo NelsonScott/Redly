@@ -139,22 +139,25 @@ ul.feeds-index > li p{
 .entry-list-item {
   margin-bottom: 50px;
 }
-
+/*
 .entry-thumb-nail {
+  display: inline;
+}
+
+.entry-img-wrapper {
   display: inline;
 }
 
 .entry-text-wrapper {
   display: inline;
 }
-
+*/
 .entry-title {
   font-size: 14px;
-  display: inline;
 }
 
 .rate-entry {
-  display: inline;
+  /*display: inline;*/
   width: 120px;
 }
 

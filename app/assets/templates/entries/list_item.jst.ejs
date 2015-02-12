@@ -1,5 +1,15 @@
-<img class="entry-thumb-nail" src="<%= entry.get('image_thumb') %>" alt="" /><a href="#/feeds/<%= entry.get('feed_id') %>/entries/<%= entry.id %>">
-<div class="entry-text-wrapper">
-  <h3 class="entry-title"><%= entry.get('title') %></h3></a>
-  <div class="rate-entry"></div>
+<div class="modal-body row">
+  <div class="col-md-2">
+  <img class="entry-thumb-nail" src="<%= entry.get('image_thumb') %>" alt="" />
+  </div>
+
+  <div class="col-md-4">
+    <a href="#/feeds/<%= entry.get('feed_id') %>/entries/<%= entry.id %>">
+      <h3 class="entry-title"><%= entry.get('title') %></h3>
+    </a>
+    <div class="rate-entry"></div>
+  </div>
+  <div class="col-md-5">
+    Description goes here.
+  </div>
 </div>
