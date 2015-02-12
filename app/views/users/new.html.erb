@@ -46,7 +46,7 @@
         <div class="col-md-2">
         </div>
         <div class="col-md-2">
-          <a class="new-user-link">New User?</a>
+          <a class="login-style-link">New User?</a>
         </div>
 
       </div>
@@ -60,16 +60,25 @@
 
 <% content_for :scripts do %>
 <script>
-$('.new-user-link').on('click', function(){
-  $('#myModalLabel').html('Sign Up');
-  $('.sign-in-form').hide();
-  $('.sign-up-form').show();
+$('.login-style-link').on('click', function(){
+  if ($('#myModalLabel').text() == "Sign Up"){
+    $('#myModalLabel').html('Sign In');
+    $('.sign-in-form').show();
+    $('.sign-up-form').hide();
+    $('.login-style-link').html('Sign Up');
+  } else {
+    $('#myModalLabel').html('Sign Up');
+    $('.sign-in-form').hide();
+    $('.sign-up-form').show();
+    $('.login-style-link').html('Sign In');
+  }
 });
 
 $('#myModal').on('hidden.bs.modal', function () {
   $('#myModalLabel').html('Sign In');
   $('.sign-in-form').show();
   $('.sign-up-form').hide();
+  $('.login-style-link').html('Sign Up');
 });
 
 $('.tour').on('click', function(){
