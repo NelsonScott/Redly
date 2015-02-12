@@ -10,19 +10,14 @@ class UsersController < ApplicationController
   end
 
   def create
-    if (user_params[:button])
-      @user = User.find_by(user_name: "demo")
+    @user = User.new(user_params)
+
+    if @user.save
       sign_in!(@user)
       redirect_to root_url
     else
-      @user = User.new(user_params)
-
-      if @user.save
-        sign_in!(@user)
-        redirect_to root_url
-      else
-        flash.now[:errors] = @user.errors.full_messages
-      end
+      flash.now[:errors] = @user.errors.full_messages
+      redirect_to new_user_url
     end
   end
 
