@@ -43,15 +43,15 @@
             <form action="/users" method="post" class="sign-up-form">
               <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
               <label for="smallInput">Email<br>
-                <input class = "user_email" name="user[email]" type="text" class="small input-text" id="smallInput" value="<%= @user.email %>"><br>
+                <input class = "sign-up-user-email" name="user[email]" type="text" class="small input-text" id="smallInput" value="<%= @user.email %>"><br>
               </label><br>
               <label>Username<br>
-                <input class = "user_name" name="user[user_name]" type="text" value="<%= @user.user_name %>"><br>
+                <input class = "sign-up-user-name" name="user[user_name]" type="text" value="<%= @user.user_name %>"><br>
               </label><br>
               <label>Password<br>
-                <input class = "password" name="user[password]" type="password"><br>
+                <input class = "sign-up-user-pass" name="user[password]" type="password"><br>
               </label><br>
-              <button type="button" class="btn btn-primary sign-up-btn">Submit</button>
+              <button type="submit" class="btn btn-primary sign-up-btn">Submit</button>
               <!-- <input type="submit" value="Submit" class="small button"><br> -->
             </form>
 
@@ -131,6 +131,26 @@ $('.sign-in-form').submit(function(event){
   });
 });
 
+$('.sign-up-form').submit(function(event){
+  event.preventDefault();
+  userName = $('.sign-up-user-name').val();
+  userPass = $('.sign-up-user-pass').val();
+  userEmail = $('.sign-up-user-email').val();
+
+  $.ajax({
+  type: 'POST',
+  url: '/users',
+  data: {user: {user_name: userName, password: userPass, email: userEmail} },
+  success: function(){
+    console.log("Logged in.");
+    window.location = "/";
+    },
+  error: function(msg){
+    $('.error-messages').html(msg.responseText);
+    }
+  });
+});
+
 $('.tour').on('click', function(){
   $.ajax({
   type: 'POST',
@@ -138,6 +158,9 @@ $('.tour').on('click', function(){
   data: {user: {user_name: "demo", password: "password"} },
   success: function(){
     window.location = "/";
+  },
+  error: function(msg){
+    $('.error-messages').html(msg.responseText);
   }
   });
 });

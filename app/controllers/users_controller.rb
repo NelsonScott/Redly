@@ -17,7 +17,7 @@ class UsersController < ApplicationController
       redirect_to root_url
     else
       flash.now[:errors] = @user.errors.full_messages
-      redirect_to new_user_url
+      render text: @user.errors.full_messages.join("<br>"), status: :unprocessable_entity
     end
   end
 
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:user_name, :password, :email, :button)
+    params.require(:user).permit(:user_name, :password, :email)
   end
 
 end
