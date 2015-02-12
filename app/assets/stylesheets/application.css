@@ -135,7 +135,31 @@ ul.feeds-index > li p{
 
 }
 
-.entry-item-title{
+/* Entry List Item */
+.entry-list-item {
+  margin-bottom: 50px;
+}
+
+.entry-thumb-nail {
+  display: inline;
+}
+
+.entry-text-wrapper {
+  display: inline;
+}
+
+.entry-title {
+  font-size: 14px;
+  display: inline;
+}
+
+.rate-entry {
+  display: inline;
+  width: 120px;
+}
+
+/* Entry Show Page */
+.entry-item-title {
   font-size: 1.8695652173913044rem;
   font-weight: 700;
   font-family: sans-serif;
@@ -240,13 +264,4 @@ label[for="URL"] {
 .add-feed-header{
   margin-top: 0px;
   padding-top: 20px;
-}
-
-.entry-title{
-  font-size: 14px;
-}
-
-/* raty stars*/
-.rate-entry{
-  width: 120px;
 }

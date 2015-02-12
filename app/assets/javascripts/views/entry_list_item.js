@@ -1,6 +1,12 @@
 Redly.Views.entryListItem = Backbone.View.extend({
   tagName: 'li',
 
+  attributes: function(){
+    return {
+      class: 'entry-list-item'
+    };
+  },
+
   template: JST['entries/list_item'],
 
   events: {

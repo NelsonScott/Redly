@@ -1,1 +1,5 @@
-<a href="#/feeds/<%= entry.get('feed_id') %>/entries/<%= entry.id %>"><h3 class="entry-title"><%= entry.get('title') %></h3></a><div class="rate-entry"></div>
+<img class="entry-thumb-nail" src="<%= entry.get('image_thumb') %>" alt="" /><a href="#/feeds/<%= entry.get('feed_id') %>/entries/<%= entry.id %>">
+<div class="entry-text-wrapper">
+  <h3 class="entry-title"><%= entry.get('title') %></h3></a>
+  <div class="rate-entry"></div>
+</div>
