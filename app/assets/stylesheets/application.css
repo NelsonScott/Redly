@@ -20,11 +20,11 @@ html {
 
 body {
   height: 100%;
-  min-width: 1000px;
+  min-width: 1200px;
   min-height: 520px;
 }
 
-#sidebar{
+#sidebar {
   /*Making position fixed will break content sliding left effect */
   position: relative;
   float: left;
@@ -36,7 +36,7 @@ body {
 
 }
 
-.slide-left{
+.slide-left {
   margin-left: -177px;
 }
 
@@ -55,7 +55,7 @@ body {
   /*float:right;*/
 }
 
-.sidebar-content{
+.sidebar-content {
   background-color: hsl(0, 0%, 94%);
   position: relative;
   padding-left: 5px;
@@ -84,7 +84,7 @@ body {
   width: auto;
 }
 
-.entry-show{
+.entry-show {
   padding-top: 30px;
 }
 

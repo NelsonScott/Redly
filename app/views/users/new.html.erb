@@ -1,6 +1,4 @@
-<h1>Sign Up</h1>
-
-<form action="/users" method="post">
+<form action="/users" method="post" class="sign-up-form">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <label for="smallInput">Email<br>
     <input class = "user_email" name="user[email]" type="text" class="small input-text" id="smallInput" value="<%= @user.email %>"><br>
@@ -14,3 +12,54 @@
   <input type="submit" value="Submit" class="small button"><br>
   <button name="user[button]" id="guest">Guest Login</button>
 </form>
+
+<h1 class="landing-header">The Stories You Need</h1>
+<p class="tagline">Newspapers, Blogs, & Feeds</p>
+<p class="sign-up-buttons">
+  <button type="button" class="btn btn-success tour">Take a Tour</button>
+  <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-default get-started">Get Started</button>
+</p>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Sign In</h4>
+      </div>
+      <div class="modal-body row">
+
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4 form-content">
+          <form action="/session" method="post" class="sign-in-form">
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            <label>Username<br>
+              <input name="user[user_name]" type="text" value="<%= @user.user_name %>"><br>
+            </label><br>
+            <label>Password<br>
+              <input name="user[password]" type="password"><br>
+            </label><br>
+            <input type="submit" value="Submit" class="small button"><br>
+          </form>
+        </div>
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-2">
+          <a class="new-user-link">New User?</a>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% content_for :scripts do %>
+<script>
+</script>
+
+<% end %>
