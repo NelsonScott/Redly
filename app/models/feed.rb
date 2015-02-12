@@ -14,14 +14,20 @@ class Feed < ActiveRecord::Base
 
     begin
       feed_data = SimpleRSS.parse(open(url))
-      doc = Nokogiri::HTML( feed_data.image )
+      doc = Nokogiri::HTML( feed_data.try(:image) )
       img_srcs = doc.css('url')
+      if img_srcs.children && img_srcs.children.first
+        img = ensure_img(img_srcs.children.first.content)
+      else
+        img = nil
+      end
 
       feed = Feed.create!(
       title: feed_data.title,
       url: url,
       description: feed_data.description,
-      image: ensure_img(img_srcs.children.first.content))
+      image: img
+      )
 
       feed_data.entries.each do |entry_data|
       # add helper that if the entry data is < certain time, add it
