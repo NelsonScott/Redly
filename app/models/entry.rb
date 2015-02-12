@@ -2,12 +2,16 @@ require 'open-uri'
 require 'nokogiri'
 
 class Entry < ActiveRecord::Base
-
   belongs_to :feed
   has_many :ratings, dependent: :destroy
 
   def self.create_from_json!(entryData, feed)
     image = get_image(entryData)
+    image_thumb = entryData.media_thumbnail_url
+    if !image_thumb
+      image_thumb = image
+    end
+
     entry_content = get_content(entryData)
     entry_content = ActionController::Base.helpers.strip_tags(entry_content)
 
@@ -17,8 +21,9 @@ class Entry < ActiveRecord::Base
       published_at: entryData.pubDate,
       title: shorten(entryData.title),
       feed_id: feed.id,
-      image: ensure_img(image),
-      content: entry_content
+      image: check_img_url_status(image),
+      content: entry_content,
+      image_thumb: image_thumb
     })
   end
 
@@ -48,7 +53,7 @@ class Entry < ActiveRecord::Base
   end
 
 
-  def self.ensure_img(image)
+  def self.check_img_url_status(image)
     return nil if !image
 
     uri = URI(image)
