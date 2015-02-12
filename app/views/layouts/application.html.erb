@@ -8,12 +8,6 @@
   </head>
   <body>
 
-    <% if flash[:errors] %>
-      <div class="alert-box warning" role="alert">
-        <%= flash[:errors].join("<br>").html_safe %>
-      </div>
-    <% end %>
-
     <%= yield %>
 
     <%= javascript_include_tag "application" %>
