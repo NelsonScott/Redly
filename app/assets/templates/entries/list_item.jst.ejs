@@ -1,6 +1,8 @@
 <div class="modal-body row">
   <div class="col-md-4">
-  <img class="entry-thumb-nail" src="<%= entry.get('image_thumb') %>" alt="" />
+    <a href="#/feeds/<%= entry.get('feed_id') %>/entries/<%= entry.id %>">
+    <img class="entry-thumb-nail" src="<%= entry.get('image_thumb') %>" alt="" />
+    </a>
   </div>
 
   <div class="col-md-4">
