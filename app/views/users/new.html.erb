@@ -36,6 +36,9 @@
         </div>
 
         <div class="col-md-4">
+          <div class="error-messages">
+          </div>
+
           <div class="form-content">
             <form action="/users" method="post" class="sign-up-form">
               <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
@@ -48,18 +51,21 @@
               <label>Password<br>
                 <input class = "password" name="user[password]" type="password"><br>
               </label><br>
-              <input type="submit" value="Submit" class="small button"><br>
+              <button type="button" class="btn btn-primary sign-up-btn">Submit</button>
+              <!-- <input type="submit" value="Submit" class="small button"><br> -->
             </form>
 
             <form action="/session" method="post" class="sign-in-form">
               <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
               <label>Username<br>
-                <input name="user[user_name]" type="text" value="<%= @user.user_name %>"><br>
+                <input class="sign-in-user-name" name="user[user_name]" type="text" value="<%= @user.user_name %>"><br>
               </label><br>
               <label>Password<br>
-                <input name="user[password]" type="password"><br>
+                <input class="sign-in-user-pass" name="user[password]" type="password"><br>
               </label><br>
-              <input type="submit" value="Submit" class="small button"><br>
+              <button type="submit" class="btn btn-primary sign-in-btn">Submit</button>
+              <!-- <input type="submit" value="Submit" class="small button"><br> -->
+
             </form>
           </div>
         </div>
@@ -73,22 +79,25 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-primary">Submit</button>
+        <!-- <button type="button" class="btn btn-primary">Submit</button> -->
       </div>
     </div>
   </div>
 </div>
 
 <%= image_tag "feedly-showcase.png", alt: "All the Devices", class: "feedly-showcase" %>
+
 <% content_for :scripts do %>
 <script>
 $('.login-style-link').on('click', function(){
   if ($('#myModalLabel').text() == "Sign Up"){
+    $('.error-messages').html("");
     $('#myModalLabel').html('Sign In');
     $('.sign-in-form').show();
     $('.sign-up-form').hide();
     $('.login-style-link').html('Sign Up');
   } else {
+    $('.error-messages').html("");
     $('#myModalLabel').html('Sign Up');
     $('.sign-in-form').hide();
     $('.sign-up-form').show();
@@ -97,10 +106,29 @@ $('.login-style-link').on('click', function(){
 });
 
 $('#myModal').on('hidden.bs.modal', function () {
+  $('.error-messages').html("");
   $('#myModalLabel').html('Sign In');
   $('.sign-in-form').show();
   $('.sign-up-form').hide();
   $('.login-style-link').html('Sign Up');
+});
+
+$('.sign-in-form').submit(function(event){
+  event.preventDefault();
+  userName = $('.sign-in-user-name').val();
+  userPass = $('.sign-in-user-pass').val();
+
+  $.ajax({
+  type: 'POST',
+  url: '/session',
+  data: {user: {user_name: userName, password: userPass} },
+  success: function(){
+    window.location = "/";
+    },
+  error: function(msg){
+    $('.error-messages').html(msg.responseText);
+    }
+  });
 });
 
 $('.tour').on('click', function(){

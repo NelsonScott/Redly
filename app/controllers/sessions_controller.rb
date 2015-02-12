@@ -12,8 +12,8 @@ class SessionsController < ApplicationController
     else
       @user ||= User.new()
       @user.user_name = params[:user][:user_name]
-      flash.now[:errors] = ["Invalid email or password."]
-      render "users/new"
+      # flash.now[:errors] = ["Invalid email or password."]
+      render text: "Invalid email or password.", status: :unprocessable_entity
     end
   end
 
