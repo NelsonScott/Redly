@@ -70,7 +70,18 @@ $('#myModal').on('hidden.bs.modal', function () {
   $('#myModalLabel').html('Sign In');
   $('.sign-in-form').show();
   $('.sign-up-form').hide();
-})
+});
+
+$('.tour').on('click', function(){
+  $.ajax({
+  type: 'POST',
+  url: '/session',
+  data: {user: {user_name: "demo", password: "password"} },
+  success: function(){
+    window.location = "/";
+  }
+  });
+});
 </script>
 
 <% end %>
