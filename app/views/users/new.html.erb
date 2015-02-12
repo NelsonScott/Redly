@@ -1,19 +1,4 @@
-<form action="/users" method="post" class="sign-up-form">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <label for="smallInput">Email<br>
-    <input class = "user_email" name="user[email]" type="text" class="small input-text" id="smallInput" value="<%= @user.email %>"><br>
-  </label><br>
-  <label>Username<br>
-    <input class = "user_name" name="user[user_name]" type="text" value="<%= @user.user_name %>"><br>
-  </label><br>
-  <label>Password<br>
-    <input class = "password" name="user[password]" type="password"><br>
-  </label><br>
-  <input type="submit" value="Submit" class="small button"><br>
-  <button name="user[button]" id="guest">Guest Login</button>
-</form>
-
-<h1 class="landing-header">The Stories You Need</h1>
+<h1 class="landing-header">The Stories You Want</h1>
 <p class="tagline">Newspapers, Blogs, & Feeds</p>
 <p class="sign-up-buttons">
   <button type="button" class="btn btn-success tour">Take a Tour</button>
@@ -32,6 +17,21 @@
         <div class="col-md-4">
         </div>
         <div class="col-md-4 form-content">
+
+          <form action="/users" method="post" class="sign-up-form">
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            <label for="smallInput">Email<br>
+              <input class = "user_email" name="user[email]" type="text" class="small input-text" id="smallInput" value="<%= @user.email %>"><br>
+            </label><br>
+            <label>Username<br>
+              <input class = "user_name" name="user[user_name]" type="text" value="<%= @user.user_name %>"><br>
+            </label><br>
+            <label>Password<br>
+              <input class = "password" name="user[password]" type="password"><br>
+            </label><br>
+            <input type="submit" value="Submit" class="small button"><br>
+          </form>
+
           <form action="/session" method="post" class="sign-in-form">
             <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
             <label>Username<br>
@@ -60,6 +60,17 @@
 
 <% content_for :scripts do %>
 <script>
+$('.new-user-link').on('click', function(){
+  $('#myModalLabel').html('Sign Up');
+  $('.sign-in-form').hide();
+  $('.sign-up-form').show();
+});
+
+$('#myModal').on('hidden.bs.modal', function () {
+  $('#myModalLabel').html('Sign In');
+  $('.sign-in-form').show();
+  $('.sign-up-form').hide();
+})
 </script>
 
 <% end %>

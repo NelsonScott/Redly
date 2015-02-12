@@ -44,7 +44,7 @@ Redly.Views.sidebar = Backbone.CompositeView.extend({
     url: '/session',
     success: function(msg) {
         if (msg == 'loggedOut') {
-            window.location.href = '/session/new';
+            window.location.href = '/users/new';
           }
       },
     error: function(msg){
