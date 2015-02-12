@@ -1,3 +1,12 @@
+<% if flash[:errors] %>
+  <div class="alert alert-danger" role="alert">
+    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+    <span class="sr-only">Error:</span>
+    <%= flash[:errors].join("").html_safe %>
+  </div>
+
+<% end %>
+
 <h1 class="landing-header">The Stories You Want</h1>
 <p class="tagline">Newspapers, Blogs, & Feeds</p>
 <p class="sign-up-buttons">
@@ -16,14 +25,14 @@
       <div class="modal-body row">
 
         <div class="col-md-4">
-          <% if flash[:errors] %>
+          <!-- <% if flash[:errors] %>
             <div class="alert alert-danger" role="alert">
               <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
               <span class="sr-only">Error:</span>
               <%= flash[:errors].join("").html_safe %>
             </div>
 
-          <% end %>
+          <% end %> -->
         </div>
 
         <div class="col-md-4">
@@ -70,7 +79,7 @@
   </div>
 </div>
 
-<img src="/assets/feedly-showcase.png" alt="All the Devices" class="feedly-showcase"/>
+<%= image_tag "feedly-showcase.png", alt: "All the Devices", class: "feedly-showcase" %>
 <% content_for :scripts do %>
 <script>
 $('.login-style-link').on('click', function(){
