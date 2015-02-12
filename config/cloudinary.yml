@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: redly
+  api_key: '729357954134579'
+  api_secret: MVuDpaNguvGUpbheSjWTfUqdcoo
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: redly
+  api_key: '729357954134579'
+  api_secret: MVuDpaNguvGUpbheSjWTfUqdcoo
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: redly
+  api_key: '729357954134579'
+  api_secret: MVuDpaNguvGUpbheSjWTfUqdcoo
+  enhance_image_tag: true
+  static_image_support: false

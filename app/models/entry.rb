@@ -12,6 +12,18 @@ class Entry < ActiveRecord::Base
       image_thumb = image
     end
 
+    if check_img_url_status(image)
+      begin
+        cloud_img = Cloudinary::Uploader.upload(image)
+        cloud_img = cloud_img["secure_url"]
+      rescue
+        cloud_img = nil
+      end
+    else
+      cloud_img = nil
+    end
+    # cloud_thumb = Cloudinary::Uploader.upload(image_thumb)
+
     entry_content = get_content(entryData)
     entry_content = ActionController::Base.helpers.strip_tags(entry_content)
 
@@ -21,7 +33,7 @@ class Entry < ActiveRecord::Base
       published_at: entryData.pubDate,
       title: shorten(entryData.title),
       feed_id: feed.id,
-      image: check_img_url_status(image),
+      image: cloud_img,
       content: entry_content,
       image_thumb: image_thumb,
       description: entryData.description
