@@ -22,6 +22,10 @@ Redly.Views.EntryShow = Backbone.View.extend({
         that.$('.entry-show-img').attr('src', that.model.get('image'));
       });
     }
+    // TODO add more text show feature
+    // var shortened = this.$('.entry-show-content').text().substring(0,2500)+"...";
+    // this.remaining = this.$('.entry-show-content').text().slice(2500);
+    // this.$('.entry-show-content').html(shortened);
 
     return this;
   },
