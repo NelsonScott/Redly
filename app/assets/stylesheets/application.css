@@ -167,6 +167,7 @@ ul.feeds-index > li p{
 }*/
 
 .entry-title {
+  margin-top: 0px;
   font-size: 14px;
 }
 

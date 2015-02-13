@@ -5,13 +5,13 @@
     </a>
   </div>
 
-  <div class="col-md-4">
+  <div class="col-md-4 text-wrapper">
     <a href="#/feeds/<%= entry.get('feed_id') %>/entries/<%= entry.id %>">
       <h3 class="entry-title"><%= entry.get('title') %></h3>
     </a>
-    <div class="rate-entry"></div>
+    <p class="entry-list-description"><%= description %></p>
   </div>
   <div class="col-md-4">
-    <p class="entry-list-description"><%= description %></p>
+    <div class="rate-entry"></div>
   </div>
 </div>
