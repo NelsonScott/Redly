@@ -24,7 +24,8 @@ Redly.Views.sidebar = Backbone.CompositeView.extend({
     "click .toggle-side": "toggleSlide",
     "focus .URL": "enlargeInput",
     "blur .URL": "shrinkInput",
-    "keyup .URL": "searchFeeds"
+    "keyup .URL": "searchFeeds",
+    "click .feed-result": "addSearchResult"
   },
 
   enlargeInput: function(){
@@ -66,13 +67,18 @@ Redly.Views.sidebar = Backbone.CompositeView.extend({
       that.$('.search-results').html("");
 
       _(msg).each(function(result){
-        that.$('.search-results').append(result.title+"<br>");
+        that.$('.search-results').append("<a class='feed-result' data-feed-url="+ result.url+">"+result.title+"</a>"+'<br>');
       });
       },
     error: function(msg){
       console.log("Could not find results.");
       }
     });
+  },
+
+  addSearchResult: function(event){
+    event.preventDefault;
+    this.$('.URL').val($(event.target).data('feedUrl'));
   },
 
   addFeed: function(event){
