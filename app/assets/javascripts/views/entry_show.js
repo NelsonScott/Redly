@@ -17,7 +17,7 @@ Redly.Views.EntryShow = Backbone.View.extend({
 
     var that = this;
     if (this.model.get('image')){
-      that.$('.entry-show-img').attr('src', "/assets/spinner.gif" )
+      that.$('.entry-show-img').attr('src', "http://res.cloudinary.com/redly/image/upload/v1423802426/spinner_vbivfw.gif" )
       PreloadImage(this.model.get('image'), function(){
         that.$('.entry-show-img').attr('src', that.model.get('image'));
       });

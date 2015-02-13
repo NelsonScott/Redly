@@ -2,7 +2,13 @@ require 'uri'
 
 class Api::FeedsController < ApplicationController
   def index
-    @feeds = current_user.feeds
+    if params[:searchTerm]
+      search_term = params[:searchTerm]
+      results = Feed.where("title LIKE ?", "%"+ search_term + "%")
+      render json: results.to_json
+    else
+      @feeds = current_user.feeds
+    end
   end
 
   def show

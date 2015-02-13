@@ -24,6 +24,7 @@ Redly.Views.sidebar = Backbone.CompositeView.extend({
     "click .toggle-side": "toggleSlide",
     "focus .URL": "enlargeInput",
     "blur .URL": "shrinkInput",
+    "keyup .URL": "searchFeeds"
   },
 
   enlargeInput: function(){
@@ -49,6 +50,27 @@ Redly.Views.sidebar = Backbone.CompositeView.extend({
       },
     error: function(msg){
       console.log("Error logging out");
+      }
+    });
+  },
+
+  searchFeeds: function(event){
+    var that = this;
+
+    var term = $(event.target).val();
+    $.ajax({
+    type: 'GET',
+    url: 'api/feeds',
+    data: {searchTerm: term},
+    success: function(msg) {
+      that.$('.search-results').html("");
+
+      _(msg).each(function(result){
+        that.$('.search-results').append(result.title+"<br>");
+      });
+      },
+    error: function(msg){
+      console.log("Could not find results.");
       }
     });
   },
