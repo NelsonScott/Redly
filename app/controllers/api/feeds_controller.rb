@@ -4,7 +4,8 @@ class Api::FeedsController < ApplicationController
   def index
     if params[:searchTerm]
       search_term = params[:searchTerm]
-      results = Feed.where("title LIKE ?", "%"+ search_term + "%")
+      # results = Feed.where("title LIKE ?", "%"+ search_term + "%")
+      results = Feed.where("UPPER(title) LIKE ?", "%"+ search_term.upcase + "%")
       render json: results.to_json
     else
       @feeds = current_user.feeds
