@@ -40,6 +40,9 @@ Redly.Views.entryListItem = Backbone.View.extend({
     var content = this.template({entry: this.model, description: desc});
     this.$el.html(content);
     this.$('.entry-list-description img').remove();
+    var shortened = this.$('.entry-list-description').text().substring(0,260)+"...";
+    this.$('.entry-list-description').html(shortened);
+    
     return this;
   },
 

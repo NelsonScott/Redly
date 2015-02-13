@@ -105,6 +105,7 @@ body {
   line-height: 26.25px;
   margin-bottom: 24px;
   margin-top: 24px;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* lists */
@@ -149,22 +150,22 @@ ul.feeds-index > li p{
   /*height: auto;*/
   letter-spacing: normal;
   line-height: 17px;
-  /*text-transform: none;*/
-  width: auto;
-}
-/*
-.entry-thumb-nail {
-  display: inline;
+  /*width: auto;*/
 }
 
-.entry-img-wrapper {
+.entry-thumb-nail {
+  width: 210px;
+  height: 117px;
+}
+
+/*.entry-img-wrapper {
   display: inline;
 }
 
 .entry-text-wrapper {
   display: inline;
-}
-*/
+}*/
+
 .entry-title {
   font-size: 14px;
 }

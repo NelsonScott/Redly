@@ -66,6 +66,8 @@ class Entry < ActiveRecord::Base
       return raw.first.text
     elsif (raw = doc.css('#articleText')).any?
       return raw.first.text
+    elsif (raw = doc.css('#storytext')).any?
+      return raw.first.text
     else
       return entryData.description
     end
