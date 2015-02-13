@@ -30,8 +30,6 @@ class Entry < ActiveRecord::Base
       end
     end
 
-    # cloud_thumb = Cloudinary::Uploader.upload(image_thumb)
-
     entry_content = get_content(entryData)
     entry_content = ActionController::Base.helpers.strip_tags(entry_content)
 
