@@ -7,11 +7,6 @@ class Entry < ActiveRecord::Base
 
   def self.create_from_json!(entryData, feed)
     image = get_image(entryData)
-    image_thumb = entryData.media_thumbnail_url
-    if !image_thumb
-      image_thumb = image
-    end
-
     if check_img_url_status(image)
       begin
         cloud_img = Cloudinary::Uploader.upload(image)
@@ -22,6 +17,19 @@ class Entry < ActiveRecord::Base
     else
       cloud_img = nil
     end
+
+    image_thumb = entryData.media_thumbnail_url
+    if !image_thumb
+      cloud_thumb = cloud_img
+    else
+      begin
+        cloud_thumb = Cloudinary::Uploader.upload(image_thumb)
+        cloud_thumb = cloud_thumb["secure_url"]
+      rescue
+        cloud_thumb = nil
+      end
+    end
+
     # cloud_thumb = Cloudinary::Uploader.upload(image_thumb)
 
     entry_content = get_content(entryData)
@@ -35,7 +43,7 @@ class Entry < ActiveRecord::Base
       feed_id: feed.id,
       image: cloud_img,
       content: entry_content,
-      image_thumb: image_thumb,
+      image_thumb: cloud_thumb,
       description: entryData.description
     })
   end
