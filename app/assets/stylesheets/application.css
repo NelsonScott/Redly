@@ -24,25 +24,6 @@ body {
   min-height: 520px;
 }
 
-#sidebar {
-  position: relative;
-  float: left;
-  height: 100%;
-  /*width: 250px;*/
-  /*putting height here also breaks content sliding left effect*/
-  /*height: 800px;*/
-  margin-left: 0px;
-
-}
-
-.slide-left {
-  margin-left: -177px;
-}
-
-#sidebar p{
-  color: rgba(0, 0, 0, 0.529412);
-}
-
 #content {
   overflow: auto;
   padding-left: 50px;
@@ -52,15 +33,6 @@ body {
   padding-right: 130px;
   /*width:750px;*/
   /*float:right;*/
-}
-
-.sidebar-content {
-  background-color: hsl(0, 0%, 94%);
-  position: relative;
-  padding-left: 5px;
-  height: 100%;
-  width: 250px;
-  transition: margin-left 500ms ease;
 }
 
 .feed-show{
@@ -108,36 +80,6 @@ body {
 }
 
 /* lists */
-ul.feeds-index {
-  list-style-type: none;
-  padding: 0;
-  margin-top: 0px;
-  width: 180px;
-  text-overflow: ellipsis;
-  /*margin: 0 0 0px 0px;*/
-}
-
-ul.feeds-index > li p{
-  display:inline;
-  width: 25px;
-  font-family: sans-serif;
-  font-size: 12px;
-  text-overflow: ellipsis;
-}
-
-.feed-item-title{
-  padding-left: 5px;
-  display: inline;
-}
-
-.feed-item-title:hover{
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-.feed-result:hover{
-  cursor: pointer;
-}
 
 /* Entry List Item */
 .entry-list-item {
@@ -211,11 +153,6 @@ ul.entries-index li{
   display: none;
 }
 
-ul.input-and-feeds{
-  padding-left: 15px;
-  padding-top: 20px;
-}
-
 /* buttons and clickables */
 button {
   background: transparent;
@@ -224,48 +161,8 @@ button {
 
 button:focus {outline:0;}
 
-.toggle-side{
-  float: right;
-  padding-right: 40px;
-  padding-top: 20px;
-  background: transparent;
-  border: none !important;
-}
-
-.open-side{
-  /*position: fixed;*/
-  margin-left: 15px;
-  margin-top: 20px;
-  visibility: hidden;
-}
-
-.logout{
-  color: rgba(0, 0, 0, 0.529412);
-  position: absolute;
-  bottom: 20px;
-  font-size: 12px;
-  margin-left: 15px;
-}
-
-.logout:hover{
-  text-decoration: underline;
-}
-
 .delete-feed:hover{
   color: #CC0000;
-}
-
-.URL {
-  width: 80px;
-}
-
-label[for="URL"] {
-  color: rgba(0, 0, 0, 0.529412);
-  font-weight: bold;
-}
-
-.add-feed:hover {
-  color: #7CCD61;
 }
 
 /* headers */
@@ -274,11 +171,6 @@ label[for="URL"] {
   font-size: 26px;
   padding-left: 50px;
   padding-bottom: 30px;
-}
-
-.feeds-header{
-  font-weight: bold;
-  margin-top: 15px;
 }
 
 .add-feed-header{
