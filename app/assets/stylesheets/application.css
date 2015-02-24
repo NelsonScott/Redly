@@ -25,7 +25,6 @@ body {
 }
 
 #sidebar {
-  /*Making position fixed will break content sliding left effect */
   position: relative;
   float: left;
   height: 100%;
@@ -134,7 +133,10 @@ ul.feeds-index > li p{
 .feed-item-title:hover{
   text-decoration: underline;
   cursor: pointer;
+}
 
+.feed-result:hover{
+  cursor: pointer;
 }
 
 /* Entry List Item */

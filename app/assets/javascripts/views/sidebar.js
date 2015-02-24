@@ -78,26 +78,31 @@ Redly.Views.sidebar = Backbone.CompositeView.extend({
 
   addSearchResult: function(event){
     event.preventDefault;
-    this.$('.URL').val($(event.target).data('feedUrl'));
+    this.$('.URL').val($(event.target).html());
+    this.$('.URL').data('feedUrl', $(event.target).data('feedUrl'));
   },
 
   addFeed: function(event){
     event.preventDefault();
 
-    var url = this.$('.URL').val();
-    var newFeed = new Redly.Models.Feed({
-      url: url
-    });
+    var url = this.$('.URL').data('feedUrl');
+    if (typeof url == "undefined"){
+      console.log("No Data.");
+    } else {
+      var newFeed = new Redly.Models.Feed({
+        url: url
+      });
 
-    var that = this;
-    newFeed.save({}, {
-      success: function(msg){
-        that.collection.add(newFeed);
-      },
-      error: function(msg){
-        console.log("Error adding Feed.");
-      }
-    });
+      var that = this;
+      newFeed.save({}, {
+        success: function(msg){
+          that.collection.add(newFeed);
+        },
+        error: function(msg){
+          console.log("Error adding Feed.");
+        }
+      });
+    }
 
     this.$('input').val("");
   },
