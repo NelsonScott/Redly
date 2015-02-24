@@ -17,6 +17,8 @@ class ApplicationController < ActionController::Base
 
   def sign_in!(user)
     @current_user = user
+    # if it's a demo user, just don't reset session token
+    # set session token to just session token for demo
     session[:token] = user.reset_session_token!
   end
 
