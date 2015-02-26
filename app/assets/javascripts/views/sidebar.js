@@ -35,11 +35,11 @@ Redly.Views.sidebar = Backbone.CompositeView.extend({
   shrinkAndClearInput: function(){
     this.$('.URL').animate({ width: 80 }, 600);
     // TODO clear input on closing the sidebar instead or when empty search
-    // this.$('.search-results').html("");
   },
 
   toggleSlide: function(){
     this.$el.toggleClass("slide-left");
+    this.$('.search-results').html("");
   },
 
   logoutUser: function(){

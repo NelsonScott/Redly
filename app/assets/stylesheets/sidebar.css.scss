@@ -87,6 +87,10 @@ label[for="URL"] {
 	padding-bottom: 10px;
 }
 
+.feed-result p {
+	padding-left: 12px;
+}
+
 .feed-result-link:focus {
 	outline: none !important;
 }
@@ -96,7 +100,8 @@ label[for="URL"] {
 }
 
 .add-feed-btn {
-	float: right;
+	margin-left: 12px;
+	// float: right;
 }
 
 .add-feed-btn:hover {color: #7CCD61;}
