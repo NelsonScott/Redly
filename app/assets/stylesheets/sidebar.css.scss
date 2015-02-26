@@ -80,13 +80,19 @@ label[for="URL"] {
 }
 
 .feed-result {
+	border-bottom: 1px solid black;
 	list-style-type: none;
 	margin-top: 10px;
-	border-top: 1px solid black;
 	margin-right: 40px;
+	padding-bottom: 10px;
 }
 
-.feed-result-link {
+.feed-result-link:focus {
+	outline: none !important;
+}
+
+.feed-result-link:active {
+	outline: none !important;
 }
 
 .add-feed-btn {

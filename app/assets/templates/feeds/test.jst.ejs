@@ -1,0 +1,14 @@
+<!-- <li class='feed-result'>
+  <a class='feed-result-link' data-feed-url="+ result.url+"><%= result.title %></a>
+  <button class='glyphicon glyphicon-plus-sign add-feed-btn'></button>
+</li> -->
+<li class='feed-result'>
+  <button type="button" class="btn feed-result-link" data-toggle="collapse" data-target="#demo<%= result.id %>">
+    <%= result.title %>
+  </button>
+
+  <div id="demo<%= result.id %>" class="collapse in">
+    <p><%= result.description %></p>
+    <p>Add This Feed</p>
+  </div>
+</li>

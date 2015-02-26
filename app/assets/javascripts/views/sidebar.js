@@ -34,7 +34,8 @@ Redly.Views.sidebar = Backbone.CompositeView.extend({
 
   shrinkAndClearInput: function(){
     this.$('.URL').animate({ width: 80 }, 600);
-    this.$('.search-results').html("");
+    // TODO clear input on closing the sidebar instead or when empty search
+    // this.$('.search-results').html("");
   },
 
   toggleSlide: function(){
@@ -68,7 +69,10 @@ Redly.Views.sidebar = Backbone.CompositeView.extend({
       that.$('.search-results').html("");
 
       _(msg).each(function(result){
-        that.$('.search-results').append("<li class='feed-result'><a class='feed-result-link' data-feed-url="+ result.url+">"+result.title+"</a><button class='glyphicon glyphicon-plus-sign add-feed-btn'></button>");
+        // that.$('.search-results').append("<li class='feed-result'><a class='feed-result-link' data-feed-url="+ result.url+">"+result.title+"</a><button class='glyphicon glyphicon-plus-sign add-feed-btn'></button>");
+        var test = JST['feeds/test'];
+        var content = test({result: result});
+        that.$('.search-results').append(content);
       });
       },
     error: function(msg){
