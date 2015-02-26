@@ -19,7 +19,6 @@ Redly.Views.sidebar = Backbone.CompositeView.extend({
   },
 
   events: {
-    // "click .add-feed-btn": "addFeed",
     "click .logout": "logoutUser",
     "click .toggle-side": "toggleSlide",
     "focus .URL": "enlargeInput",
@@ -34,7 +33,6 @@ Redly.Views.sidebar = Backbone.CompositeView.extend({
 
   shrinkAndClearInput: function(){
     this.$('.URL').animate({ width: 80 }, 600);
-    // TODO clear input on closing the sidebar instead or when empty search
   },
 
   toggleSlide: function(){
@@ -69,9 +67,8 @@ Redly.Views.sidebar = Backbone.CompositeView.extend({
       that.$('.search-results').html("");
 
       _(msg).each(function(result){
-        //TODO fix naming
-        var test = JST['feeds/test'];
-        var content = test({result: result});
+        var search_list_item = JST['feeds/search_list_item'];
+        var content = search_list_item({ result: result });
         that.$('.search-results').append(content);
       });
       },
@@ -83,14 +80,10 @@ Redly.Views.sidebar = Backbone.CompositeView.extend({
 
   addSearchResult: function(event){
     event.preventDefault;
-    // this.$('.URL').data('feedUrl', $(event.target).data('feedUrl'));
     this.addFeed($(event.target).data('feedUrl'));
   },
 
   addFeed: function(url){
-    // event.preventDefault();
-
-    // var url = this.$('.URL').data('feedUrl');
     if (typeof url == "undefined"){
       console.log("No Feed To Add.");
     } else {
@@ -102,6 +95,7 @@ Redly.Views.sidebar = Backbone.CompositeView.extend({
       newFeed.save({}, {
         success: function(msg){
           that.collection.add(newFeed);
+          Backbone.history.navigate("feeds/"+ newFeed.id, {trigger: true});
         },
         error: function(msg){
           console.log("Error adding Feed.");
@@ -122,6 +116,7 @@ Redly.Views.sidebar = Backbone.CompositeView.extend({
 
    this.removeSubview("ul.feeds-index", subview);
    this.render();
+   Backbone.history.navigate("", {trigger: true});
   },
 
   attachFeedSubView: function(feed){
