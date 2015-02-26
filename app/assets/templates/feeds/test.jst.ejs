@@ -5,9 +5,10 @@
 <li class='feed-result'>
   <button type="button" class="btn feed-result-link" data-toggle="collapse" data-target="#feed-description-<%= result.id %>">
     <%= result.title %>
+    <span class="caret"></span>
   </button>
 
-  <div id="feed-description-<%= result.id %>" class="collapse in">
+  <div id="feed-description-<%= result.id %>" class="collapse">
     <p><%= result.description %></p>
     <!-- <p>Add This Feed<button class='glyphicon glyphicon-plus-sign add-feed-btn'></button></p> -->
     <button class="btn-small btn-success add-feed-btn">Add Feed</button>
