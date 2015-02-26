@@ -74,9 +74,28 @@ label[for="URL"] {
 
 .URL {width: 80px;}
 
+.search-results {
+	margin-top: 15px;
+	padding-left: 0px;
+}
+
+.feed-result {
+	list-style-type: none;
+	margin-top: 10px;
+	border-top: 1px solid black;
+	margin-right: 40px;
+}
+
+.feed-result-link {
+}
+
+.add-feed-btn {
+	float: right;
+}
+
 .add-feed-btn:hover {color: #7CCD61;}
 
-.feed-result:hover {cursor: pointer;}
+.feed-result-link:hover {cursor: pointer;}
 
 .logout {
 	color: rgba(0, 0, 0, 0.529412);

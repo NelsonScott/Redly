@@ -23,17 +23,18 @@ Redly.Views.sidebar = Backbone.CompositeView.extend({
     "click .logout": "logoutUser",
     "click .toggle-side": "toggleSlide",
     "focus .URL": "enlargeInput",
-    "blur .URL": "shrinkInput",
+    "blur .URL": "shrinkAndClearInput",
     "keyup .URL": "searchFeeds",
-    "click .feed-result": "addSearchResult"
+    "click .feed-result-link": "addSearchResult"
   },
 
   enlargeInput: function(){
     this.$('.URL').animate({ width: 130 }, 400);
   },
 
-  shrinkInput: function(){
+  shrinkAndClearInput: function(){
     this.$('.URL').animate({ width: 80 }, 600);
+    this.$('.search-results').html("");
   },
 
   toggleSlide: function(){
@@ -67,7 +68,7 @@ Redly.Views.sidebar = Backbone.CompositeView.extend({
       that.$('.search-results').html("");
 
       _(msg).each(function(result){
-        that.$('.search-results').append("<a class='feed-result' data-feed-url="+ result.url+">"+result.title+"</a>"+'<br>');
+        that.$('.search-results').append("<li class='feed-result'><a class='feed-result-link' data-feed-url="+ result.url+">"+result.title+"</a><button class='glyphicon glyphicon-plus-sign add-feed-btn'></button>");
       });
       },
     error: function(msg){
