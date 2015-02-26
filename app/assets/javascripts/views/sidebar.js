@@ -102,7 +102,6 @@ Redly.Views.sidebar = Backbone.CompositeView.extend({
       newFeed.save({}, {
         success: function(msg){
           that.collection.add(newFeed);
-          console.log("added Feed!");
         },
         error: function(msg){
           console.log("Error adding Feed.");
