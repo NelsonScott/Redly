@@ -19,13 +19,13 @@ Redly.Views.sidebar = Backbone.CompositeView.extend({
   },
 
   events: {
-    "click .add-feed-btn": "addFeed",
+    // "click .add-feed-btn": "addFeed",
     "click .logout": "logoutUser",
     "click .toggle-side": "toggleSlide",
     "focus .URL": "enlargeInput",
     "blur .URL": "shrinkAndClearInput",
     "keyup .URL": "searchFeeds",
-    "click .feed-result-link": "addSearchResult"
+    "click .add-feed-btn": "addSearchResult"
   },
 
   enlargeInput: function(){
@@ -69,7 +69,7 @@ Redly.Views.sidebar = Backbone.CompositeView.extend({
       that.$('.search-results').html("");
 
       _(msg).each(function(result){
-        // that.$('.search-results').append("<li class='feed-result'><a class='feed-result-link' data-feed-url="+ result.url+">"+result.title+"</a><button class='glyphicon glyphicon-plus-sign add-feed-btn'></button>");
+        //TODO fix naming
         var test = JST['feeds/test'];
         var content = test({result: result});
         that.$('.search-results').append(content);
@@ -83,16 +83,16 @@ Redly.Views.sidebar = Backbone.CompositeView.extend({
 
   addSearchResult: function(event){
     event.preventDefault;
-    this.$('.URL').val($(event.target).html());
-    this.$('.URL').data('feedUrl', $(event.target).data('feedUrl'));
+    // this.$('.URL').data('feedUrl', $(event.target).data('feedUrl'));
+    this.addFeed($(event.target).data('feedUrl'));
   },
 
-  addFeed: function(event){
-    event.preventDefault();
+  addFeed: function(url){
+    // event.preventDefault();
 
-    var url = this.$('.URL').data('feedUrl');
+    // var url = this.$('.URL').data('feedUrl');
     if (typeof url == "undefined"){
-      console.log("No Data.");
+      console.log("No Feed To Add.");
     } else {
       var newFeed = new Redly.Models.Feed({
         url: url
@@ -102,6 +102,7 @@ Redly.Views.sidebar = Backbone.CompositeView.extend({
       newFeed.save({}, {
         success: function(msg){
           that.collection.add(newFeed);
+          console.log("added Feed!");
         },
         error: function(msg){
           console.log("Error adding Feed.");

@@ -11,6 +11,8 @@
   <div id="feed-description-<%= result.id %>" class="collapse">
     <p><%= result.description %></p>
     <!-- <p>Add This Feed<button class='glyphicon glyphicon-plus-sign add-feed-btn'></button></p> -->
-    <button class="btn-small btn-success add-feed-btn">Add Feed</button>
+    <button class="btn-small btn-success add-feed-btn" data-feed-url="<%= result.url %>">
+      Add Feed
+    </button>
   </div>
 </li>
