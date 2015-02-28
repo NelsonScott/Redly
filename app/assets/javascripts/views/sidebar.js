@@ -22,7 +22,7 @@ Redly.Views.sidebar = Backbone.CompositeView.extend({
     "click .logout": "logoutUser",
     "click .toggle-side": "toggleSlide",
     "focus .URL": "enlargeInput",
-    "blur .URL": "shrinkAndClearInput",
+    "blur .URL": "shrinkInput",
     "keyup .URL": "searchFeeds",
     "click .add-feed-btn": "addSearchResult"
   },
@@ -31,7 +31,7 @@ Redly.Views.sidebar = Backbone.CompositeView.extend({
     this.$('.URL').animate({ width: 130 }, 400);
   },
 
-  shrinkAndClearInput: function(){
+  shrinkInput: function(){
     this.$('.URL').animate({ width: 80 }, 600);
   },
 
