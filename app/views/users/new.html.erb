@@ -164,6 +164,34 @@ $('.tour').on('click', function(){
   }
   });
 });
+
+tour = new Shepherd.Tour({
+  	defaults: {
+  		classes: 'shepherd-theme-arrows',
+  	}
+  });
+
+tour.addStep('welcomeStep', {
+		title: 'Welcome!',
+		text: "Test Test!",
+		classes: 'shepherd shepherd-open shepherd-theme-arrows shepherd-transparent-text',
+		buttons: [
+			{
+				text: 'Next',
+				action: tour.next,
+				classes: 'shepherd-button-example-primary'
+			},
+
+			{
+				text: 'End Tutorial',
+				classes: 'shepherd-button-secondary',
+				action: tour.complete
+			}
+		]
+	});
+
+  tour.start();
+
 </script>
 
 <% end %>

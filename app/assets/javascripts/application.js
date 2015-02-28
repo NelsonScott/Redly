@@ -15,6 +15,7 @@
 //= require jquery_ujs
 //= require jquery.ui.all
 //= require jquery.raty
+//= require shepherd.min
 //= require underscore
 //= require backbone
 //= require redly
