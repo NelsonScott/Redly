@@ -30,7 +30,6 @@ class Feed < ActiveRecord::Base
       )
 
       feed_data.entries.each do |entry_data|
-      # add helper that if the entry data is < certain time, add it
         Entry.create_from_json!(entry_data, feed)
       end
     rescue SimpleRSSError
@@ -45,23 +44,35 @@ class Feed < ActiveRecord::Base
     entries
   end
 
-  def reload
+  def reload(feed)
+    feed.entries = []
+    
     begin
-      feed_data = SimpleRSS.parse(open(url))
-      self.title = feed_data.title
-      save!
+      feed_data = SimpleRSS.parse(open(feed.url))
 
-      existing_entry_guids = Entry.pluck(:guid).sort
       feed_data.entries.each do |entry_data|
-        unless existing_entry_guids.include?(entry_data.guid)
-          Entry.create_from_json!(entry_data, self)
-        end
+        Entry.create_from_json!(entry_data, feed)
       end
-
-      self
     rescue SimpleRSSError
-      return false
+      return nil
     end
+
+    # begin
+    #   feed_data = SimpleRSS.parse(open(url))
+    #   self.title = feed_data.title
+    #   save!
+    #
+    #   existing_entry_guids = Entry.pluck(:guid).sort
+    #   feed_data.entries.each do |entry_data|
+    #     unless existing_entry_guids.include?(entry_data.guid)
+    #       Entry.create_from_json!(entry_data, self)
+    #     end
+    #   end
+    #
+    #   self
+    # rescue SimpleRSSError
+    #   return false
+    # end
   end
 
   def self.ensure_img(image)
