@@ -13,7 +13,6 @@ Redly.Views.entriesIndex = Backbone.CompositeView.extend({
   },
 
   attachFeedEntries: function(feed){
-    var that = this;
     var entries = new Redly.Collections.Entries({feedId: feed.id});
     entries.fetch();
 
