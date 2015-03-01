@@ -44,14 +44,14 @@ class Feed < ActiveRecord::Base
     entries
   end
 
-  def reload(feed)
-    feed.entries = []
-    
+  def reload
+    self.entries = []
+
     begin
-      feed_data = SimpleRSS.parse(open(feed.url))
+      feed_data = SimpleRSS.parse(open(self.url))
 
       feed_data.entries.each do |entry_data|
-        Entry.create_from_json!(entry_data, feed)
+        Entry.create_from_json!(entry_data, self)
       end
     rescue SimpleRSSError
       return nil
