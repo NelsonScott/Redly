@@ -50,7 +50,7 @@ Implement a search bar that displays a realtime preview of feeds to select from.
 [Details][phase-five]
 
 ### Bonus Features
-- [ ] Display feeds higher based on rating and popularity
+- [x] Add Tour of the App
 - [ ] Pagination of the feeds show
 - [ ] Divide page into feeds categories (tech, science, etc)
 - [ ] Add a feeds suggestion index
