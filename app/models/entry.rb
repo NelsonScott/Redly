@@ -11,7 +11,7 @@ class Entry < ActiveRecord::Base
     rescue
       image = nil
     end
-    
+
     if check_img_url_status(image)
       begin
         cloud_img = Cloudinary::Uploader.upload(image, width: 500, height: 500)
@@ -60,20 +60,24 @@ class Entry < ActiveRecord::Base
   end
 
   def self.get_content(entryData)
-    doc = Nokogiri::HTML( open(entryData.link) )
-    doc.css('script').remove
+    begin
+      doc = Nokogiri::HTML( open(entryData.link) )
+      doc.css('script').remove
 
-    raw = doc.css('.article-entry')
+      raw = doc.css('.article-entry')
 
-    if raw.any?
-      return raw.first.text
-    elsif (raw = doc.css('.article-content')).any?
-      return raw.first.text
-    elsif (raw = doc.css('#articleText')).any?
-      return raw.first.text
-    elsif (raw = doc.css('#storytext')).any?
-      return raw.first.text
-    else
+      if raw.any?
+        return raw.first.text
+      elsif (raw = doc.css('.article-content')).any?
+        return raw.first.text
+      elsif (raw = doc.css('#articleText')).any?
+        return raw.first.text
+      elsif (raw = doc.css('#storytext')).any?
+        return raw.first.text
+      else
+        return entryData.description
+      end
+    rescue
       return entryData.description
     end
   end
