@@ -9,7 +9,7 @@ class Entry < ActiveRecord::Base
     image = get_image(entryData)
     if check_img_url_status(image)
       begin
-        cloud_img = Cloudinary::Uploader.upload(image)
+        cloud_img = Cloudinary::Uploader.upload(image, width: 500, height: 500)
         cloud_img = cloud_img["secure_url"]
       rescue
         cloud_img = nil
@@ -23,7 +23,7 @@ class Entry < ActiveRecord::Base
       cloud_thumb = cloud_img
     else
       begin
-        cloud_thumb = Cloudinary::Uploader.upload(image_thumb)
+        cloud_thumb = Cloudinary::Uploader.upload(image_thumb, width: 210, height: 117)
         cloud_thumb = cloud_thumb["secure_url"]
       rescue
         cloud_thumb = nil
