@@ -6,7 +6,12 @@ class Entry < ActiveRecord::Base
   has_many :ratings, dependent: :destroy
 
   def self.create_from_json!(entryData, feed)
-    image = get_image(entryData)
+    begin
+      image = get_image(entryData)
+    rescue
+      image = nil
+    end
+    
     if check_img_url_status(image)
       begin
         cloud_img = Cloudinary::Uploader.upload(image, width: 500, height: 500)
@@ -87,7 +92,7 @@ class Entry < ActiveRecord::Base
       else
         return image
       end
-    rescue 
+    rescue
       return nil
     end
   end
