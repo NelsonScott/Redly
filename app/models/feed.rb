@@ -45,16 +45,22 @@ class Feed < ActiveRecord::Base
   end
 
   def reload
-    self.entries = []
 
     begin
       feed_data = SimpleRSS.parse(open(self.url))
 
+      old_entry_guids = self.entries.pluck(:guid).sort
       feed_data.entries.each do |entry_data|
-        Entry.create_from_json!(entry_data, self)
+        unless old_entry_guids.include?(entry_data.guid)
+          Entry.create_from_json!(entry_data, self)
+        end
       end
     rescue SimpleRSSError
       return nil
+    end
+
+    self.entries.each do |entry|
+      entry.delete if entry.created_at < 1.week.ago
     end
 
     # begin
@@ -76,13 +82,17 @@ class Feed < ActiveRecord::Base
   end
 
   def self.ensure_img(image)
-    uri = URI(image)
-    request = Net::HTTP.new uri.host
-    response = request.request_head uri.path
+    begin
+      uri = URI(image)
+      request = Net::HTTP.new uri.host
+      response = request.request_head uri.path
 
-    if (response.code.to_i == 200)
-      return image
-    else
+      if (response.code.to_i == 200)
+        return image
+      else
+        return nil
+      end
+    rescue
       return nil
     end
   end

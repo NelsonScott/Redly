@@ -77,14 +77,18 @@ class Entry < ActiveRecord::Base
   def self.check_img_url_status(image)
     return nil if !image
 
-    uri = URI(image)
-    request = Net::HTTP.new uri.host
-    response = request.request_head uri.path
+    begin
+      uri = URI(image)
+      request = Net::HTTP.new uri.host
+      response = request.request_head uri.path
 
-    if ((response.code.to_i >= 400) && (response.code.to_i <= 499))
+      if ((response.code.to_i >= 400) && (response.code.to_i <= 499))
+        return nil
+      else
+        return image
+      end
+    rescue 
       return nil
-    else
-      return image
     end
   end
 

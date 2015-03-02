@@ -1,10 +1,10 @@
 desc "Update Entries for Each Feed in the Database"
 
-task :update_feed => :environment do
+task :update_feeds => :environment do
   puts "Updating feed..."
   feeds = Feed.all
   feeds.each do |feed|
-    puts feed.entries.pluck(:title)
+    feed.reload
   end
   puts "done."
 end
