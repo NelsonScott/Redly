@@ -9,7 +9,6 @@ Redly.Views.FeedShow = Backbone.CompositeView.extend({
 
   initialize: function(){
       this.attachFeedEntries(this.model);
-      this.listenTo(this.model, 'sync', this.attachFeedEntries);
       this.listenTo(this.model, 'sync', this.render);
   },
 
