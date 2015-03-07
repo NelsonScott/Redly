@@ -13,20 +13,19 @@ class Entry < ActiveRecord::Base
       cloud_img = nil
     end
 
-    image_thumb = entryData.media_thumbnail_url
-    if !image_thumb
+    begin
+      image_thumb = entryData.media_thumbnail_url
+      cloud_thumb = Cloudinary::Uploader.upload(image_thumb, width: 210, height: 117)
+      cloud_thumb = cloud_thumb["secure_url"]
+    rescue
       cloud_thumb = cloud_img
-    else
-      begin
-        cloud_thumb = Cloudinary::Uploader.upload(image_thumb, width: 210, height: 117)
-        cloud_thumb = cloud_thumb["secure_url"]
-      rescue
-        cloud_thumb = nil
-      end
     end
 
-    entry_content = get_content(entryData)
-    entry_content = ActionController::Base.helpers.strip_tags(entry_content)
+    begin
+      entry_content = get_content(entryData)
+    rescue
+      entry_content = entryData.description
+    end
 
     Entry.create!({
       guid: shorten(entryData.guid),
@@ -41,16 +40,22 @@ class Entry < ActiveRecord::Base
     })
   end
 
-  def self.shorten(str)
-    if (str.length > 225)
-      return str[0..225]
-    end
+  def self.get_image(entryData)
+    return entryData[:media_content_url] if entryData[:media_content_url]
 
-    str
+    get_photo_url(entryData.link)
+  end
+
+  def self.get_photo_url(url)
+    doc = Nokogiri::HTML(open(url))
+    target = doc.css("meta[property='og:image']")
+    photo_url = target.first.attributes["content"]
+    photo = URI.parse(photo_url)
+
+    return photo.to_s
   end
 
   def self.get_content(entryData)
-    begin
       doc = Nokogiri::HTML( open(entryData.link) )
       doc.css('script').remove
 
@@ -67,28 +72,14 @@ class Entry < ActiveRecord::Base
       else
         return entryData.description
       end
-    rescue
-      return entryData.description
-    end
-  end
-
-  def self.get_image(entryData)
-    return entryData[:media_content_url] if entryData[:media_content_url]
-
-    get_photo_url(entryData.link)
-  end
-
-  def self.get_photo_url(url)
-    if !Nokogiri::HTML(open(url)).css("meta[property='og:image']").blank?
-      doc = Nokogiri::HTML(open(url))
-      target = doc.css("meta[property='og:image']")
-      photo_url = target.first.attributes["content"]
-      photo = URI.parse(photo_url)
-      return photo.to_s
-    end
   end
 
   def average_rating
     ratings.average(:entry_val).to_f
   end
+
+  def self.shorten(str)
+    return str[0..225]
+  end
+
 end
