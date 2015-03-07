@@ -22,7 +22,7 @@ class Entry < ActiveRecord::Base
     end
 
     begin
-      entry_content = get_content(entryData)
+      entry_content = get_entry_content(entryData)
     rescue
       entry_content = entryData.description
     end
@@ -55,20 +55,20 @@ class Entry < ActiveRecord::Base
     return photo.to_s
   end
 
-  def self.get_content(entryData)
+  def self.get_entry_content(entryData)
       doc = Nokogiri::HTML( open(entryData.link) )
       doc.css('script').remove
 
-      raw = doc.css('.article-entry')
+      raw_content = doc.css('.article-entry')
 
-      if raw.any?
-        return raw.first.text
-      elsif (raw = doc.css('.article-content')).any?
-        return raw.first.text
-      elsif (raw = doc.css('#articleText')).any?
-        return raw.first.text
-      elsif (raw = doc.css('#storytext')).any?
-        return raw.first.text
+      if raw_content.any?
+        return raw_content.first.text
+      elsif (raw_content = doc.css('.article-content')).any?
+        return raw_content.first.text
+      elsif (raw_content = doc.css('#articleText')).any?
+        return raw_content.first.text
+      elsif (raw_content = doc.css('#storytext')).any?
+        return raw_content.first.text
       else
         return entryData.description
       end
