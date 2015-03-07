@@ -7,19 +7,9 @@ class Entry < ActiveRecord::Base
 
   def self.create_from_json!(entryData, feed)
     begin
-      image = get_image(entryData)
+      cloud_img = Cloudinary::Uploader.upload(get_image(entryData), width: 500, height: 500)
+      cloud_img = cloud_img["secure_url"]
     rescue
-      image = nil
-    end
-
-    if check_img_url_status(image)
-      begin
-        cloud_img = Cloudinary::Uploader.upload(image, width: 500, height: 500)
-        cloud_img = cloud_img["secure_url"]
-      rescue
-        cloud_img = nil
-      end
-    else
       cloud_img = nil
     end
 
@@ -79,25 +69,6 @@ class Entry < ActiveRecord::Base
       end
     rescue
       return entryData.description
-    end
-  end
-
-
-  def self.check_img_url_status(image)
-    return nil if !image
-
-    begin
-      uri = URI(image)
-      request = Net::HTTP.new uri.host
-      response = request.request_head uri.path
-
-      if ((response.code.to_i >= 400) && (response.code.to_i <= 499))
-        return nil
-      else
-        return image
-      end
-    rescue
-      return nil
     end
   end
 
