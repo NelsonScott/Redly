@@ -8,20 +8,20 @@ class Entry < ActiveRecord::Base
   def self.create_from_json!(entryData, feed)
     begin
       cloud_img = Cloudinary::Uploader.upload(get_image(entryData), width: 500, height: 500)
-      cloud_img = cloud_img["secure_url"]
+      cloud_img_url = cloud_img["secure_url"]
       cloud_img_id = cloud_img["public_id"]
     rescue
-      cloud_img = nil
+      cloud_img_url = nil
       cloud_img_id = nil
     end
 
     begin
       image_thumb = entryData.media_thumbnail_url
       cloud_thumb = Cloudinary::Uploader.upload(image_thumb, width: 210, height: 117)
-      cloud_thumb = cloud_thumb["secure_url"]
+      cloud_thumb_url = cloud_thumb["secure_url"]
       cloud_thumb_id = cloud_thumb["public_id"]
     rescue
-      cloud_thumb = cloud_img
+      cloud_thumb_url = cloud_img
       cloud_thumb_id = cloud_img_id
     end
 
@@ -37,9 +37,11 @@ class Entry < ActiveRecord::Base
       published_at: entryData.pubDate,
       title: shorten(entryData.title),
       feed_id: feed.id,
-      image: cloud_img,
+      image: cloud_img_url,
+      cloud_img_id: cloud_img_id,
       content: entry_content,
-      image_thumb: cloud_thumb,
+      image_thumb: cloud_thumb_url,
+      cloud_thumb_id: cloud_thumb_id,
       description: entryData.description
     })
   end
