@@ -54,37 +54,15 @@ class Feed < ActiveRecord::Base
     end
 
     self.entries.each do |entry|
-      if entry.created_at < 1.day.ago
+      if entry.created_at < 1.week.ago
         cloud_img_id = entry.cloud_img_id
         cloud_thumb_id = entry.cloud_thumb_id
-        if cloud_img_id
-          Cloudinary::Api.delete_resources(cloud_img_id)
-        end
-        
-        if cloud_thumb_id
-          Cloudinary::Api.delete_resources(cloud_thumb_id)
-        end
+        Cloudinary::Api.delete_resources(cloud_img_id) if cloud_img_id
+        Cloudinary::Api.delete_resources(cloud_thumb_id) if cloud_thumb_id
 
         entry.destroy
       end
     end
-
-    # begin
-    #   feed_data = SimpleRSS.parse(open(url))
-    #   self.title = feed_data.title
-    #   save!
-    #
-    #   existing_entry_guids = Entry.pluck(:guid).sort
-    #   feed_data.entries.each do |entry_data|
-    #     unless existing_entry_guids.include?(entry_data.guid)
-    #       Entry.create_from_json!(entry_data, self)
-    #     end
-    #   end
-    #
-    #   self
-    # rescue SimpleRSSError
-    #   return false
-    # end
   end
 
   def self.ensure_img(image)
