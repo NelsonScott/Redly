@@ -20,8 +20,4 @@ class SessionsController < ApplicationController
     sign_out!
     render text: "loggedOut"
   end
-
-  def ip
-    render text: request.remote_ip.to_s
-  end
 end

@@ -1,9 +1,7 @@
 Redly::Application.routes.draw do
   root 'static_pages#home'
   resources :users
-  resource :session do
-    get "ip"
-  end
+  resource :session
   resources :ratings, only: [:create]
 
   namespace :api do
