@@ -14,6 +14,7 @@ Redly is a clone of Feedly that allows users to rate and tag entries, built on R
 - [x] Tag entries
 - [x] Rate entries
 - [x] View entries' tags and ratings
+- [x] Periodically Update Feeds with Heroku Scheduler
 
 ## Design Docs
 * [View Wireframes][views]

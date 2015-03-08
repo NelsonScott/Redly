@@ -54,11 +54,12 @@ class Feed < ActiveRecord::Base
     end
 
     self.entries.each do |entry|
-      if entry.created_at < 1.week.ago
+      if entry.created_at < 1.day.ago
         cloud_img_id = entry.cloud_img_id
         cloud_thumb_id = entry.cloud_thumb_id
-        Cloudinary::Api.delete_resources(cloud_img_id)
-        Cloudinary::Api.delete_resources(cloud_thumb_id)
+        Cloudinary::Api.delete_resources(cloud_img_id) if cloud_img_id
+        Cloudinary::Api.delete_resources(cloud_thumb_id) if cloud_thumb_id
+
         entry.destroy
       end
     end

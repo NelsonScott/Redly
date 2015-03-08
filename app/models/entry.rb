@@ -9,16 +9,20 @@ class Entry < ActiveRecord::Base
     begin
       cloud_img = Cloudinary::Uploader.upload(get_image(entryData), width: 500, height: 500)
       cloud_img = cloud_img["secure_url"]
+      cloud_img_id = cloud_img["public_id"]
     rescue
       cloud_img = nil
+      cloud_img_id = nil
     end
 
     begin
       image_thumb = entryData.media_thumbnail_url
       cloud_thumb = Cloudinary::Uploader.upload(image_thumb, width: 210, height: 117)
       cloud_thumb = cloud_thumb["secure_url"]
+      cloud_thumb_id = cloud_thumb["public_id"]
     rescue
       cloud_thumb = cloud_img
+      cloud_thumb_id = cloud_img_id
     end
 
     begin
@@ -56,22 +60,22 @@ class Entry < ActiveRecord::Base
   end
 
   def self.get_entry_content(entryData)
-      doc = Nokogiri::HTML( open(entryData.link) )
-      doc.css('script').remove
+    doc = Nokogiri::HTML( open(entryData.link) )
+    doc.css('script').remove
 
-      raw_content = doc.css('.article-entry')
+    raw_content = doc.css('.article-entry')
 
-      if raw_content.any?
-        return raw_content.first.text
-      elsif (raw_content = doc.css('.article-content')).any?
-        return raw_content.first.text
-      elsif (raw_content = doc.css('#articleText')).any?
-        return raw_content.first.text
-      elsif (raw_content = doc.css('#storytext')).any?
-        return raw_content.first.text
-      else
-        return entryData.description
-      end
+    if raw_content.any?
+      return raw_content.first.text
+    elsif (raw_content = doc.css('.article-content')).any?
+      return raw_content.first.text
+    elsif (raw_content = doc.css('#articleText')).any?
+      return raw_content.first.text
+    elsif (raw_content = doc.css('#storytext')).any?
+      return raw_content.first.text
+    else
+      return entryData.description
+    end
   end
 
   def average_rating

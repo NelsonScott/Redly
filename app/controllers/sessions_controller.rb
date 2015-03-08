@@ -12,14 +12,16 @@ class SessionsController < ApplicationController
     else
       @user ||= User.new()
       @user.user_name = params[:user][:user_name]
-      # flash.now[:errors] = ["Invalid email or password."]
       render text: "Invalid Username or Password.", status: :unprocessable_entity
     end
   end
 
   def destroy
     sign_out!
-    # redirect_to new_session_url
     render text: "loggedOut"
+  end
+
+  def ip
+    render text: request.remote_ip.to_s
   end
 end
