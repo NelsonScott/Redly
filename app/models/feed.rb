@@ -39,13 +39,7 @@ class Feed < ActiveRecord::Base
     feed
   end
 
-  def latest_entries
-    reload if updated_at < 30.seconds.ago
-    entries
-  end
-
   def reload
-
     begin
       feed_data = SimpleRSS.parse(open(self.url))
 
@@ -60,7 +54,13 @@ class Feed < ActiveRecord::Base
     end
 
     self.entries.each do |entry|
-      entry.delete if entry.created_at < 1.week.ago
+      if entry.created_at < 1.week.ago
+        cloud_img_id = entry.cloud_img_id
+        cloud_thumb_id = entry.cloud_thumb_id
+        Cloudinary::Api.delete_resources(cloud_img_id)
+        Cloudinary::Api.delete_resources(cloud_thumb_id)
+        entry.destroy
+      end
     end
 
     # begin
