@@ -22,7 +22,6 @@ html {
 body {
   height: 100%;
   min-width: 1200px;
-  /*min-height: 520px;*/
 }
 
 #content {
@@ -30,140 +29,7 @@ body {
   padding-left: 50px;
   height: 100%;
   overflow-y: scroll;
-  /*padding-left: 130px;*/
   padding-right: 130px;
-  /*width:750px;*/
-  /*float:right;*/
-}
-
-.feed-show{
-  padding-top: 20px;
-  /*padding-left: 50px;*/
-  font-weight: bold;
-  font-size: 26px;
-}
-
-.feed-description{
-  color: rgb(180, 179, 178);
-  display: inline;
-  font-family: sans-serif;
-  font-size: 12px;
-  font-weight: normal;
-  height: auto;
-  letter-spacing: normal;
-  line-height: 17px;
-  text-transform: none;
-  width: auto;
-}
-
-.entry-show {
-  padding-top: 30px;
-  padding-left: 60px;
-}
-
-.entry-show-img{
-  padding-top: 20px;
-  padding-bottom: 20px;
-  max-width: 450px;
-}
-
-.entry-show p{
-  color: rgb(51, 51, 50);
-  cursor: auto;
-  display: block;
-  font-family: 'Slab Serif', sans-serif;
-  font-size: 15px;
-  height: 130px;
-  line-height: 26.25px;
-  margin-bottom: 24px;
-  margin-top: 24px;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* lists */
-
-/* Entry List Item */
-.entry-list-item {
-  margin-bottom: 50px;
-}
-
-.entry-list-description {
-  color: rgb(180, 179, 178);
-  font-family: sans-serif;
-  font-size: 12px;
-  font-weight: normal;
-  /*height: auto;*/
-  letter-spacing: normal;
-  line-height: 17px;
-  /*width: auto;*/
-}
-
-.entry-thumb-nail {
-  width: 210px;
-  height: 117px;
-}
-
-/*.entry-img-wrapper {
-  display: inline;
-}
-
-.entry-text-wrapper {
-  display: inline;
-}*/
-
-.entry-title {
-  margin-top: 0px;
-  font-size: 14px;
-}
-
-.rate-entry {
-  /*display: inline;*/
-  width: 120px;
-}
-
-/* Entry Show Page */
-.entry-item-title {
-  font-size: 1.8695652173913044rem;
-  font-weight: 700;
-  font-family: sans-serif;
-  text-rendering: optimizeLegibility;
-  line-height: 2.15rem;
-  text-transform: none;
-  margin-top: 3rem;
-  margin-bottom: 1.5rem;
-  letter-spacing: -0.04em;
-  display: block;
-  margin-bottom: 1rem;
-  width: 650px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-
-}
-
-ul.entries-index{
-  padding-left: 50px;
-}
-
-ul.feed {
-  padding-left: 0px;
-}
-
-ul.entries-index li{
-  list-style-type: none;
-  display: none;
-}
-
-/* buttons and clickables */
-button {
-  background: transparent;
-  border: none !important;
-}
-
-button:focus {outline:0;}
-
-.delete-feed:hover{
-  color: #CC0000;
 }
 
 /* headers */

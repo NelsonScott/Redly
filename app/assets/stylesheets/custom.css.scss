@@ -12,3 +12,10 @@ a:hover{
 a:visited{
   color: inherit;
 }
+
+button {
+  background: transparent;
+  border: none !important;
+}
+
+button:focus {outline:0;}
