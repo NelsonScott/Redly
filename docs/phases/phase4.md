@@ -24,6 +24,6 @@ Api::TagsController (create, destroy, show)
 * TagShow
 
 ## Gems/Libraries
-* JQuery Raty
+* jQuery Raty
 * nokogiri
 * Cloudinary
