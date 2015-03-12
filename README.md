@@ -5,15 +5,14 @@
 [heroku]:https://redly.herokuapp.com
 
 ## Minimum Viable Product
-Redly is a clone of Feedly that allows users to rate and tag entries, built on Rails and Backbone. Users can:
+Redly is a clone of Feedly that allows users to rate and tag entries, built with Rails and Backbone. Users can:
 
 - [x] Create accounts
-- [x] Create sessions (log in)
+- [x] Log in
 - [x] Add feeds
 - [x] View feeds
-- [x] Tag entries
 - [x] Rate entries
-- [x] View entries' tags and ratings
+- [x] View entries' and corresponding ratings
 - [x] Periodically Update Feeds with Heroku Scheduler
 
 ## Design Docs
@@ -29,27 +28,27 @@ I will implement user login and authentication using Rails based on the lessons 
 [Details][phase-one]
 
 ### Phase 2: Feeds, JSON API and Backbone Views (~2 days)
-Allow users to create feeds with a URL, store these URLs in the database.  Create feed API for retrieving feed data with corresponding entries.  Create Backbone views to display information about a feed on the homepage. Ensure feeds index returns feeds only for the current user and that URL's are valid.  
+Allow users to add feeds from a list, store these selections in the database.  Create feed API for retrieving feed data with corresponding entries.  Create Backbone views to display information about a feed on the homepage. Ensure feeds index returns feeds only for the current user and that URL's are valid.  
 
 [Details][phase-two]
 
 ### Phase 3: Add sidebar view, Easier Feed Creation (~1 days)
-By this point users should be able to properly add and see feeds on their page.  Have sidebar to slide open to show a list of the user's current feeds to select from.  Also change Feed creation to be done from the sidebar instead of with the current separate form.  Use CSS to well-position index items and have sliding animation on sidebar close/open.
+By this point users should be able to properly add and see feeds on their page.  Enable sidebar to slide in and out to show a list of the user's current feeds.  Change feed creation to be done from the sidebar instead of main page.  Add CSS to position index items and sliding animation on sidebar close/open.
 
 [Details][phase-three]
 
 ### Phase 4: Entries, Ratings, & Taggings(~2 days)
-Create Model and Controller for entries. Add ability to see a feed's entries.  Allow user to rate entries from 1 to 5 stars using jquery raty and rails controllers.  Create tags for feeds in order to better organize them.  Use nokogiri to parse sources for images.  Use cloudinary for fastest image retrieval.  
+Create Model and Controller for entries. Add ability to see a feed's entries.  Enable a user to rate entries from 1 to 5 stars using jquery raty, store ratings in DB.  Use nokogiri to parse sources for images.  Use cloudinary for fast image retrieval.  
 
 [Details][phase-four]
 
 ### Phase 5: Search Bar/Feed Selection (~2 days)
-Implement a search bar that displays a realtime preview of feeds to select from.  Allow a user to click on a result to add it to their list of feeds.  
+Implement a search bar that displays a realtime list of feeds.  Allow a user to just click on a result to add it to their list of feeds.  
 
 [Details][phase-five]
 
 ### Bonus Features
-- [x] Add Tour of the App
+- [x] Add Tour of the App using Shepherd
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md

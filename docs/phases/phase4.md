@@ -5,7 +5,6 @@
 
 ### Controllers
 Api::EntriesController (create, destroy, show)
-Api::TagsController (create, destroy, show)
 
 ### Views
 * entry/show.json.jbuilder
@@ -13,15 +12,12 @@ Api::TagsController (create, destroy, show)
 ## Backbone
 ### Models
 * Entry
-* Tag
 
 ### Collections
 * Entries
-* Tags
 
 ### Views
 * EntryShow
-* TagShow
 
 ## Gems/Libraries
 * jQuery Raty
