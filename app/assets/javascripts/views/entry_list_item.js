@@ -29,7 +29,7 @@ Redly.Views.entryListItem = Backbone.View.extend({
       },
     error: function(msg){
       console.log(msg);
-      console.log("Error updating rating.");
+      console.log("Error submitting rating.");
       }
     });
   },
