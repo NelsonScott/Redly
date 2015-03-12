@@ -1,7 +1,7 @@
 Redly::Application.routes.draw do
   root 'static_pages#home'
   resources :users
-  resource :session
+  resource :session, only: [:create, :destroy]
   resources :ratings, only: [:create]
 
   namespace :api do
