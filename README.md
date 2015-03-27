@@ -1,6 +1,7 @@
 # Redly
 
-[Heroku link][heroku]
+[Live Demo][heroku]
+
 Redly is an RSS reader built with Rails that provides customized content to users.  Users can choose relevant news sources, rate entries, and read full length articles.  
 [heroku]:https://redly.herokuapp.com
 
