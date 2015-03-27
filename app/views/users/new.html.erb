@@ -130,7 +130,6 @@ $('.sign-up-form').submit(function(event){
   url: '/users',
   data: {user: {user_name: userName, password: userPass, email: userEmail} },
   success: function(){
-    console.log("Logged in.");
     window.location = "/";
     },
   error: function(msg){

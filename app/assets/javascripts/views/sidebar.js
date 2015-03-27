@@ -73,7 +73,7 @@ Redly.Views.sidebar = Backbone.CompositeView.extend({
       });
       },
     error: function(msg){
-      console.log("Could not find results.");
+      // console.log("Could not find results.");
       }
     });
   },
