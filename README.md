@@ -1,12 +1,10 @@
 # Redly
 
 [Heroku link][heroku]
-
+Redly is an RSS reader built with Rails that provides customized content to users.  Users can choose relevant news sources, rate entries, and read full length articles.  
 [heroku]:https://redly.herokuapp.com
 
 ## Minimum Viable Product
-Redly is a clone of Feedly that allows users to rate and tag entries, built with Rails and Backbone. Users can:
-
 - [x] Create accounts
 - [x] Log in
 - [x] Add feeds
