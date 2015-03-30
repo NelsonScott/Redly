@@ -145,7 +145,7 @@ Redly.Routers.Router = Backbone.Router.extend({
 
     tour.addStep('showFeeds', {
       title: 'Searching',
-      text: "Search for more content by organization (e.g. New York Times) or type of content you want to see (e.g. Technology)",
+      text: "Search for more content by organization (e.g. New York Times) or type of content you want to see (e.g. Tech)",
       attachTo: "#new-feed-form",
       classes: 'shepherd shepherd-open shepherd-theme-arrows shepherd-transparent-text',
       buttons: [
