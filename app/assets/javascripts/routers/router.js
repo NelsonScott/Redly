@@ -45,6 +45,15 @@ Redly.Routers.Router = Backbone.Router.extend({
     this.$content.html(view.render().$el);
   },
 
+  addTourStep: function(tour, stepName, title, text, buttons){
+    tour.addStep(stepName, {
+      title: title,
+      text: text,
+      classes: 'shepherd shepherd-open shepherd-theme-arrows shepherd-transparent-text',
+      buttons: buttons
+    })
+  },
+
   startTour: function(){
     tour = new Shepherd.Tour({
       defaults: {
@@ -52,24 +61,39 @@ Redly.Routers.Router = Backbone.Router.extend({
       }
     });
 
-    tour.addStep('welcomeStep', {
-      title: 'Welcome to Redly!',
-      text: "Redly lets you organize and read your favorite news stories from different sources all in one place.",
-      classes: 'shepherd shepherd-open shepherd-theme-arrows shepherd-transparent-text',
-      buttons: [
-        {
-          text: 'Next',
-          action: tour.next,
-          classes: 'shepherd-button-example-primary'
-        },
+    var text = "Redly lets you organize and read your favorite news stories from different sources all in one place.";
+    var buttons = [
+      {
+        text: 'Next',
+        action: tour.next,
+        classes: 'shepherd-button-example-primary'
+      },
+      {
+        text: 'End Tutorial',
+        classes: 'shepherd-button-secondary',
+        action: tour.complete
+      }
+    ]
+    this.addTourStep(tour, 'welcomeStep', 'Welcome to Redly!', text, )
 
-        {
-          text: 'End Tutorial',
-          classes: 'shepherd-button-secondary',
-          action: tour.complete
-        }
-      ]
-    });
+    // tour.addStep('welcomeStep', {
+    //   title: 'Welcome to Redly!',
+    //   text: "Redly lets you organize and read your favorite news stories from different sources all in one place.",
+    //   classes: 'shepherd shepherd-open shepherd-theme-arrows shepherd-transparent-text',
+    //   buttons: [
+    //     {
+    //       text: 'Next',
+    //       action: tour.next,
+    //       classes: 'shepherd-button-example-primary'
+    //     },
+    //
+    //     {
+    //       text: 'End Tutorial',
+    //       classes: 'shepherd-button-secondary',
+    //       action: tour.complete
+    //     }
+    //   ]
+    // });
 
     tour.addStep('showFeeds', {
       title: 'Your Feeds',
