@@ -46,23 +46,22 @@ Redly.Routers.Router = Backbone.Router.extend({
   },
 
   addTourStep: function(tour, stepName, title, text, buttons){
-    tour.addStep(stepName, {
-      title: title,
-      text: text,
-      classes: 'shepherd shepherd-open shepherd-theme-arrows shepherd-transparent-text',
-      buttons: buttons
-    })
+    tour.addStep(stepName, options)
   },
 
   startTour: function(){
+    var options = {};
+
     tour = new Shepherd.Tour({
       defaults: {
         classes: 'shepherd-theme-arrows',
       }
     });
 
-    var text = "Redly lets you organize and read your favorite news stories from different sources all in one place.";
-    var buttons = [
+    options.stepName = ""
+    options.title = 'Welcome to Redly!';
+    options.text = "Redly lets you organize and read your favorite news stories from different sources all in one place.";
+    options.buttons = [
       {
         text: 'Next',
         action: tour.next,
@@ -73,8 +72,9 @@ Redly.Routers.Router = Backbone.Router.extend({
         classes: 'shepherd-button-secondary',
         action: tour.complete
       }
-    ]
-    this.addTourStep(tour, 'welcomeStep', 'Welcome to Redly!', text, )
+    ];
+    debugger
+    this.addTourStep(tour, options);
 
     // tour.addStep('welcomeStep', {
     //   title: 'Welcome to Redly!',
