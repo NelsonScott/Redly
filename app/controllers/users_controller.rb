@@ -13,6 +13,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
+      @user.user_feeds.create(feed_id: Feed.first.id, user_id: @user.id)
       sign_in!(@user)
       redirect_to root_url
     else
