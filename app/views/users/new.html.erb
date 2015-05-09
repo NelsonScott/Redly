@@ -73,10 +73,18 @@
   </div>
 </div>
 
-<%= image_tag "feedly-showcase.png", alt: "All the Devices", class: "feedly-showcase" %>
+<%= video_tag "demo.mov", controls: false, autoplay: false, loop: true, alt: "Redly on a MBP", class: "redly-showcase" %>
 
 <% content_for :scripts do %>
 <script>
+$('.redly-showcase').on('mouseover', function(){
+  this.play();
+});
+
+$('.redly-showcase').on('mouseout', function(){
+  this.pause();
+})
+
 $('.login-style-link').on('click', function(){
   if ($('#myModalLabel').text() == "Sign Up"){
     $('.error-messages').html("");
